@@ -1,5 +1,19 @@
 #me{
-    width: 250px;
-    height: 250px;
+    border: 8px solid white;
     border-radius: 250px;
+}
+#me_navbar{
+    border: 2px solid white;
+    border-radius: 250px;
+    padding: 0px 0px 0px 0px;
+    margin-top: 5px;
+}
+.event-info .date{
+    margin-left: 4px !important;
+}
+
+@media screen and (max-width: 770px) {
+    #me_navbar{
+        display: none;
+    }
 }

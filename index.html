@@ -1,440 +1,407 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
+    <!-- ==========================
+    	Meta Tags 
+    =========================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ==========================
+    	Title 
+    =========================== -->
+    <title>Ian</title>
+    
+    <!-- ==========================
+    	Favicons 
+    =========================== -->
+    <link rel="shortcut icon" href="icons/favicon.ico">
+	<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="icons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="icons/apple-touch-icon-114x114.png">
+    
+    <!-- ==========================
+    	Fonts 
+    =========================== -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lilita+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <!-- ==========================
+    	CSS 
+    =========================== -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.css" rel="stylesheet" type="text/css">
+    <link href="css/creative-brands.css" rel="stylesheet" type="text/css">
+    <link href="css/vertical-carousel.css" rel="stylesheet" type="text/css">
+    <link href="css/custom.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
 
-    <title>Ian Luddy</title>
-
-    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/freelancer.css" rel="stylesheet">
-
-    <link href="css/style.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- ==========================
+    	JS 
+    =========================== -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-
+    
 </head>
-
-<body id="page-top" class="index">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#page-top">Welcome!</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#about">About Me</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <!-- Header -->
+<body id="page-top">
+	<a href="#page-top" class="scroll-up scroll"><i class="fa fa-chevron-up"></i></a>
+    <h1>Freelancer</h1>
+	
+    <!-- ==========================
+    	HEADER - START 
+    =========================== -->
     <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <img id="me" class="img-responsive" src="img/me_grey.gif" alt="">
-                    <div class="intro-text">
-                        <span class="name">Ian Luddy</span>
-                        <hr class="star-light">
-                        <span class="skills">Full Stack Python Dev</span>
-                    </div>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavigation"><i class="fa fa-bars"></i></button>
+                    <img src="image/me.png" id="me_navbar" class="navbar-logo pull-left" alt="" />
+                    <a href="index.html" class="navbar-brand animated flipInX">Ian Luddy</a>
                 </div>
+                
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="myNavigation">
+                
+                    <ul class="nav navbar-nav navbar-right animated flipInX">
+                        <li><a href="#about" class="scroll">About me</a></li>
+                        <li><a href="#reference" class="scroll">Reference</a></li>
+                        <li><a href="#pricing" class="scroll">Pricing</a></li>
+                        <li><a href="#contact" class="scroll">Contact</a></li>
+                        <li><a href="blog.html" class="scroll blog_menu_link">Blog</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container -->
+        </nav>
+        
+        <div class="jumbotron">
+            <img src="image/me.png" id="me" class="img-responsive scrollpoint sp-effect3" alt="" />
+            <div class="social-wrapper">
+                <ul class="brands brands-inline hidden-xs scrollpoint sp-effect1">
+                    <li><a href="https://www.facebook.com/ian.luddy"><i class="fa fa-facebook  hi-icon-effect-8"></i></a></li>
+                    <li><a href="https://github.com/ianluddy"><i class="fa fa-github"></i></a></li>
+                </ul>   
+                <h2 class="scrollpoint sp-effect3">Ian Luddy</h2>
+                <ul class="brands brands-inline hidden-xs scrollpoint sp-effect2">
+                    <li><a href="mailto:ianluddy@gmail.com"><i class="fa fa-google"></i></a></li>
+                    <li><a href="https://ie.linkedin.com/in/ianluddy"><i class="fa fa-linkedin"></i></a></li>
+                </ul>       
             </div>
         </div>
     </header>
-
-    <!-- Portfolio Grid Section -->
-    <section id="portfolio">
+    <!-- ==========================
+    	HEADER - END 
+    =========================== -->
+     
+    <!-- ==========================
+    	ABOUT - START 
+    =========================== -->
+    <section id="about" class="content-first">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Portfolio</h2>
-                    <hr class="star-primary">
+                <div class="col-sm-2 hidden-xs scrollpoint sp-effect1"><!-- Profile image --> 
+                	<img src="image/me.png" id="me" class="image-bordered img-responsive" alt="" />
+                </div><!-- Profile end --> 
+                
+                <div class="col-md-5 col-sm-4 scrollpoint sp-effect1"><!-- Profile description -->
+                	<h3>Me</h3>
+
+                    <p>I am a 27 year-old full-stack Python developer currently leading a talented team of developers at Arts Alliance Media. I am currently working to enhance and support the world’s leading Theatre Management System which is currently automating 28,000 cinema screens worldwide.</p>
+                    <p>I’m looking for a role where I can move away from the administrative side of running a development team. I would ideally like a position where I can spend the majority of my time writing code, which is what I am passionate about.</p>
+
+               </div><!-- Profile description end--> 
+                
+              <div class="col-md-5 col-sm-6 scrollpoint sp-effect2"><!--Timeline-->
+                 
+                  <div class="timeline">
+                      <!-- BLOG POST 1 - START -->
+                      <div class="event">
+                          <div class="event-info">
+                            <div class="date">May 2011</div>
+                          </div>
+                      	  <span>BSc. (Hons) in Software Development (Awarded 1:1) - GMIT</span>
+                      </div> <!-- BLOG POST 1 - END -->
+                      
+                      <div class="event">
+                          <div class="event-info">
+                             <div class="date">May 2011</div>
+                          </div>
+                      	  <span>C# Developer - Avaeon</span>
+                      </div> <!-- BLOG POST 1 - END -->
+                      
+                      <div class="event">
+                          <div class="event-info">
+                             <div class="date">Aug 2011</div>
+                          </div>
+                      	  <span>Python Developer - Arts Alliance Media</span>
+                      </div> <!-- BLOG POST 1 - END -->
+                      
+                      <div class="event">
+                          <div class="event-info">
+                             <div class="date">Oct 2012</div>
+                          </div>
+                      	  <span>Lead Python Developer - Arts Alliance Media</span>
+                      </div> <!-- BLOG POST 1 - END -->
+                      
+                      <div class="event">
+                          <div class="event-info">
+                             <div class="date">Aug 2015</div>
+                          </div>
+                      	  <span>Backpacking - South East Asia</span>
+                      </div> <!-- BLOG POST 1 - END -->
+                      
+                  </div><!--timeline-->
+              </div><!--col 3 end-->
+               
+            </div><!--Row about end-->
+            
+        </div><!-- Container end-->
+        
+    </section>
+    <!-- ==========================
+    	ABOUT - END 
+    =========================== --> 
+
+     <!-- ==========================
+    	SHOWCASE - START
+    =========================== -->   
+    <section id="showcase" class="content-second">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 class="scrollpoint sp-effect3">My latest work</h2>
+                    <p class="scrollpoint sp-effect3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in turpis quam. Nulla quis eleifend lectus.</p> 
                 </div>
+                
+                <div class="col-lg-6 showcase-text scrollpoint sp-effect1">
+                    <div class="row">
+                    <!-- Service 1 -->
+                    	<div class="col-sm-6 col-md-6 col-lg-12">
+                            <div class="media">
+                                <div class="pull-left showcase-icon"><i class="fa fa-puzzle-piece"></i></div>
+                                <div class="media-body">
+                                    <h3 class="media-heading">Browser friendly</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur ad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Service 2 -->
+                    	<div class="col-sm-6 col-md-6 col-lg-12">
+                            <div class="media">
+                                <div class="pull-left showcase-icon"><i class="fa fa-trophy"></i></div>
+                                <div class="media-body">
+                                   <h3 class="media-heading">First class design</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur ad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Service 3 -->
+                    	<div class="col-sm-6 col-md-6 col-lg-12">
+                            <div class="media">
+                                <div class="pull-left showcase-icon"><i class="fa fa-thumbs-up"></i></div>
+                                <div class="media-body">
+                                    <h3 class="media-heading">Profesional scheme for freelancers</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur ad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Service 4 -->
+                    	<div class="col-sm-6 col-md-6 col-lg-12">
+                            <div class="media">
+                                <div class="pull-left showcase-icon"><i class="fa fa-arrows"></i></div>
+                                <div class="media-body">
+                                    <h3 class="media-heading">Fully responsive</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur ad.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                   <div class="text-center showcase-button">
+                   		<a class="btn btn-primary btn-lg" role="button"><i class="fa fa-bolt"></i> See in action</a>
+                   </div>
+                </div>            
+            
+                <div class="col-lg-6 col-sm-8 col-md-8 col-md-offset-2 col-sm-offset-2 col-lg-offset-0 showcase-carousel hidden-xs scrollpoint sp-effect2">
+                    <img src="image/imac.png" class="img-responsive" alt="">
+                    
+                    <div id="carousel-reference" class="carousel slide" data-ride="carousel">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active"><img src="image/image_01.png" alt=""></div>
+                            <div class="item"><img src="image/image_02.png" alt=""></div>
+                        </div>
+                        
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-reference" data-slide="prev"><i class="fa fa-arrow-left"></i></a>
+                        <a class="right carousel-control" href="#carousel-reference" data-slide="next"><i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </section>
+    <!-- ==========================
+    	SHOWCASE - END 
+    =========================== -->
+    
+    <!-- ==========================
+    	CONTACT - START
+    =========================== -->   
+    <section id="contact" class="content-first">
+        <div class="container">
+        	<h2 class="scrollpoint sp-effect3">Contact me</h2>
+            <div class="contact-alert">
             </div>
             <div class="row">
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
+            <!-- PRICING TABLE FIRST - start --> 
+                <div class="col-sm-12">
+                	<img src="image/macbook.png" class="img-responsive hidden-xs" alt="">
+                    
+                    <div class="macbook-inner black">
+                    	<div class="row scrollpoint sp-effect4">
+                        	<div class="col-sm-8">
+                            	<h3 class="hidden-xs">Leave a message</h3>
+                                
+                                <form role="form" id="contactForm">
+
+                                    <div class="form-group control-group">
+                                        <div class="controls">
+                                            <p class="help-block"></p>
+                                            <input type="text" class="form-control" placeholder="First Name" id="firstname" data-validation-required-message="Please enter your first name." aria-invalid="false">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group control-group">
+                                        <div class="controls">
+                                            <p class="help-block"></p>
+                                            <input type="text" class="form-control" placeholder="Last Name" id="lastname" data-validation-required-message="Please enter your last name." aria-invalid="false">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group control-group">
+                                        <div class="controls">
+                                            <p class="help-block"></p>
+                                            <input type="email" class="form-control" placeholder="Email" id="email" data-validation-required-message="Please enter your email address." aria-invalid="false">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group control-group">
+                                        <div class="controls">
+                                            <p class="help-block"></p>
+                                            <textarea class="form-control" placeholder="Message" id="message" data-validation-required-message="Please enter some message." aria-invalid="false"></textarea>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary">Send message</button>
+                                    </div>
+                                </form>
+                                
                             </div>
-                        </div>
-                        <img src="img/portfolio/ss.gif" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
+                            <div class="col-sm-4">
+                            
+                            <img src="image/jonathan.png" class="contact-image image-responsive hidden-xs hidden-sm" alt="" />
+                            	<div class="contact-info">
+                                	<p>Ian Luddy</p>
+                                    <p>9 St Nicholas St.</p>
+                                    <p>Galway</p>
+                                </div>
                             </div>
-                        </div>
-                        <img src="img/portfolio/cmt.gif" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/sbl.gif" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/vh.gif" class="img-responsive" alt="">
-                    </a>
+                    	</div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- About Section -->
-    <section class="success" id="about">
+    <!-- ==========================
+    	CONTACT - END 
+    =========================== -->
+    
+    <!-- ==========================
+    	FOOTER - START
+    =========================== -->   
+    <section id="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>About Me</h2>
-                    <hr class="star-light">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-                    <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
-                </div>
-                <div class="col-lg-4">
-                    <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
-                </div>
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="#" class="btn btn-lg btn-outline">
-                        <i class="fa fa-download"></i> Download Theme
-                    </a>
-                </div>
+                <div class="col-sm-12 scrollpoint sp-effect3">
+                
+               			<ul class="brands brands-inline">
+                            <li><a href="https://www.facebook.com/ian.luddy"><i class="fa fa-facebook  hi-icon-effect-8"></i></a></li>
+                            <li><a href="https://github.com/ianluddy"><i class="fa fa-github"></i></a></li>
+                            <li><a href="mailto:ianluddy@gmail.com"><i class="fa fa-google"></i></a></li>
+                            <li><a href="https://ie.linkedin.com/in/ianluddy"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>  
+
+                    <p>© Ian Luddy 2015</p>
+                </div>   	
             </div>
         </div>
     </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Contact Me</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    <form name="sentMessage" id="contactForm" novalidate>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Name</label>
-                                <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Email Address</label>
-                                <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Phone Number</label>
-                                <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Message</label>
-                                <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <br>
-                        <div id="success"></div>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg">Send</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="text-center">
-        <div class="footer-above">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col col-md-4">
-                        <h3>Location</h3>
-                        <p>Dublin<br>Ireland</p>
-                    </div>
-                    <div class="footer-col col-md-4">
-                        <h3>Around the Web</h3>
-                        <ul class="list-inline">
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer-col col-md-4">
-                        <h3>About Freelancer</h3>
-                        <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-below">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        Copyright &copy; Your Website 2014
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-top page-scroll visible-xs visible-sm">
-        <a class="btn btn-primary" href="#page-top">
-            <i class="fa fa-chevron-up"></i>
-        </a>
-    </div>
-
-    <!-- Portfolio Modals -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Slice Scanner</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/ss.gif" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Cork Motorcycle Training</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/cmt.gif" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Spud Blog</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/sbl.gif" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Volcoholic</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/vh.gif" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
-
-    <!-- Contact Form JavaScript -->
+    <!-- ==========================
+    	FOOTER - END 
+    =========================== -->
+    
+    <!-- ==========================
+    	JS 
+    =========================== -->
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/creative-brands.js"></script>
+    <script src="js/jquery.easy-pie-chart.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.countTo.js"></script>
     <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/freelancer.js"></script>
-
+    <script src="js/custom.js"></script>
+    <script>
+    $(function () { 
+		$("input,textarea").jqBootstrapValidation({
+        	preventSubmit: true,
+			
+			submitSuccess: function($form, event) {
+				event.preventDefault(); // prevent default submit behaviour
+				// get values from FORM
+				var firstname = $("input#firstname").val();
+				var lastname = $("input#lastname").val();
+				var email = $("input#email").val();
+				var message = $("textarea#message").val();
+	
+				$.ajax({
+					url: "send.php",
+					type: "POST",
+					data: {
+						firstname: firstname,
+						lastname: lastname,
+						email: email,
+						message: message
+					},
+					cache: false,
+					success: function() {
+						// Success message
+						$('.contact-alert').html("<div class='alert alert-success'>");
+						$('.contact-alert > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'><i class='fa fa-times'></i></button><strong>Your message has been sent.</strong></div>");
+						//clear all fields
+						$('#contactForm').trigger("reset");
+					},
+					error: function() {
+						// Fail message
+						$('.contact-alert').html("<div class='alert alert-danger'>");
+						$('.contact-alert > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'><i class='fa fa-times'></i></button><strong>Sorry, it seems that my mail server is not responding. Please try again later!</strong></div>");
+						//clear all fields
+						$('#contactForm').trigger("reset");
+					},
+				})
+			}
+		});
+	});
+    </script>
 </body>
-
 </html>
