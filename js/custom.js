@@ -6,7 +6,7 @@
 ------------------------------*/
 
 $(window).scroll(function(){
-	if($(window).scrollTop() > 600) {
+	if($(window).scrollTop() > 300) {
 		$('.navbar-default').fadeIn(300);
 	}
 	else {

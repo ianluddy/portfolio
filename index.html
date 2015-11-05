@@ -71,10 +71,8 @@
                 
                     <ul class="nav navbar-nav navbar-right animated flipInX">
                         <li><a href="#about" class="scroll">About me</a></li>
-                        <li><a href="#reference" class="scroll">Reference</a></li>
-                        <li><a href="#pricing" class="scroll">Pricing</a></li>
+                        <li><a href="#showcase" class="scroll">Projects</a></li>
                         <li><a href="#contact" class="scroll">Contact</a></li>
-                        <li><a href="blog.html" class="scroll blog_menu_link">Blog</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container -->
@@ -110,10 +108,17 @@
                 </div><!-- Profile end --> 
                 
                 <div class="col-md-5 col-sm-4 scrollpoint sp-effect1"><!-- Profile description -->
-                	<h3>Me</h3>
 
-                    <p>I am a 27 year-old full-stack Python developer currently leading a talented team of developers at Arts Alliance Media. I am currently working to enhance and support the world’s leading Theatre Management System which is currently automating 28,000 cinema screens worldwide.</p>
-                    <p>I’m looking for a role where I can move away from the administrative side of running a development team. I would ideally like a position where I can spend the majority of my time writing code, which is what I am passionate about.</p>
+                    <p>Welcome to my page! This is where I'll be exhibiting my latest work, there are links above for
+                    getting in touch, including my <a href="https://github.com/ianluddy">Github</a> page where you can check out some code.
+                    There is also a contact form at the bottom of the page if you want to ping me a message.</p>
+
+                    <p>I'm a full-stack Python developer from Galway. I studied Software Development
+                    at <a href="http://www.gmit.ie">GMIT</a> and was awarded a 1:1 Honours Degree in 2011, as well as
+                    the Student of the Year award for the highest overall grade in my class. Since then I've
+                    been working full-time, primarily in London as a Senior Python Developer</p>
+
+                    <p>Give me a shout if you think I could help you out with anything :D</p>
 
                </div><!-- Profile description end--> 
                 
@@ -125,35 +130,35 @@
                           <div class="event-info">
                             <div class="date">May 2011</div>
                           </div>
-                      	  <span>BSc. (Hons) in Software Development (Awarded 1:1) - GMIT</span>
+                      	  <span>BSc. (Hons) in Software Development - <a href="http://www.gmit.ie">GMIT</a></span>
                       </div> <!-- BLOG POST 1 - END -->
                       
                       <div class="event">
                           <div class="event-info">
                              <div class="date">May 2011</div>
                           </div>
-                      	  <span>C# Developer - Avaeon</span>
+                      	  <span>C# Developer - <a href="http://www.avaeon.com/">Avaeon</a></span>
                       </div> <!-- BLOG POST 1 - END -->
                       
                       <div class="event">
                           <div class="event-info">
                              <div class="date">Aug 2011</div>
                           </div>
-                      	  <span>Python Developer - Arts Alliance Media</span>
+                      	  <span>Python Developer - <a href="http://www.artsalliancemedia.com/">Arts Alliance Media</a></span>
                       </div> <!-- BLOG POST 1 - END -->
                       
                       <div class="event">
                           <div class="event-info">
                              <div class="date">Oct 2012</div>
                           </div>
-                      	  <span>Lead Python Developer - Arts Alliance Media</span>
+                      	  <span>Lead Python Developer - <a href="http://www.artsalliancemedia.com/">Arts Alliance Media</a></span>
                       </div> <!-- BLOG POST 1 - END -->
                       
                       <div class="event">
                           <div class="event-info">
                              <div class="date">Aug 2015</div>
                           </div>
-                      	  <span>Backpacking - South East Asia</span>
+                      	  <span>Backpacking - <a href="https://en.wikipedia.org/wiki/Southeast_Asia">SouthEast Asia</a></span>
                       </div> <!-- BLOG POST 1 - END -->
                       
                   </div><!--timeline-->
@@ -172,12 +177,60 @@
     	SHOWCASE - START
     =========================== -->   
     <section id="showcase" class="content-second">
+
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
                     <h2 class="scrollpoint sp-effect3">Recent Work</h2>
                 </div>
                 
+                <div class="col-lg-6 showcase-text scrollpoint sp-effect1 showcase-text-right">
+                    <div class="row">
+                        <strong><a href="http://luddy-spud.appspot.com/">slicescanner.ie</a></strong>
+                        <h3>Slice Scanner</h3>
+                        <div class="showcase-desc">
+                            Slice Scanner is a web application which aggregates data from the top pizza vendors in the
+                            country and presents them to the discerning pizza lover. I used Bootstrap for the UI which is
+                            served up by a Flask application. I used Selenium to scrape the data and AWS for deployment.
+                            <br/>
+                        </div>
+                        <div class="codebase">
+                            <i class="fa fa-github"></i>
+                            <a href="https://github.com/ianluddy/slice_scanner">github.com/ianluddy/slice_scanner</a>
+                        </div>
+                        <div class="resources">
+                            <h4>Resources:</h4>
+                            <div><a href="http://flask.pocoo.org/">Flask</a></div>
+                            <div><a href="http://getbootstrap.com/">Bootstrap</a></div>
+                            <div><a href="http://www.seleniumhq.org/">Selenium</a></div>
+                            <div><a href="https://aws.amazon.com/">AWS</a></div>
+                            <div><a href="http://ionden.com/a/plugins/ion.rangeSlider/en.html">Ion Range Slider</a></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-6 col-sm-8 col-md-8 col-md-offset-2 col-sm-offset-2 col-lg-offset-0 showcase-carousel hidden-xs scrollpoint sp-effect2">
+                    <img src="image/imac.png" class="img-responsive" alt="">
+
+                    <div id="carousel-reference" class="carousel slide" data-ride="carousel">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active"><img src="image/slice1.png" alt=""></div>
+                            <div class="item"><img src="image/slice2.png" alt=""></div>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-reference" data-slide="prev"><i class="fa fa-arrow-left"></i></a>
+                        <a class="right carousel-control" href="#carousel-reference" data-slide="next"><i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
                 <div class="col-lg-6 showcase-text scrollpoint sp-effect1">
                     <div class="row">
                         <strong><a href="http://luddy-spud.appspot.com/">luddy-spud.appspot.com</a></strong>
@@ -223,52 +276,7 @@
             </div>
         </div>
 
-        <div class="container">
-            <div class="row">
 
-                <div class="col-lg-6 showcase-text scrollpoint sp-effect1 showcase-text-right">
-                    <div class="row">
-                        <strong><a href="http://luddy-spud.appspot.com/">slicescanner.ie</a></strong>
-                        <h3>Slice Scanner</h3>
-                        <div class="showcase-desc">
-                            Slice Scanner is a web application which aggregates data from the top pizza vendors in the
-                            country and presents them to the discerning pizza lover. I used Bootstrap for the UI which is
-                            served up by a Flask application. I used Selenium to scrape the data and AWS for deployment.
-                            <br/>
-                        </div>
-                        <div class="codebase">
-                            <i class="fa fa-github"></i>
-                            <a href="https://github.com/ianluddy/slice_scanner">github.com/ianluddy/slice_scanner</a>
-                        </div>
-                        <div class="resources">
-                            <h4>Resources:</h4>
-                            <div><a href="http://flask.pocoo.org/">Flask</a></div>
-                            <div><a href="http://getbootstrap.com/">Bootstrap</a></div>
-                            <div><a href="http://www.seleniumhq.org/">Selenium</a></div>
-                            <div><a href="https://aws.amazon.com/">AWS</a></div>
-                            <div><a href="http://ionden.com/a/plugins/ion.rangeSlider/en.html">Ion Range Slider</a></div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-6 col-sm-8 col-md-8 col-md-offset-2 col-sm-offset-2 col-lg-offset-0 showcase-carousel hidden-xs scrollpoint sp-effect2">
-                    <img src="image/imac.png" class="img-responsive" alt="">
-
-                    <div id="carousel-reference" class="carousel slide" data-ride="carousel">
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner">
-                            <div class="item active"><img src="image/slice1.png" alt=""></div>
-                            <div class="item"><img src="image/slice2.png" alt=""></div>
-                        </div>
-
-                        <!-- Controls -->
-                        <a class="left carousel-control" href="#carousel-reference" data-slide="prev"><i class="fa fa-arrow-left"></i></a>
-                        <a class="right carousel-control" href="#carousel-reference" data-slide="next"><i class="fa fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <!-- ==========================
@@ -290,7 +298,7 @@
                     
                     <div class="macbook-inner black">
                     	<div class="row scrollpoint sp-effect4">
-                        	<div class="col-sm-8">
+                        	<div class="col-sm-12">
                             	<h3 class="hidden-xs">Leave a message</h3>
                                 
                                 <form role="form" id="contactForm">
@@ -327,16 +335,6 @@
                                         <button type="submit" class="btn btn-primary">Send message</button>
                                     </div>
                                 </form>
-                                
-                            </div>
-                            <div class="col-sm-4">
-                            
-                            <img src="image/jonathan.png" class="contact-image image-responsive hidden-xs hidden-sm" alt="" />
-                            	<div class="contact-info">
-                                	<p>Ian Luddy</p>
-                                    <p>9 St Nicholas St.</p>
-                                    <p>Galway</p>
-                                </div>
                             </div>
                     	</div>
                     </div>

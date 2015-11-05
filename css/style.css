@@ -55,3 +55,26 @@
 .resources a{
     color: white;
 }
+
+@media screen and (max-width: 991px) {
+    .showcase-text strong{
+        top: 8px;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .showcase-text{
+        padding: 50px;
+    }
+    .showcase-text strong{
+        top: 28px;
+    }
+}
+#about a{
+    color: #1ABC9C;
+    font-weight: bold;
+}
+#about a:hover{
+    color: #999;
+}
