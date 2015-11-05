@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['email']) && isset($_POST['message'])) {
-	//require("class.phpmailer.php"); //you have to download this plugin from github.com - link is in documentation
+	require("class.phpmailer.php"); //you have to download this plugin from github.com - link is in documentation
 	
 	$firstname = 	$_POST['firstname'];
 	$lastname = 	$_POST['lastname'];

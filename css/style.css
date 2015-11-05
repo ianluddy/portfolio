@@ -11,12 +11,6 @@
 .event-info .date{
     margin-left: 4px !important;
 }
-
-@media screen and (max-width: 770px) {
-    #me_navbar{
-        display: none;
-    }
-}
 .showcase-text a{
     color: white;
     -o-transition:.5s;
@@ -28,14 +22,12 @@
 .showcase-text a:hover{
     color: #2C3E50;
 }
-.showcase-text strong{
-    float: right;
-    position: relative;
-    top: 28px;
-    right: 10px;
+.showcase-link a{
+    color: #34495E;
+    font-size: 1.19em;
 }
-.showcase-text-right{
-    /*text-align: right !important;*/
+.showcase-link a:hover{
+    opacity: 0.6;
 }
 .showcase-desc{
     margin-top: 10px;
@@ -55,22 +47,6 @@
 .resources a{
     color: white;
 }
-
-@media screen and (max-width: 991px) {
-    .showcase-text strong{
-        top: 8px;
-    }
-}
-
-
-@media screen and (max-width: 767px) {
-    .showcase-text{
-        padding: 50px;
-    }
-    .showcase-text strong{
-        top: 28px;
-    }
-}
 #about a{
     color: #1ABC9C;
     font-weight: bold;
@@ -78,3 +54,113 @@
 #about a:hover{
     color: #999;
 }
+
+/* Responsive */
+
+/*------------------------------
+ LARGE DEVICES
+------------------------------*/
+@media (min-width:1380px) {
+}
+
+@media (min-width:1280px) and (max-width:1380px) {
+}
+
+@media (min-width:1200px) and (max-width:1279px) {
+}
+
+@media (min-width:1161px) and (max-width:1199px) {
+}
+
+@media (min-width:992px) and (max-width:1160px) {
+}
+
+@media (min-width:940px) and (max-width:991px) {
+}
+
+@media (min-width:1px) and (max-width:939px) {
+}
+
+/*------------------------------
+	MEDIUM DEVICES
+------------------------------*/
+
+@media (min-width:992px) and (max-width:1199px) {
+}
+
+/*------------------------------
+	SMALL DEVICES
+------------------------------*/
+
+@media (min-width:768px) and (max-width:991px) {
+}
+
+/*------------------------------
+	EXTRA SMALL DEVICES
+------------------------------*/
+
+@media (max-width:767px) {
+	.timeline {
+		margin:25px 0 0 250px;
+	}
+    .event .event-info {
+        width: 240px;
+    }
+    #me_navbar{
+        display: none;
+    }
+    .showcase-text{
+        padding: 50px;
+    }
+}
+
+/*------------------------------
+	PHONES 600px width
+------------------------------*/
+
+@media (max-width:600px) {
+	.timeline {
+		margin:25px 0 0 170px;
+	}
+    .event .event-info {
+        width: 160px;
+    }
+}
+
+/*------------------------------
+	PHONES 548px width
+------------------------------*/
+
+@media (max-width:548px) {
+	.timeline {
+		margin:25px 0 0 140px;
+	}
+    .event .event-info {
+        width: 130px;
+    }
+}
+
+/*------------------------------
+	PHONES 480px width
+------------------------------*/
+
+@media (max-width:480px) {
+	.timeline {
+		margin:25px 0 0 120px;
+	}
+    .event .event-info {
+        width: 110px;
+    }
+}
+
+/*------------------------------
+	PHONES 320px width
+------------------------------*/
+
+@media (max-width:320px) {
+	/*.timeline {*/
+		/*margin:25px 0 0 110px;*/
+	/*}*/
+}
+
+
