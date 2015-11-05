@@ -54,6 +54,14 @@
 #about a:hover{
     color: #999;
 }
+.mobile-social-wrapper{
+    display: none;
+    height: 40px;
+    padding-top: 13px;
+}
+.mobile-social-wrapper .scrollpoint{
+    padding-right: 4px;
+}
 
 /* Responsive */
 
@@ -100,7 +108,10 @@
 ------------------------------*/
 
 @media (max-width:767px) {
-	.timeline {
+	#about{
+        padding-top: 20px;
+    }
+    .timeline {
 		margin:25px 0 0 250px;
 	}
     .event .event-info {
@@ -111,6 +122,9 @@
     }
     .showcase-text{
         padding: 50px;
+    }
+    .mobile-social-wrapper{
+        display: block;
     }
 }
 
