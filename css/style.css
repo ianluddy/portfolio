@@ -1,8 +1,9 @@
-#me{
+.me_one, .me_two, .me_three{
     border: 8px solid white;
     border-radius: 250px;
+    display: none;
 }
-#me_navbar{
+.me_navbar{
     border: 2px solid white;
     border-radius: 250px;
     padding: 0px 0px 0px 0px;
@@ -10,10 +11,6 @@
 }
 .event-info .date{
     margin-left: 4px !important;
-}
-.showcase-text{
-    margin-left: 20px;
-    margin-right: 20px;
 }
 .showcase-text a{
     color: white;
@@ -121,11 +118,13 @@
     .event .event-info {
         width: 240px;
     }
-    #me_navbar{
+    .me_navbar{
         display: none;
     }
     .showcase-text{
         margin-bottom: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
     .mobile-social-wrapper{
         display: block;
