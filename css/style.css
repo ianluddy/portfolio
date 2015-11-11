@@ -137,6 +137,10 @@
     .mobile-social-wrapper{
         display: block;
     }
+    .carousel-inner{
+        border: 3px solid #2C3E50;
+        border-radius: 3px;
+    }
 }
 
 /*------------------------------
