@@ -25,6 +25,7 @@
 .showcase-link a{
     color: #34495E;
     font-size: 1.19em;
+    word-break: break-all;
 }
 .showcase-link a:hover{
     opacity: 0.6;
