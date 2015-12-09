@@ -66,7 +66,9 @@
 .mobile-img{
     margin-top: 30px;
 }
-
+.carousel-control{
+    display: none !important;
+}
 /* Responsive */
 
 /*------------------------------
