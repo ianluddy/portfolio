@@ -26,12 +26,25 @@
     color: #34495E;
     font-size: 1.19em;
     word-break: break-all;
+    padding-bottom: 20px;
 }
 .showcase-link a:hover{
     opacity: 0.6;
 }
+.showcase-link-small{
+    color: #34495E;
+}
+.showcase-link-small:hover{
+    opacity: 0.6;
+}
 .showcase-desc{
+    width: 97%;
     margin-top: 10px;
+}
+.showcase-desc-wide{
+  position: relative;
+  top: 13px;
+  width: 100%;
 }
 .codebase{
     margin-top: 10px;
@@ -47,6 +60,29 @@
 }
 .resources a{
     color: white;
+}
+.smile {
+  height: 20px;
+}
+.showcase-container{
+  margin-bottom: 50px !important;
+}
+div.resources{
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.resources img{
+  margin-right: 20px;
+  margin-bottom: 10px;
+  max-width: 110px;
+  max-height: 40px;
+}
+.resources-large img{
+  max-width: 120px;
+  max-height: 60px;
+}
+img.img-lg {
+  max-height: 60px;
 }
 #about a{
     color: #1ABC9C;
@@ -69,6 +105,23 @@
 .carousel-control{
     display: none !important;
 }
+#carousel-reference{
+  position: absolute;
+  top: 51px;
+  right: 45px;
+  left: 44px;
+  bottom: 0;
+}
+#carousel-reference.carousel-big{
+  position: absolute;
+  top: 57px;
+  right: 49px;
+  left: 48px;
+}
+.carousel-inner{
+  height: 66.5%;
+}
+
 /* Responsive */
 
 /*------------------------------
@@ -99,7 +152,23 @@
 	MEDIUM DEVICES
 ------------------------------*/
 
+@media  (max-width:1199px) {
+  #showcase .showcase-text {
+    text-align: center;
+  }
+}
+
 @media (min-width:992px) and (max-width:1199px) {
+  #carousel-reference{
+    top: 49px;
+    right: 43px;
+    left: 42px;
+  }
+  #carousel-reference.carousel-big{
+    top: 49px;
+    right: 43px;
+    left: 42px;
+  }
 }
 
 /*------------------------------
@@ -111,6 +180,16 @@
         margin-left: 20px;
         margin-right: 20px;
     }
+    #carousel-reference{
+      top: 37px;
+      right: 37px;
+      left: 36px;
+    }
+    #carousel-reference.carousel-big{
+      top: 36px;
+      right: 36px;
+      left: 35px;
+    }
 }
 
 /*------------------------------
@@ -118,6 +197,16 @@
 ------------------------------*/
 
 @media (max-width:767px) {
+  .showcase-carousel{
+    display: none;
+  }
+  .showcase-container{
+    margin-bottom: 0px !important;
+  }
+  .mac-img{
+    position: relative;
+    bottom: 2px;
+  }
 	#about{
         padding-top: 20px;
     }
@@ -142,13 +231,7 @@
     .mobile-social-wrapper{
         display: block;
     }
-    #carousel-reference{
-        position: absolute;
-        top: 15px;
-        right: 30px;
-        left: 27px;
-        bottom: 0;
-    }
+
     #showcase .showcase-carousel{
         margin-top: 5px !important;
     }
@@ -185,6 +268,10 @@
 ------------------------------*/
 
 @media (max-width:480px) {
+  .mac-img{
+    position: relative;
+    bottom: 0px;
+  }
 	.timeline {
 		margin:25px 0 0 120px;
 	}
@@ -202,5 +289,3 @@
 		/*margin:25px 0 0 110px;*/
 	/*}*/
 }
-
-
