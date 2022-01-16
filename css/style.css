@@ -1,3 +1,6 @@
+#footer .col-sm-12 {
+  opacity: 1;
+}
 .me{
     border: 8px solid white;
     border-radius: 250px;
