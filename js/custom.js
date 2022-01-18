@@ -68,25 +68,29 @@ $(document).ready(function() {
 	
 	$('#separator').waypoint(function(){$('#separator .number').countTo();},{offset:'85%'});
 	
-	if($(window).width() > 767) {
+	function initialiseWaypoints() {
 		$('.service').mouseenter(function(e) {
 			$(this).find('img').animate({paddingBottom: "15px"},500);
 		});
-		
 		$('.service').mouseleave(function(e) {
 			$(this).find('img').stop().animate({paddingBottom: "0px"},500);
-		});
-	}
-	
-	if($(window).width() > 767) {
+		});		
 		$('.scrollpoint.sp-effect1').waypoint(function(){$(this).toggleClass('active');$(this).toggleClass('animated fadeInLeft');},{offset:'90%'});
 		$('.scrollpoint.sp-effect2').waypoint(function(){$(this).toggleClass('active');$(this).toggleClass('animated fadeInRight');},{offset:'90%'});
 		$('.scrollpoint.sp-effect3').waypoint(function(){$(this).toggleClass('active');$(this).toggleClass('animated fadeInDown');},{offset:'90%'});
 		$('.scrollpoint.sp-effect4').waypoint(function(){$(this).toggleClass('active');$(this).toggleClass('animated fadeIn');},{offset:'70%'});
-		
-		$('.macbook-inner').waypoint(function(){$(this).toggleClass('active');$(this).toggleClass('black');},{offset:'70%'});
+		$('.macbook-inner').waypoint(function(){$(this).toggleClass('active');$(this).toggleClass('black');},{offset:'70%'});		
+	}
+	
+	var waypointsInit = false;
+	if($(window).width() > 767) {
+		initialiseWaypoints();
+	} else {
+		$(window).resize(function(){
+			if( $(window).width() > 767 && !waypointsInit ) {
+				initialiseWaypoints();
+				waypointsInit = true;
+			}
+		})		
 	}
 });
-
-
-

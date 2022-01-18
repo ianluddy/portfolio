@@ -1,294 +1,320 @@
 #footer .col-sm-12 {
   opacity: 1;
 }
-.me{
-    border: 8px solid white;
-    border-radius: 250px;
+
+.me {
+  border: 8px solid white;
+  border-radius: 250px;
 }
-.me_navbar{
-    border: 2px solid white;
-    border-radius: 250px;
-    padding: 0px 0px 0px 0px;
-    margin-top: 8px;
+
+.me_navbar {
+  border: 2px solid white;
+  border-radius: 250px;
+  padding: 0px 0px 0px 0px;
+  margin-top: 8px;
 }
-.event-info .date{
-    margin-left: 4px !important;
+
+.event-info .date {
+  margin-left: 4px !important;
 }
-.showcase-text a{
-    color: white;
-    -o-transition:.5s;
-    -ms-transition:.5s;
-    -moz-transition:.5s;
-    -webkit-transition:.5s;
-    transition:.5s;
+
+.showcase-text a {
+  color: white;
 }
-.showcase-text a:hover{
-    color: #2C3E50;
+
+#about a,
+.showcase-text a {
+  -o-transition: .2s;
+  -ms-transition: .2s;
+  -moz-transition: .2s;
+  -webkit-transition: .2s;
+  transition: .2s;
 }
-.showcase-link a{
-    color: #34495E;
-    font-size: 1.19em;
-    word-break: break-all;
-    padding-bottom: 20px;
+
+.showcase-link a {
+  color: #34495E;
+  font-size: 1.19em;
+  word-break: break-all;
+  padding-bottom: 20px;
 }
-.showcase-link a:hover{
-    opacity: 0.6;
+
+.showcase-link a:hover,
+#about a:hover,
+.showcase-link-small:hover {
+  opacity: 0.6;
 }
-.showcase-link-small{
-    color: #34495E;
+
+.showcase-link-small {
+  color: #34495E;
 }
-.showcase-link-small:hover{
-    opacity: 0.6;
+
+.showcase-desc {
+  width: 97%;
+  margin-top: 10px;
 }
-.showcase-desc{
-    width: 97%;
-    margin-top: 10px;
-}
-.showcase-desc-wide{
+
+.showcase-desc-wide {
   position: relative;
   top: 13px;
   width: 100%;
 }
-.codebase{
-    margin-top: 10px;
+
+.codebase {
+  margin-top: 10px;
 }
-.codebase i{
-    padding-right: 5px;
-    font-size: 1.4em;
-    position: relative;
-    top: 3px;
+
+.codebase i {
+  padding-right: 5px;
+  font-size: 1.4em;
+  position: relative;
+  top: 3px;
 }
-.codebase a{
-    color: white;
+
+.codebase a {
+  color: white;
 }
-.resources a{
-    color: white;
+
+.resources a {
+  color: white;
 }
+
 .smile {
   height: 20px;
 }
-.showcase-container{
+
+.showcase-container {
   margin-bottom: 50px !important;
 }
-div.resources{
+
+div.resources {
   margin-top: 30px;
   margin-bottom: 20px;
 }
-.resources img{
+
+.resources img {
   margin-right: 20px;
   margin-bottom: 10px;
   max-width: 110px;
   max-height: 40px;
 }
-.resources-large img{
+
+.resources-large img {
   max-width: 120px;
   max-height: 60px;
 }
+
 img.img-lg {
   max-height: 60px;
 }
-#about a{
-    color: #1ABC9C;
-    font-weight: bold;
+
+#about a {
+  color: #1ABC9C;
+  font-weight: bold;
 }
-#about a:hover{
-    color: #999;
+
+.mobile-social-wrapper {
+  display: none;
+  height: 40px;
+  padding-top: 13px;
 }
-.mobile-social-wrapper{
-    display: none;
-    height: 40px;
-    padding-top: 13px;
+
+.mobile-social-wrapper .scrollpoint {
+  padding-right: 4px;
 }
-.mobile-social-wrapper .scrollpoint{
-    padding-right: 4px;
+
+.mobile-img {
+  margin-top: 30px;
 }
-.mobile-img{
-    margin-top: 30px;
+
+.carousel-control {
+  display: none !important;
 }
-.carousel-control{
-    display: none !important;
-}
-#carousel-reference{
+
+#carousel-reference {
   position: absolute;
   top: 51px;
   right: 45px;
   left: 44px;
   bottom: 0;
 }
-#carousel-reference.carousel-big{
+
+#carousel-reference.carousel-big {
   position: absolute;
   top: 57px;
   right: 49px;
   left: 48px;
 }
-.carousel-inner{
+
+.carousel-inner {
   height: 66.5%;
 }
 
+
 /* Responsive */
+
 
 /*------------------------------
  LARGE DEVICES
 ------------------------------*/
-@media (min-width:1380px) {
-}
 
-@media (min-width:1280px) and (max-width:1380px) {
-}
+@media (min-width:1380px) {}
 
-@media (min-width:1200px) and (max-width:1279px) {
-}
+@media (min-width:1280px) and (max-width:1380px) {}
 
-@media (min-width:1161px) and (max-width:1199px) {
-}
+@media (min-width:1200px) and (max-width:1279px) {}
 
-@media (min-width:992px) and (max-width:1160px) {
-}
+@media (min-width:1161px) and (max-width:1199px) {}
 
-@media (min-width:940px) and (max-width:991px) {
-}
+@media (min-width:992px) and (max-width:1160px) {}
 
-@media (min-width:1px) and (max-width:939px) {
-}
+@media (min-width:940px) and (max-width:991px) {}
+
+@media (min-width:1px) and (max-width:939px) {}
+
 
 /*------------------------------
 	MEDIUM DEVICES
 ------------------------------*/
 
-@media  (max-width:1199px) {
+@media (max-width:1199px) {
   #showcase .showcase-text {
     text-align: center;
   }
 }
 
 @media (min-width:992px) and (max-width:1199px) {
-  #carousel-reference{
+  #carousel-reference {
     top: 49px;
     right: 43px;
     left: 42px;
   }
-  #carousel-reference.carousel-big{
+  #carousel-reference.carousel-big {
     top: 49px;
     right: 43px;
     left: 42px;
   }
 }
+
 
 /*------------------------------
 	SMALL DEVICES
 ------------------------------*/
 
 @media (min-width:768px) and (max-width:991px) {
-    .showcase-text{
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-    #carousel-reference{
-      top: 37px;
-      right: 37px;
-      left: 36px;
-    }
-    #carousel-reference.carousel-big{
-      top: 36px;
-      right: 36px;
-      left: 35px;
-    }
+  .showcase-text {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  #carousel-reference {
+    top: 37px;
+    right: 37px;
+    left: 36px;
+  }
+  #carousel-reference.carousel-big {
+    top: 36px;
+    right: 36px;
+    left: 35px;
+  }
 }
+
 
 /*------------------------------
 	EXTRA SMALL DEVICES
 ------------------------------*/
 
 @media (max-width:767px) {
-  .showcase-carousel{
+  .showcase-carousel {
     display: none;
   }
-  .showcase-container{
+  .showcase-container {
     margin-bottom: 0px !important;
   }
-  .mac-img{
+  .mac-img {
     position: relative;
     bottom: 2px;
   }
-	#about{
-        padding-top: 20px;
-    }
-    .timeline {
-		margin:25px 0 0 250px;
-	}
-    .event .event-info {
-        width: 240px;
-    }
-    .me_navbar{
-        display: none !important;
-        opacity: 0;
-    }
-    .navbar-default .navbar-brand {
-        padding: 26px 0 0 25px;
-    }
-    .showcase-text{
-        margin-bottom: 30px;
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-    .mobile-social-wrapper{
-        display: block;
-    }
-
-    #showcase .showcase-carousel{
-        margin-top: 5px !important;
-    }
+  #about {
+    padding-top: 20px;
+  }
+  .timeline {
+    margin: 25px 0 0 250px;
+  }
+  .event .event-info {
+    width: 240px;
+  }
+  .me_navbar {
+    display: none !important;
+    opacity: 0;
+  }
+  .navbar-default .navbar-brand {
+    padding: 26px 0 0 25px;
+  }
+  .showcase-text {
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .mobile-social-wrapper {
+    display: block;
+  }
+  #showcase .showcase-carousel {
+    margin-top: 5px !important;
+  }
 }
+
 
 /*------------------------------
 	PHONES 600px width
 ------------------------------*/
 
 @media (max-width:600px) {
-	.timeline {
-		margin:25px 0 0 170px;
-	}
-    .event .event-info {
-        width: 160px;
-    }
+  .timeline {
+    margin: 25px 0 0 170px;
+  }
+  .event .event-info {
+    width: 160px;
+  }
 }
+
 
 /*------------------------------
 	PHONES 548px width
 ------------------------------*/
 
 @media (max-width:548px) {
-	.timeline {
-		margin:25px 0 0 140px;
-	}
-    .event .event-info {
-        width: 130px;
-    }
+  .timeline {
+    margin: 25px 0 0 140px;
+  }
+  .event .event-info {
+    width: 130px;
+  }
 }
+
 
 /*------------------------------
 	PHONES 480px width
 ------------------------------*/
 
 @media (max-width:480px) {
-  .mac-img{
+  .mac-img {
     position: relative;
     bottom: 0px;
   }
-	.timeline {
-		margin:25px 0 0 120px;
-	}
-    .event .event-info {
-        width: 110px;
-    }
+  .timeline {
+    margin: 25px 0 0 120px;
+  }
+  .event .event-info {
+    width: 110px;
+  }
 }
+
 
 /*------------------------------
 	PHONES 320px width
 ------------------------------*/
 
 @media (max-width:320px) {
-	/*.timeline {*/
-		/*margin:25px 0 0 110px;*/
-	/*}*/
+  /*.timeline {*/
+  /*margin:25px 0 0 110px;*/
+  /*}*/
 }
