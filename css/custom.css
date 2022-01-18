@@ -1515,7 +1515,8 @@ blockquote footer {
   header {
     height: auto;
   }
-  .social-wrapper h2 {
+  .social-wrapper h2,
+  .social-wrapper h1 {
     display: inline;
     padding: 0 15px 0 15px;
     font-size: 38px;
