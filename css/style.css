@@ -2,6 +2,18 @@
   opacity: 1;
 }
 
+#showcase h2.scrollpoint {
+  margin: 70px 0 !important
+}
+
+#showcase {
+  padding: 20px 0 80px 0;
+}
+
+.img-xs {
+  display: none;
+}
+
 .me {
   border: 8px solid white;
   border-radius: 250px;
@@ -70,8 +82,9 @@
   top: 3px;
 }
 
-.codebase a {
-  color: white;
+.codebase a,
+.codebase i::before {
+  color: #34495E;
 }
 
 .resources a {
@@ -223,8 +236,16 @@ img.img-lg {
 ------------------------------*/
 
 @media (max-width:767px) {
-  .showcase-carousel {
+  .showcase-carousel,
+  .resources {
     display: none;
+  }
+  .img-xs {
+    display: block;
+  }
+  .img-xs img {
+    width: 100%;
+    margin: 10px 0;
   }
   .showcase-container {
     margin-bottom: 0px !important;
@@ -314,7 +335,4 @@ img.img-lg {
 ------------------------------*/
 
 @media (max-width:320px) {
-  /*.timeline {*/
-  /*margin:25px 0 0 110px;*/
-  /*}*/
 }
