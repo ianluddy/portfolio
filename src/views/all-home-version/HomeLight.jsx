@@ -9,7 +9,7 @@ import News from "../../components/News";
 import Contact from "../../components/Contact";
 
 const HomeLight = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
   const handleLabelClick = () => {
     if (isDark) {
       localStorage.setItem("theme-color", "light");
