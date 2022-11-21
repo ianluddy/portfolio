@@ -22,7 +22,7 @@ const About = () => {
         </div> */}
         {/* END ABOUT IMAGE */}
         <div className="description">
-          <h3 className="name">Adriano Smith &amp; Photographer</h3>
+          <h3 className="name">Ian Luddy &amp; Photographer</h3>
           <div className="description_inner">
             <div className="left">
               <p>
