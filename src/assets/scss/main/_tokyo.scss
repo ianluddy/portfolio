@@ -452,10 +452,11 @@ h6 {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  animation: morph 8s ease-in-out infinite 1s;
+  // animation: morph 8s ease-in-out infinite 1s;
   background-blend-mode: multiply;
   box-shadow: inset 0px 0px 0px 9px rgba(255, 255, 255, 0.3);
-  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  // border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  border-radius: 50%;
   overflow: hidden;
 }
 
@@ -485,7 +486,7 @@ h6 {
   font-style: italic;
   font-weight: 500;
   max-width: 450px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .tokyo_tm_home .social {
   width: 100%;
@@ -553,8 +554,7 @@ h6 {
   padding-right: 50px;
 }
 .tokyo_tm_about .description .left p {
-  margin-bottom: 35px;
-  font-style: italic;
+  margin-bottom: 20px;
 }
 .tokyo_tm_about .description .name {
   font-weight: 700;
@@ -575,7 +575,7 @@ h6 {
   float: left;
 }
 .tokyo_tm_about .description .right > ul > li span {
-  min-width: 90px;
+  min-width: 100px;
   display: inline-block;
   font-weight: 700;
   color: #000;
