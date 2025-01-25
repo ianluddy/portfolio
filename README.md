@@ -1,3 +1,3 @@
 ### Portfolio Site
 
-http://www.ianluddy.com/
+https://www.ianluddy.com/
