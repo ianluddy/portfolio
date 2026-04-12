@@ -6,11 +6,11 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="bg-secondary-background scroll-mt-16"
+      className="bg-secondary-background min-h-[100dvh] flex items-center"
     >
-      <div className="mx-auto max-w-7xl px-6 pt-20 pb-28 md:pt-32 md:pb-40">
+      <div className="mx-auto max-w-7xl px-6 w-full">
         <div className="max-w-3xl mx-auto text-center space-y-6">
-          <h1 className="text-6xl md:text-[95px] font-heading-shade leading-tight">
+          <h1 className="text-[67px] md:text-[95px] font-heading-shade leading-tight">
             Ian Luddy
           </h1>
           <p className="text-xl md:text-2xl font-base text-foreground/80">

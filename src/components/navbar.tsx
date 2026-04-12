@@ -16,7 +16,7 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-secondary-background">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-secondary-background">
       <div className="flex items-stretch py-2">
         <div className="hidden md:flex items-center gap-1 px-4">
           {navLinks.map((link) => (
@@ -54,9 +54,9 @@ export function Navbar() {
           aria-label="Toggle menu"
         >
           {mobileOpen ? (
-            <X className="h-6 w-6" />
+            <X className="h-8 w-8" />
           ) : (
-            <Menu className="h-6 w-6" />
+            <Menu className="h-8 w-8" />
           )}
         </button>
       </div>

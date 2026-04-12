@@ -25,7 +25,7 @@ const projects: Project[] = [
     url: "https://www.zendesk.com",
     urlLabel: "zendesk.com",
     description: [
-      "I was thrilled to lead the experimentation program at Zendesk, where we strategically implemented A/B tests and personalisation campaigns across our marketing sites, which collectively attracted around 2 million visitors each month. During my time at Zendesk, we successfully conducted over 400 experiments.",
+      "I was thrilled to lead the experimentation program at Zendesk, where I strategically implemented A/B tests and personalisation campaigns across our marketing sites, which collectively attracted around 2 million visitors each month. During my time at Zendesk, I successfully conducted over 400 experiments.",
       "In addition to web experimentation, I collaborated with product and design teams to build out and enhance new sections of our websites and add components to our design system. I also provided out-of-hours support and handled tickets for internal stakeholders.",
     ],
     stack: ["Claude Code", "Cursor", "NextJS", "React", "Node", "Optimizely", "Adobe Target", "Storybook", "Hotjar", "AWS", "Docker"],
@@ -81,7 +81,7 @@ const projects: Project[] = [
       "During my time at Total Digital, I worked on building irishadvantage.com for Enterprise Ireland to help promote Ireland's export strengths and connect Irish businesses with global markets.",
       "The site, a localised Wordpress website with country-specific domains in six languages, highlights the unique advantages Irish companies bring across industries.",
     ],
-    stack: ["PHP", "WordPress", "WPML", "WPEngine"],
+    stack: ["PHP", "WordPress", "WPML", "WPEngine", "AWS", "Docker"],
     image: "/image/adv.webp",
     imageAlt: "Irish Advantage",
     device: "laptop",
@@ -122,7 +122,7 @@ const projects: Project[] = [
       "I worked at Qualio as the primary backend Python developer for the company's SaaS Quality Management software. This application, built on the robust Pyramid framework, is designed for organizations in highly regulated industries such as Pharma and Life Sciences.",
       "During my time at Qualio, I took on refactoring legacy code, developing a new API, and creating innovative features to enhance the user experience.",
     ],
-    stack: ["Python", "Pyramid", "PostgreSQL", "Gunicorn", "Nginx", "CircleCI"],
+    stack: ["Python", "Pyramid", "PostgreSQL", "Gunicorn", "Nginx", "CircleCI", "AWS", "Docker"],
     image: "/image/qual.webp",
     imageAlt: "Qualio",
     device: "laptop",
@@ -162,7 +162,7 @@ const projects: Project[] = [
       "I worked on a WordPress project to create a website for the Health Services Staffs Credit Union (HSSCU). The goal was to build a modern, easy-to-use platform where members could access online banking, loan calculators, and financial resources.",
       "I worked closely with the agency and HSSCU stakeholders to customise plugins and add features. I also focused on SEO and set up analytics tools to track user engagement.",
     ],
-    stack: ["PHP", "WordPress", "WPEngine", "Bootstrap", "Slick Slider"],
+    stack: ["PHP", "WordPress", "WPEngine", "Bootstrap", "Slick Slider", "AWS", "Docker"],
     image: "/image/hss.webp",
     imageAlt: "HSSCU",
     device: "laptop",
@@ -292,7 +292,7 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
 
 export function Projects() {
   const [showAll, setShowAll] = useState(false);
-  const visible = showAll ? projects : projects.slice(0, 6);
+  const visible = showAll ? projects : projects.slice(0, 7);
 
   return (
     <section id="projects" className="bg-background scroll-mt-16">
@@ -305,7 +305,7 @@ export function Projects() {
           <div className="flex justify-center mt-10">
             <Button onClick={() => setShowAll(true)} className="text-base px-8 py-3">
               <ChevronDown className="mr-2 h-4 w-4" />
-              Show All Projects ({projects.length - 6} more)
+              Show All Projects ({projects.length - 7} more)
             </Button>
           </div>
         )}

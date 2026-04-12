@@ -10,24 +10,24 @@ export function Footer() {
           <div>
             <h2 className="text-2xl font-heading mb-2">Get in touch</h2>
             <p className="text-sm font-base text-foreground/60">
-              Always happy to hear from you.
+              I'd love to work with you.
             </p>
           </div>
-          <div className="flex gap-3">
+          <div className="flex flex-col gap-3 w-full max-w-md">
             <a href="mailto:ianluddy@gmail.com">
-              <Button className="px-5 py-3">
+              <Button className="px-5 py-3 w-full">
                 <Mail className="mr-2 h-4 w-4" />
                 Email
               </Button>
             </a>
             <a href="https://github.com/ianluddy">
-              <Button className="px-5 py-3">
+              <Button className="px-5 py-3 w-full">
                 <GithubIcon className="mr-2 h-4 w-4" />
                 GitHub
               </Button>
             </a>
             <a href="https://ie.linkedin.com/in/ianluddy">
-              <Button className="px-5 py-3">
+              <Button className="px-5 py-3 w-full">
                 <LinkedinIcon className="mr-2 h-4 w-4" />
                 LinkedIn
               </Button>
