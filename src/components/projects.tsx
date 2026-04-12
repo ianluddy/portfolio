@@ -61,7 +61,7 @@ const projects: Project[] = [
   },
   {
     title: "Ian & Claire",
-    url: "https://ianluddy.com/ianandclaire.com/",
+    url: "https://ianandclaire.vercel.app/",
     urlLabel: "ianandclaire.com",
     description: [
       "I created a wedding website for my wife and our big day, using NextJS to bring it all together. I added a touch of style with Google Fonts and some beautiful imagery and font icons I found on Etsy.",
