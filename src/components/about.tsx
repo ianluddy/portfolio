@@ -72,7 +72,10 @@ export function About() {
                         {item.company}
                       </a>
                       <div className="text-xs text-foreground/60">
-                        {item.role} · {item.date} – {item.endDate}
+                        {item.role}<span className="hidden sm:inline"> · {item.date} – {item.endDate}</span>
+                      </div>
+                      <div className="text-xs text-foreground/60 sm:hidden">
+                        {item.date} – {item.endDate}
                       </div>
                     </div>
                   </div>

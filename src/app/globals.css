@@ -135,13 +135,13 @@
   background: #2a2a2a;
   border: 2px solid var(--border);
   border-radius: 12px 12px 0 0;
-  padding: 16px 16px 12px;
+  padding: 11px 11px 8px;
   position: relative;
 }
 
 .laptop-camera {
   position: absolute;
-  top: 7px;
+  top: 5px;
   left: 50%;
   transform: translateX(-50%);
   width: 6px;
@@ -203,11 +203,11 @@
 /* Phone */
 .phone-device {
   position: relative;
-  width: 160px;
+  width: 80px;
   background: #1a1a1a;
   border: 2px solid var(--border);
   border-radius: 24px;
-  padding: 40px 6px 40px 6px;
+  padding: 26px 6px 26px 6px;
 }
 
 .phone-notch {
@@ -240,7 +240,7 @@
 /* Tablet */
 .tablet-device {
   position: relative;
-  width: 280px;
+  width: 170px;
   background: #2a2a2a;
   border: 2px solid var(--border);
   border-radius: 16px;
@@ -272,4 +272,13 @@
   object-fit: cover;
   object-position: top;
   display: block;
+}
+
+@media (min-width: 480px) {
+  .phone-device {
+    width: 160px;
+  }
+  .tablet-device {
+    width: 280px;
+  }
 }
