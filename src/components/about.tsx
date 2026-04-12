@@ -6,15 +6,15 @@ import {
 } from "@/components/ui/card";
 
 const timeline = [
-  { date: "May 2025", endDate: "Present", role: "Senior Web Engineer", company: "Intercom", url: "http://www.intercom.com/", icon: "https://www.google.com/s2/favicons?domain=intercom.com&sz=64" },
-  { date: "Dec 2019", endDate: "May 2025", role: "Senior Web Engineer", company: "Zendesk", url: "http://www.zendesk.com/", icon: "https://www.google.com/s2/favicons?domain=zendesk.com&sz=64" },
-  { date: "Dec 2018", endDate: "Dec 2019", role: "Senior Full Stack Developer", company: "Total Digital", url: "http://www.totaldigital.ie/", icon: "https://www.google.com/s2/favicons?domain=totaldigital.ie&sz=64" },
-  { date: "Jun 2016", endDate: "Dec 2018", role: "Senior Full Stack Developer", company: "Software Design", url: "http://www.softwaredesign.ie/", icon: "https://www.google.com/s2/favicons?domain=softwaredesign.ie&sz=64" },
-  { date: "Jan 2016", endDate: "Jun 2016", role: "Senior Back End Developer", company: "Qualio", url: "http://www.qualio.com", icon: "https://www.google.com/s2/favicons?domain=qualio.com&sz=64" },
-  { date: "Oct 2012", endDate: "Jan 2016", role: "Lead Developer", company: "Arts Alliance Media", url: "http://www.artsalliancemedia.com/", icon: "https://www.google.com/s2/favicons?domain=artsalliancemedia.com&sz=64" },
-  { date: "Aug 2011", endDate: "Oct 2012", role: "Python Developer", company: "Arts Alliance Media", url: "http://www.artsalliancemedia.com/", icon: "https://www.google.com/s2/favicons?domain=artsalliancemedia.com&sz=64" },
-  { date: "May 2011", endDate: "Aug 2011", role: "Back End Developer", company: "Avaeon", url: "http://www.avaeon.com/", icon: "https://www.google.com/s2/favicons?domain=avaeon.com&sz=64" },
-  { date: "Sep 2008", endDate: "May 2011", role: "BSc. (Hons) Software Development", company: "ATU", url: "http://www.atu.ie", icon: "https://www.google.com/s2/favicons?domain=atu.ie&sz=64" },
+  { date: "May 2025", endDate: "Present", role: "Senior Web Engineer", company: "Intercom", url: "http://www.intercom.com/", icon: "/logos/intercom.png" },
+  { date: "Dec 2019", endDate: "May 2025", role: "Senior Web Engineer", company: "Zendesk", url: "http://www.zendesk.com/", icon: "/logos/zendesk.png" },
+  { date: "Dec 2018", endDate: "Dec 2019", role: "Senior Full Stack Developer", company: "Total Digital", url: "http://www.totaldigital.ie/", icon: "/logos/totaldigital.png" },
+  { date: "Jun 2016", endDate: "Dec 2018", role: "Senior Full Stack Developer", company: "Software Design", url: "http://www.softwaredesign.ie/", icon: "/logos/softwaredesign.png" },
+  { date: "Jan 2016", endDate: "Jun 2016", role: "Senior Back End Developer", company: "Qualio", url: "http://www.qualio.com", icon: "/logos/qualio.png" },
+  { date: "Oct 2012", endDate: "Jan 2016", role: "Lead Developer", company: "Arts Alliance Media", url: "http://www.artsalliancemedia.com/", icon: "/logos/artsalliancemedia.png" },
+  { date: "Aug 2011", endDate: "Oct 2012", role: "Python Developer", company: "Arts Alliance Media", url: "http://www.artsalliancemedia.com/", icon: "/logos/artsalliancemedia.png" },
+  { date: "May 2011", endDate: "Aug 2011", role: "Back End Developer", company: "Avaeon", url: "http://www.avaeon.com/", icon: "/logos/avaeon.png" },
+  { date: "Sep 2008", endDate: "May 2011", role: "BSc. (Hons) Software Development", company: "ATU", url: "http://www.atu.ie", icon: "/logos/atu.png" },
 ];
 
 export function About() {
