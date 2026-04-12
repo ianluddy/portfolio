@@ -10,11 +10,11 @@ export function Hero() {
     >
       <div className="mx-auto max-w-7xl px-6 w-full">
         <div className="max-w-3xl mx-auto text-center space-y-6">
-          <h1 className="text-[67px] md:text-[95px] font-heading-shade leading-tight">
+          <h1 className="text-[67px] md:text-[120px] font-heading-shade leading-tight">
             Ian Luddy
           </h1>
-          <p className="text-xl md:text-2xl font-base text-foreground/80">
-            Multiple agents. Parallel workflows. Continuous shipping. Engineering at full velocity.
+          <p className="text-xl md:text-xl font-base text-foreground/80">
+            One engineer · Many agents · Parallel workflows · Shipping at full velocity
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3">
             <a href="#projects" className="w-full sm:w-auto">
