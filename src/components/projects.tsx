@@ -102,7 +102,7 @@ const projects: Project[] = [
   },
   {
     title: "BakedGoodes",
-    url: "https://github.com/ianluddy/bakedgoodes/",
+    url: "https://bakedgoodes.vercel.app/",
     urlLabel: "bakedgoodes.ie",
     description: [
       "I created a website for my wife's baking business, BakedGoodes, using Next.js to make a fast, responsive platform that showcases her amazing treats.",
