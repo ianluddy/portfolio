@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { Mail, Menu, X } from "lucide-react";
@@ -14,16 +14,29 @@ const navLinks = [
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const hero = document.getElementById("home");
+      if (hero) {
+        setScrolled(window.scrollY > hero.offsetHeight - 60);
+      }
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-secondary-background">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${scrolled ? "bg-secondary-background" : "bg-transparent"}`}>
       <div className="flex items-stretch py-2">
         <div className="hidden md:flex items-center gap-1 px-4">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="px-3 py-2 text-sm font-base hover:bg-main hover:text-main-foreground rounded-base transition-colors"
+              className="px-3 py-2 text-sm md:text-lg md:px-4 md:py-3 font-base hover:bg-main hover:text-main-foreground rounded-base transition-colors"
             >
               {link.label}
             </a>
@@ -32,18 +45,18 @@ export function Navbar() {
 
         <div className="hidden md:flex items-center gap-2 px-4 ml-auto">
           <a href="mailto:ianluddy@gmail.com" aria-label="Email">
-            <Button size="sm" variant="noShadow" className="p-2">
-              <Mail className="h-4 w-4" />
+            <Button size="sm" variant="noShadow" className="p-2 md:p-3">
+              <Mail className="h-4 w-4 md:h-6 md:w-6" />
             </Button>
           </a>
           <a href="https://github.com/ianluddy" aria-label="GitHub">
-            <Button size="sm" variant="noShadow" className="p-2">
-              <GithubIcon className="h-4 w-4" />
+            <Button size="sm" variant="noShadow" className="p-2 md:p-3">
+              <GithubIcon className="h-4 w-4 md:h-6 md:w-6" />
             </Button>
           </a>
           <a href="https://ie.linkedin.com/in/ianluddy" aria-label="LinkedIn">
-            <Button size="sm" variant="noShadow" className="p-2">
-              <LinkedinIcon className="h-4 w-4" />
+            <Button size="sm" variant="noShadow" className="p-2 md:p-3">
+              <LinkedinIcon className="h-4 w-4 md:h-6 md:w-6" />
             </Button>
           </a>
         </div>

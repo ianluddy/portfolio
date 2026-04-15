@@ -40,11 +40,9 @@ export function About() {
               features, fix bugs, and iterate on designs simultaneously.
             </p>
             <p>
-              Outside of work I&apos;m usually chilling with the family, attempting
-              latte art, playing some tunes on the banjo or walking the
-              dachshund.
+              Outside of work I&apos;m usually chilling with the family, dialling
+              in coffee, playing some tunes on the banjo or walking the dog.
             </p>
-            <p>Have a nice day! 🙂</p>
           </div>
 
           <Card>
