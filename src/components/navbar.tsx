@@ -29,7 +29,7 @@ export function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${scrolled ? "bg-secondary-background" : "bg-transparent"}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${scrolled || mobileOpen ? "bg-secondary-background" : "bg-transparent"}`}>
       <div className="flex items-stretch py-2">
         <div className="hidden md:flex items-center gap-1 px-4">
           {navLinks.map((link) => (
