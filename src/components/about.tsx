@@ -6,7 +6,8 @@ import {
 } from "@/components/ui/card";
 
 const timeline = [
-  { date: "May 2025", endDate: "Present", role: "Senior Web Engineer", company: "Intercom", url: "http://www.intercom.com/", icon: "/logos/intercom.png" },
+  { date: "May 2026", endDate: "Present", role: "Senior Web Engineer", company: "Fin", url: "https://fin.ai/", icon: "/logos/fin.png" },
+  { date: "May 2025", endDate: "May 2026", role: "Senior Web Engineer", company: "Intercom", url: "http://www.intercom.com/", icon: "/logos/intercom.png" },
   { date: "Dec 2019", endDate: "May 2025", role: "Senior Web Engineer", company: "Zendesk", url: "http://www.zendesk.com/", icon: "/logos/zendesk.png" },
   { date: "Dec 2018", endDate: "Dec 2019", role: "Senior Full Stack Developer", company: "Total Digital", url: "http://www.totaldigital.ie/", icon: "/logos/totaldigital.png" },
   { date: "Jun 2016", endDate: "Dec 2018", role: "Senior Full Stack Developer", company: "Software Design", url: "http://www.softwaredesign.ie/", icon: "/logos/softwaredesign.png" },
