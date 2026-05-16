@@ -211,9 +211,9 @@ function LaptopMockup({ src, alt }: { src: string; alt: string }) {
   );
 }
 
-function PhoneMockup({ src, alt }: { src: string; alt: string }) {
+function PhoneMockup({ src, alt, large = false }: { src: string; alt: string; large?: boolean }) {
   return (
-    <div className="phone-device">
+    <div className={large ? "phone-device phone-device--large" : "phone-device"}>
       <div className="phone-notch" />
       <div className="phone-screen">
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -245,10 +245,15 @@ function DeviceMockup({ project }: { project: Project }) {
   }
 
   return (
-    <div className="flex items-end justify-center gap-4 md:gap-6">
-      <PhoneMockup src={project.image2 || project.image} alt={project.imageAlt} />
-      <TabletMockup src={project.image} alt={project.imageAlt} />
-    </div>
+    <>
+      <div className="flex md:hidden items-end justify-center w-full">
+        <PhoneMockup src={project.image2 || project.image} alt={project.imageAlt} large />
+      </div>
+      <div className="hidden md:flex items-end justify-center gap-4 md:gap-6">
+        <PhoneMockup src={project.image2 || project.image} alt={project.imageAlt} />
+        <TabletMockup src={project.image} alt={project.imageAlt} />
+      </div>
+    </>
   );
 }
 
