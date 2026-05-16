@@ -20,25 +20,25 @@
   --heading-font-weight: 800;
   --base-font-weight: 500;
 
-  /* Sage palette: muted sage bg, warm clay primary, soft cream secondary */
-  --background: hsl(105, 12%, 45%);
-  --secondary-background: hsl(105, 12%, 35%);
+  /* Editorial cream palette: warm cream bg, deep forest primary, terracotta secondary */
+  --background: hsl(40, 25%, 92%);
+  --secondary-background: hsl(40, 25%, 85%);
   --foreground: hsl(0, 0%, 9%);
-  --main-foreground: hsl(0, 0%, 0%);
+  --main-foreground: hsl(40, 30%, 95%);
 
-  --main: hsl(20, 45%, 55%);
-  --secondary: hsl(40, 30%, 78%);
-  --border: hsl(215, 27.9%, 16.9%);
-  --ring: hsl(215, 27.9%, 16.9%);
-  --overlay: hsl(215, 27.9%, 16.9% / 0.8);
+  --main: hsl(155, 22%, 30%);
+  --secondary: hsl(15, 45%, 50%);
+  --border: hsl(0, 0%, 12%);
+  --ring: hsl(0, 0%, 12%);
+  --overlay: hsl(0, 0%, 12% / 0.8);
 
   --shadow: var(--box-shadow-x) var(--box-shadow-y) 0px 0px var(--border);
 
-  --chart-1: hsl(20, 45%, 55%);
-  --chart-2: hsl(40, 30%, 78%);
-  --chart-3: hsl(105, 12%, 55%);
-  --chart-4: hsl(20, 45%, 42%);
-  --chart-5: hsl(40, 30%, 62%);
+  --chart-1: hsl(155, 22%, 30%);
+  --chart-2: hsl(15, 45%, 50%);
+  --chart-3: hsl(40, 25%, 70%);
+  --chart-4: hsl(155, 22%, 45%);
+  --chart-5: hsl(15, 45%, 38%);
   --chart-active-dot: #000;
 }
 
