@@ -21,6 +21,19 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Dylan Luddy",
+    url: "https://www.dylanluddy.com",
+    urlLabel: "dylanluddy.com",
+    description: [
+      "I built a portfolio website for my brother Dylan, a graphic designer and creative director based in Dublin. The site showcases his work across branding, illustration, and visual identity, with a clean, design-forward aesthetic to match his craft.",
+      "The site is built with Next.js and Tailwind CSS, with content managed through Sanity CMS so Dylan can update his work independently. It's hosted on Vercel and was built entirely using Claude Code and Claude Design.",
+    ],
+    stack: ["Claude Code", "Claude Design", "NextJS", "React", "Tailwind CSS", "Sanity CMS", "Vercel"],
+    image: "/image/dylan.webp",
+    imageAlt: "Dylan Luddy Portfolio",
+    device: "laptop",
+  },
+  {
     title: "Zendesk",
     url: "https://www.zendesk.com",
     urlLabel: "zendesk.com",
