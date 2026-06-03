@@ -25,7 +25,7 @@ const projects: Project[] = [
     url: "https://www.dylanluddy.com",
     urlLabel: "dylanluddy.com",
     description: [
-      "I built a portfolio website for my brother Dylan, a graphic designer and creative director based in Dublin. The site showcases his work across branding, illustration, and visual identity, with a clean, design-forward aesthetic to match his craft.",
+      "I built a portfolio website for my brother Dylan, a digital marketer based in London. The site showcases his experience across SEO, paid media, and growth strategy, with a clean, modern aesthetic to match his personal brand.",
       "The site is built with Next.js and Tailwind CSS, with content managed through Sanity CMS so Dylan can update his work independently. It's hosted on Vercel and was built entirely using Claude Code and Claude Design.",
     ],
     stack: ["Claude Code", "Claude Design", "NextJS", "React", "Tailwind CSS", "Sanity CMS", "Vercel"],
@@ -251,7 +251,7 @@ function TabletMockup({ src, alt }: { src: string; alt: string }) {
 function DeviceMockup({ project }: { project: Project }) {
   if (project.device === "laptop") {
     return (
-      <div className="flex items-end justify-center">
+      <div className="flex items-end justify-center w-full">
         <LaptopMockup src={project.image} alt={project.imageAlt} />
       </div>
     );
