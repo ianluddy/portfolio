@@ -26,7 +26,7 @@ const projects: Project[] = [
     urlLabel: "dylanluddy.com",
     description: [
       "I built a portfolio website for my brother Dylan, a digital marketer based in London. The site showcases his experience across SEO, paid media, and growth strategy, with a clean, modern aesthetic to match his personal brand.",
-      "The site is built with Next.js and Tailwind CSS, with content managed through Sanity CMS so Dylan can update his work independently. It's hosted on Vercel and was built entirely using Claude Code and Claude Design.",
+      "The site is built with Next.js and Tailwind CSS, with content managed through Sanity CMS. It's hosted on Vercel and was built entirely using Claude Code and Claude Design.",
     ],
     stack: ["Claude Code", "Claude Design", "NextJS", "React", "Tailwind CSS", "Sanity CMS", "Vercel"],
     image: "/image/dylan.webp",
