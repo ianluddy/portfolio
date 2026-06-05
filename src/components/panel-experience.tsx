@@ -14,7 +14,7 @@ const timeline = [
 export function PanelExperience() {
   return (
     <div className="h-full flex flex-col p-8 md:p-16">
-      <p className="text-[10px] tracking-[0.2em] text-foreground/35 uppercase mb-8 flex-none">
+      <p className="text-[10px] tracking-[0.2em] text-subtle uppercase mb-8 flex-none">
         Experience
       </p>
 
@@ -26,16 +26,16 @@ export function PanelExperience() {
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-light text-foreground/70 hover:text-foreground transition-colors"
+                className="text-sm text-foreground hover:text-muted transition-colors"
               >
                 {item.company}
               </a>
             </div>
-            <div className="flex-1 text-sm font-light text-foreground/45">
+            <div className="flex-1 text-sm text-muted">
               {item.role}
             </div>
             <div className="md:w-48 flex-none text-right">
-              <span className="text-[10px] tracking-widest text-foreground/25 uppercase">
+              <span className="text-[10px] tracking-widest text-subtle uppercase">
                 {item.date} – {item.endDate}
               </span>
             </div>

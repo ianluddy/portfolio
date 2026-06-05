@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { Sun, Moon } from "lucide-react";
 import { PanelHome } from "./panel-home";
@@ -20,23 +20,24 @@ const panels = [
 ];
 
 function ThemeToggle() {
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
+
   const isDark = resolvedTheme === "dark";
 
   return (
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="fixed bottom-6 left-6 z-50 flex items-center gap-2 text-foreground/30 hover:text-foreground/70 transition-colors"
-      aria-label="Toggle theme"
+      className="fixed bottom-6 right-6 z-50 p-2 text-subtle hover:text-foreground transition-colors"
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
     >
-      {isDark ? (
-        <Sun size={11} strokeWidth={1.5} />
-      ) : (
-        <Moon size={11} strokeWidth={1.5} />
-      )}
-      <span className="text-[9px] tracking-[0.2em] uppercase">
-        {isDark ? "light" : "dark"}
-      </span>
+      {isDark
+        ? <Sun size={16} strokeWidth={1.5} />
+        : <Moon size={16} strokeWidth={1.5} />
+      }
     </button>
   );
 }
@@ -72,11 +73,11 @@ export function HorizontalAccordion() {
                 className="absolute top-0 left-0 flex flex-col items-center pt-6 gap-5 z-10 select-none"
                 style={{ width: COLLAPSED_PX }}
               >
-                <span className="text-[10px] font-light tracking-[0.15em] text-foreground/30">
+                <span className="text-[10px] font-light tracking-[0.15em] text-subtle">
                   {id}
                 </span>
                 <span
-                  className="text-[10px] font-light tracking-[0.18em] text-foreground/20 uppercase"
+                  className="text-[10px] font-light tracking-[0.18em] text-subtle uppercase"
                   style={{
                     writingMode: "vertical-rl",
                     transform: "rotate(180deg)",
@@ -118,15 +119,13 @@ export function HorizontalAccordion() {
                 className="w-full flex items-center gap-4 px-5 py-4 text-left cursor-pointer"
                 onClick={() => setActiveIndex(i)}
               >
-                <span className="text-[10px] font-light tracking-[0.15em] text-foreground/30 flex-none">
+                <span className="text-[10px] font-light tracking-[0.15em] text-subtle flex-none">
                   {id}
                 </span>
-                <span className="text-[10px] font-light tracking-[0.18em] text-foreground/20 uppercase flex-1">
+                <span className="text-[10px] font-light tracking-[0.18em] text-subtle uppercase flex-1">
                   {label}
                 </span>
-                <span
-                  className={`text-foreground/30 text-sm flex-none transition-transform ${isActive ? "rotate-45" : ""}`}
-                >
+                <span className={`text-subtle text-sm flex-none transition-transform ${isActive ? "rotate-45" : ""}`}>
                   +
                 </span>
               </button>

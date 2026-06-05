@@ -2,28 +2,36 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ── Warm colour tokens ── */
+/* ── Colour tokens — warm palette matching Claude.ai ── */
 :root {
-  --background: #f5f0e8;
-  --foreground: #1c1a17;
-  --border: rgba(28, 26, 23, 0.1);
+  /* Light mode */
+  --background: #f7f3ed;
+  --foreground: #1a1714;
+  --muted:      #5c5248;   /* clearly readable secondary text */
+  --subtle:     #8c827a;   /* visible but de-emphasised */
+  --border:     rgba(26, 23, 20, 0.1);
 }
 
 .dark {
-  --background: #0f0e0c;
-  --foreground: #ede8e1;
-  --border: rgba(237, 232, 225, 0.1);
+  /* Dark mode — warm charcoal matching Claude.ai */
+  --background: #1a1714;
+  --foreground: #e8ddd2;
+  --muted:      #b0a498;   /* warm tan, readable on dark */
+  --subtle:     #7c6e62;   /* warm mid-tone, visible but subdued */
+  --border:     rgba(232, 221, 210, 0.08);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-border: var(--border);
-  --font-sans: var(--font-body);
-  --font-display: var(--font-display);
+  --color-muted:      var(--muted);
+  --color-subtle:     var(--subtle);
+  --color-border:     var(--border);
+  --font-sans:        var(--font-body);
+  --font-display:     var(--font-display);
 }
 
-/* Editorial serif utility */
+/* Editorial serif display utility */
 .font-display {
   font-family: var(--font-display), Georgia, "Times New Roman", serif;
 }

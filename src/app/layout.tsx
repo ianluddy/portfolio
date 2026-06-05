@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Cormorant_Garamond } from "next/font/google";
+import { DM_Sans, Cormorant_Garamond } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
+const dmSans = DM_Sans({
   subsets: ["latin"],
   display: "swap",
   weight: ["300", "400"],
@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${cormorant.variable}`}
+      className={`${dmSans.variable} ${cormorant.variable}`}
       suppressHydrationWarning
     >
       <body>
