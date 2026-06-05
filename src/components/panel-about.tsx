@@ -4,7 +4,7 @@ export function PanelAbout() {
   return (
     <div className="flex flex-col md:flex-row h-full w-full">
       {/* Visual */}
-      <div className="flex-none md:w-[40%] flex items-center justify-center p-8 md:p-16 border-b md:border-b-0 md:border-r border-white/10">
+      <div className="flex-none md:w-[40%] flex items-center justify-center p-8 md:p-16 border-b md:border-b-0 md:border-r border-foreground/10">
         <div className="w-full max-w-[280px]">
           <WireframeCircle size={280} />
         </div>
@@ -12,16 +12,16 @@ export function PanelAbout() {
 
       {/* Content */}
       <div className="flex-1 flex flex-col justify-center p-8 md:p-16 gap-6">
-        <p className="text-[10px] tracking-[0.2em] text-white/40 uppercase">About</p>
+        <p className="text-[10px] tracking-[0.2em] text-foreground/35 uppercase">About</p>
 
-        <div className="space-y-4 text-sm font-light leading-loose text-white/70 max-w-lg">
+        <div className="space-y-4 text-sm font-light leading-loose text-foreground/60 max-w-lg">
           <p>
             I&apos;m a full-stack software engineer from Galway with a passion for
             building that started in 2008. I build software the way modern
             engineers should: AI-first. Using{" "}
             <a
               href="https://claude.ai/code"
-              className="text-white underline underline-offset-4 hover:text-white/60 transition-colors"
+              className="text-foreground underline underline-offset-4 hover:text-foreground/60 transition-colors"
             >
               Claude Code
             </a>{" "}
@@ -35,7 +35,7 @@ export function PanelAbout() {
             I use{" "}
             <a
               href="https://conductor.build"
-              className="text-white underline underline-offset-4 hover:text-white/60 transition-colors"
+              className="text-foreground underline underline-offset-4 hover:text-foreground/60 transition-colors"
             >
               Conductor
             </a>{" "}
@@ -50,7 +50,7 @@ export function PanelAbout() {
           </p>
         </div>
 
-        <div className="pt-4 grid grid-cols-2 gap-x-8 gap-y-2 text-[10px] tracking-widest text-white/30 uppercase max-w-lg">
+        <div className="pt-4 grid grid-cols-2 gap-x-8 gap-y-2 text-[10px] tracking-widest text-foreground/25 uppercase max-w-lg">
           <span>Next.js / React</span>
           <span>Python</span>
           <span>TypeScript</span>

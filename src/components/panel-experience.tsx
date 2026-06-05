@@ -14,34 +14,34 @@ const timeline = [
 export function PanelExperience() {
   return (
     <div className="h-full flex flex-col p-8 md:p-16">
-      <p className="text-[10px] tracking-[0.2em] text-white/40 uppercase mb-8 flex-none">
+      <p className="text-[10px] tracking-[0.2em] text-foreground/35 uppercase mb-8 flex-none">
         Experience
       </p>
 
       <div className="flex-1 overflow-y-auto">
         {timeline.map((item, i) => (
-          <div key={i} className="border-t border-white/10 py-5 flex flex-col md:flex-row md:items-baseline gap-1 md:gap-0">
+          <div key={i} className="border-t border-foreground/10 py-5 flex flex-col md:flex-row md:items-baseline gap-1 md:gap-0">
             <div className="md:w-48 flex-none">
               <a
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-light text-white/80 hover:text-white transition-colors"
+                className="text-sm font-light text-foreground/70 hover:text-foreground transition-colors"
               >
                 {item.company}
               </a>
             </div>
-            <div className="flex-1 text-sm font-light text-white/50">
+            <div className="flex-1 text-sm font-light text-foreground/45">
               {item.role}
             </div>
             <div className="md:w-48 flex-none text-right">
-              <span className="text-[10px] tracking-widest text-white/25 uppercase">
+              <span className="text-[10px] tracking-widest text-foreground/25 uppercase">
                 {item.date} – {item.endDate}
               </span>
             </div>
           </div>
         ))}
-        <div className="border-t border-white/10" />
+        <div className="border-t border-foreground/10" />
       </div>
     </div>
   );

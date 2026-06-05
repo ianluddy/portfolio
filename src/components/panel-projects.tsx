@@ -172,7 +172,7 @@ export function PanelProjects() {
 
   return (
     <div className="h-full flex flex-col p-8 md:p-16">
-      <p className="text-[10px] tracking-[0.2em] text-white/40 uppercase mb-8 flex-none">
+      <p className="text-[10px] tracking-[0.2em] text-foreground/35 uppercase mb-8 flex-none">
         Projects — {projects.length} total
       </p>
 
@@ -182,28 +182,27 @@ export function PanelProjects() {
           const num = String(i + 1).padStart(2, "0");
 
           return (
-            <div key={project.title} className="border-t border-white/10">
+            <div key={project.title} className="border-t border-foreground/10">
               <button
                 className="w-full flex items-start gap-6 py-4 text-left group cursor-pointer"
                 onClick={() => setSelected(isOpen ? null : i)}
               >
-                <span className="text-[10px] font-light text-white/30 tracking-widest mt-0.5 flex-none w-6">
+                <span className="text-[10px] font-light text-foreground/25 tracking-widest mt-0.5 flex-none w-6">
                   {num}
                 </span>
                 <div className="flex-1 min-w-0">
-                  <span className={`text-sm font-light transition-colors ${isOpen ? "text-white" : "text-white/70 group-hover:text-white"}`}>
+                  <span className={`text-sm font-light transition-colors ${isOpen ? "text-foreground" : "text-foreground/60 group-hover:text-foreground"}`}>
                     {project.title}
                   </span>
-                  <span className="hidden md:inline text-sm font-light text-white/25 ml-4">
+                  <span className="hidden md:inline text-sm font-light text-foreground/20 ml-4">
                     {project.tagline}
                   </span>
                 </div>
-                <span className={`text-white/40 text-sm flex-none transition-transform ${isOpen ? "rotate-45" : ""}`}>
+                <span className={`text-foreground/30 text-sm flex-none transition-transform ${isOpen ? "rotate-45" : ""}`}>
                   +
                 </span>
               </button>
 
-              {/* Expandable detail */}
               <div
                 style={{
                   display: "grid",
@@ -213,20 +212,20 @@ export function PanelProjects() {
               >
                 <div className="overflow-hidden">
                   <div className="pl-12 pb-8 space-y-4">
-                    <p className="text-sm font-light text-white/40 md:hidden">{project.tagline}</p>
+                    <p className="text-sm font-light text-foreground/35 md:hidden">{project.tagline}</p>
                     {project.description.map((p, j) => (
-                      <p key={j} className="text-sm font-light leading-relaxed text-white/60 max-w-2xl">
+                      <p key={j} className="text-sm font-light leading-relaxed text-foreground/55 max-w-2xl">
                         {p}
                       </p>
                     ))}
-                    <p className="text-[10px] tracking-widest text-white/30 uppercase">
+                    <p className="text-[10px] tracking-widest text-foreground/25 uppercase">
                       {project.stack.join(" · ")}
                     </p>
                     <a
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block text-xs tracking-widest text-white/50 hover:text-white transition-colors uppercase"
+                      className="inline-block text-[10px] tracking-widest text-foreground/40 hover:text-foreground/80 transition-colors uppercase"
                     >
                       {project.urlLabel} →
                     </a>
@@ -236,7 +235,7 @@ export function PanelProjects() {
             </div>
           );
         })}
-        <div className="border-t border-white/10" />
+        <div className="border-t border-foreground/10" />
       </div>
     </div>
   );

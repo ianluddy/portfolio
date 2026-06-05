@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useTheme } from "next-themes";
+import { Sun, Moon } from "lucide-react";
 import { PanelHome } from "./panel-home";
 import { PanelAbout } from "./panel-about";
 import { PanelProjects } from "./panel-projects";
@@ -17,13 +19,37 @@ const panels = [
   { id: "05", label: "Contact", Content: PanelContact },
 ];
 
+function ThemeToggle() {
+  const { theme, setTheme, resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
+
+  return (
+    <button
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      className="fixed bottom-6 left-6 z-50 flex items-center gap-2 text-foreground/30 hover:text-foreground/70 transition-colors"
+      aria-label="Toggle theme"
+    >
+      {isDark ? (
+        <Sun size={11} strokeWidth={1.5} />
+      ) : (
+        <Moon size={11} strokeWidth={1.5} />
+      )}
+      <span className="text-[9px] tracking-[0.2em] uppercase">
+        {isDark ? "light" : "dark"}
+      </span>
+    </button>
+  );
+}
+
 export function HorizontalAccordion() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <>
+      <ThemeToggle />
+
       {/* ── Desktop: horizontal accordion ── */}
-      <div className="hidden md:flex h-screen w-screen overflow-hidden bg-black text-white">
+      <div className="hidden md:flex h-screen w-screen overflow-hidden bg-background text-foreground">
         {panels.map(({ id, label, Content }, i) => {
           const isActive = activeIndex === i;
           const collapsedTotal = (panels.length - 1) * COLLAPSED_PX;
@@ -31,7 +57,7 @@ export function HorizontalAccordion() {
           return (
             <div
               key={id}
-              className="relative h-full flex-none overflow-hidden border-r border-white/10 last:border-r-0"
+              className="relative h-full flex-none overflow-hidden border-r border-foreground/10 last:border-r-0"
               style={{
                 width: isActive
                   ? `calc(100vw - ${collapsedTotal}px)`
@@ -41,16 +67,16 @@ export function HorizontalAccordion() {
               }}
               onClick={() => !isActive && setActiveIndex(i)}
             >
-              {/* Collapsed tab — always visible on the left edge */}
+              {/* Collapsed tab */}
               <div
                 className="absolute top-0 left-0 flex flex-col items-center pt-6 gap-5 z-10 select-none"
                 style={{ width: COLLAPSED_PX }}
               >
-                <span className="text-[10px] font-light tracking-[0.15em] text-white/35">
+                <span className="text-[10px] font-light tracking-[0.15em] text-foreground/30">
                   {id}
                 </span>
                 <span
-                  className="text-[10px] font-light tracking-[0.18em] text-white/25 uppercase"
+                  className="text-[10px] font-light tracking-[0.18em] text-foreground/20 uppercase"
                   style={{
                     writingMode: "vertical-rl",
                     transform: "rotate(180deg)",
@@ -60,7 +86,7 @@ export function HorizontalAccordion() {
                 </span>
               </div>
 
-              {/* Panel content — starts after the tab, fades in when active */}
+              {/* Panel content */}
               <div
                 className="absolute top-0 h-full overflow-y-auto"
                 style={{
@@ -82,31 +108,29 @@ export function HorizontalAccordion() {
       </div>
 
       {/* ── Mobile: vertical accordion ── */}
-      <div className="flex md:hidden flex-col w-screen bg-black text-white overflow-y-auto">
+      <div className="flex md:hidden flex-col w-screen bg-background text-foreground overflow-y-auto">
         {panels.map(({ id, label, Content }, i) => {
           const isActive = activeIndex === i;
 
           return (
-            <div key={id} className="border-b border-white/10 last:border-b-0">
-              {/* Mobile tab row */}
+            <div key={id} className="border-b border-foreground/10 last:border-b-0">
               <button
                 className="w-full flex items-center gap-4 px-5 py-4 text-left cursor-pointer"
                 onClick={() => setActiveIndex(i)}
               >
-                <span className="text-[10px] font-light tracking-[0.15em] text-white/35 flex-none">
+                <span className="text-[10px] font-light tracking-[0.15em] text-foreground/30 flex-none">
                   {id}
                 </span>
-                <span className="text-[10px] font-light tracking-[0.18em] text-white/25 uppercase flex-1">
+                <span className="text-[10px] font-light tracking-[0.18em] text-foreground/20 uppercase flex-1">
                   {label}
                 </span>
                 <span
-                  className={`text-white/30 text-sm flex-none transition-transform ${isActive ? "rotate-45" : ""}`}
+                  className={`text-foreground/30 text-sm flex-none transition-transform ${isActive ? "rotate-45" : ""}`}
                 >
                   +
                 </span>
               </button>
 
-              {/* Mobile content */}
               <div
                 style={{
                   display: "grid",

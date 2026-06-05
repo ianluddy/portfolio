@@ -25,9 +25,9 @@ export function WireframeSphere({ size = 300 }: { size?: number }) {
     <svg
       viewBox={`0 0 ${size} ${size}`}
       fill="none"
-      stroke="white"
+      stroke="currentColor"
       strokeWidth="0.75"
-      className="opacity-70"
+      className="opacity-40"
     >
       <circle cx={cx} cy={cy} r={R} />
       {ellipses}
@@ -44,9 +44,9 @@ export function WireframeCircle({ size = 300 }: { size?: number }) {
     <svg
       viewBox={`0 0 ${size} ${size}`}
       fill="none"
-      stroke="white"
+      stroke="currentColor"
       strokeWidth="0.75"
-      className="opacity-70"
+      className="opacity-40"
     >
       <circle cx={cx} cy={cy} r={R} />
     </svg>
