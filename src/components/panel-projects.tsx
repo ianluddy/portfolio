@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface Project {
   title: string;
@@ -22,17 +22,6 @@ const projects: Project[] = [
       "Built with Next.js and Tailwind CSS, with content managed through Sanity CMS. Hosted on Vercel and built entirely using Claude Code and Claude Design.",
     ],
     stack: ["Claude Code", "Claude Design", "NextJS", "React", "Tailwind CSS", "Sanity CMS", "Vercel"],
-  },
-  {
-    title: "Zendesk",
-    url: "https://www.zendesk.com",
-    urlLabel: "zendesk.com",
-    tagline: "Led 400+ A/B experiments across 2M monthly visitors",
-    description: [
-      "I led the experimentation program at Zendesk, strategically implementing A/B tests and personalisation campaigns across marketing sites attracting around 2 million visitors each month.",
-      "Also collaborated with product and design teams to build out new website sections and add components to the design system, plus out-of-hours support for internal stakeholders.",
-    ],
-    stack: ["Claude Code", "Cursor", "NextJS", "React", "Node", "Optimizely", "Adobe Target", "Storybook", "Hotjar", "AWS", "Docker"],
   },
   {
     title: "Sparebace",
@@ -167,29 +156,25 @@ const projects: Project[] = [
   },
 ];
 
-export function PanelProjects() {
+export function PanelProjects({ isActive }: { isActive?: boolean }) {
   const [selected, setSelected] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (!isActive) setSelected(null);
+  }, [isActive]);
 
   return (
     <div className="h-full flex flex-col p-8 md:p-16">
-      <p className="text-[10px] tracking-[0.2em] text-subtle uppercase mb-8 flex-none">
-        Projects — {projects.length} total
-      </p>
-
-      <div className="flex-1 overflow-y-auto">
+<div className="flex-1 overflow-y-auto">
         {projects.map((project, i) => {
           const isOpen = selected === i;
-          const num = String(i + 1).padStart(2, "0");
 
           return (
-            <div key={project.title} className="border-t border-foreground/10">
+            <div key={project.title}>
               <button
                 className="w-full flex items-start gap-6 py-4 text-left group cursor-pointer"
                 onClick={() => setSelected(isOpen ? null : i)}
               >
-                <span className="text-[10px] text-subtle tracking-widest mt-0.5 flex-none w-6">
-                  {num}
-                </span>
                 <div className="flex-1 min-w-0">
                   <span className={`text-sm transition-colors ${isOpen ? "text-foreground" : "text-muted group-hover:text-foreground"}`}>
                     {project.title}
@@ -198,7 +183,7 @@ export function PanelProjects() {
                     {project.tagline}
                   </span>
                 </div>
-                <span className={`text-subtle text-sm flex-none transition-transform ${isOpen ? "rotate-45" : ""}`}>
+                <span className={`text-foreground/50 text-xl leading-none flex-none transition-transform duration-300 ${isOpen ? "rotate-45" : "group-hover:text-foreground"}`}>
                   +
                 </span>
               </button>
@@ -207,11 +192,11 @@ export function PanelProjects() {
                 style={{
                   display: "grid",
                   gridTemplateRows: isOpen ? "1fr" : "0fr",
-                  transition: "grid-template-rows 0.35s ease",
+                  transition: "grid-template-rows 0.21s ease",
                 }}
               >
                 <div className="overflow-hidden">
-                  <div className="pl-12 pb-8 space-y-4">
+                  <div className="pb-8 space-y-4">
                     <p className="text-sm text-subtle md:hidden">{project.tagline}</p>
                     {project.description.map((p, j) => (
                       <p key={j} className="text-sm leading-relaxed text-muted max-w-2xl">
@@ -225,7 +210,7 @@ export function PanelProjects() {
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block text-[10px] tracking-widest text-muted hover:text-foreground transition-colors uppercase"
+                      className="inline-block text-[10px] tracking-widest text-accent hover:text-foreground transition-colors uppercase"
                     >
                       {project.urlLabel} →
                     </a>
@@ -235,7 +220,6 @@ export function PanelProjects() {
             </div>
           );
         })}
-        <div className="border-t border-foreground/10" />
       </div>
     </div>
   );

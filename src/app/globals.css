@@ -5,20 +5,22 @@
 /* ── Colour tokens — warm palette matching Claude.ai ── */
 :root {
   /* Light mode */
-  --background: #f7f3ed;
+  --background: #ede0cc;
   --foreground: #1a1714;
-  --muted:      #5c5248;   /* clearly readable secondary text */
-  --subtle:     #8c827a;   /* visible but de-emphasised */
-  --border:     rgba(26, 23, 20, 0.1);
+  --muted:      #4a4644;
+  --subtle:     #7a6a5e;
+  --border:     rgba(26, 23, 20, 0.90);
+  --accent:     #1a2e80;
 }
 
 .dark {
   /* Dark mode — warm charcoal matching Claude.ai */
-  --background: #1a1714;
+  --background: #1e1e1e;
   --foreground: #e8ddd2;
-  --muted:      #b0a498;   /* warm tan, readable on dark */
-  --subtle:     #7c6e62;   /* warm mid-tone, visible but subdued */
+  --muted:      #b0a498;
+  --subtle:     #7c6e62;
   --border:     rgba(232, 221, 210, 0.08);
+  --accent:     #b06070;
 }
 
 @theme inline {
@@ -27,6 +29,7 @@
   --color-muted:      var(--muted);
   --color-subtle:     var(--subtle);
   --color-border:     var(--border);
+  --color-accent:     var(--accent);
   --font-sans:        var(--font-body);
   --font-display:     var(--font-display);
 }

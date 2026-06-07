@@ -1,47 +1,126 @@
 const timeline = [
-  { date: "May 2026", endDate: "Present", role: "Senior Web Engineer", company: "Fin", url: "https://fin.ai/" },
-  { date: "May 2025", endDate: "May 2026", role: "Senior Web Engineer", company: "Intercom", url: "http://www.intercom.com/" },
-  { date: "Dec 2019", endDate: "May 2025", role: "Senior Web Engineer", company: "Zendesk", url: "http://www.zendesk.com/" },
-  { date: "Dec 2018", endDate: "Dec 2019", role: "Senior Full Stack Developer", company: "Total Digital", url: "http://www.totaldigital.ie/" },
-  { date: "Jun 2016", endDate: "Dec 2018", role: "Senior Full Stack Developer", company: "Software Design", url: "http://www.softwaredesign.ie/" },
-  { date: "Jan 2016", endDate: "Jun 2016", role: "Senior Back End Developer", company: "Qualio", url: "http://www.qualio.com" },
-  { date: "Oct 2012", endDate: "Jan 2016", role: "Lead Developer", company: "Arts Alliance Media", url: "http://www.artsalliancemedia.com/" },
-  { date: "Aug 2011", endDate: "Oct 2012", role: "Python Developer", company: "Arts Alliance Media", url: "http://www.artsalliancemedia.com/" },
-  { date: "May 2011", endDate: "Aug 2011", role: "Back End Developer", company: "Avaeon", url: "http://www.avaeon.com/" },
-  { date: "Sep 2008", endDate: "May 2011", role: "BSc. (Hons) Software Development", company: "ATU", url: "http://www.atu.ie" },
+  {
+    date: "May 2026",
+    endDate: "Present",
+    role: "Senior Web Engineer",
+    company: "Fin",
+    url: "https://fin.ai/",
+    description: "Building out high-performance experiences across Fin's marketing site around their core AI agent offerings — Intercom's major AI pivot. Work spans CMS integration, localisation systems for global markets, full-stack observability tooling, on-call incident response via PagerDuty, and maintaining Claude skills for efficient engineering workflows.",
+  },
+  {
+    date: "May 2025",
+    endDate: "May 2026",
+    role: "Senior Web Engineer",
+    company: "Intercom",
+    url: "http://www.intercom.com/",
+    description: "Web engineer on Intercom's marketing and growth team, building and maintaining high-performance experiences across intercom.com. Worked closely with design, content, and product marketing to deliver at scale.",
+  },
+  {
+    date: "Dec 2019",
+    endDate: "May 2025",
+    role: "Senior Web Engineer",
+    company: "Zendesk",
+    url: "http://www.zendesk.com/",
+    description: "Led the experimentation program across marketing sites attracting ~2M visitors monthly, running 400+ A/B tests and personalisation campaigns. Collaborated with product and design on new site sections and design system components, with lead responsibilities across engineering teams in EMEA and APAC.",
+  },
+  {
+    date: "Dec 2018",
+    endDate: "Dec 2019",
+    role: "Senior Full Stack Developer",
+    company: "Total Digital",
+    url: "http://www.totaldigital.ie/",
+    description: "Lead developer across diverse client projects from initial concept through to production, including Enterprise Ireland and DPD. Handled the full stack, mentored junior engineers, and managed ongoing client support.",
+  },
+  {
+    date: "Jun 2016",
+    endDate: "Dec 2018",
+    role: "Senior Full Stack Developer",
+    company: "Software Design",
+    url: "http://www.softwaredesign.ie/",
+    description: "Full stack development at the agency later rebranded as Total Digital — building and maintaining a wide variety of client projects across the full stack, from greenfield builds to production support.",
+  },
+  {
+    date: "Jan 2016",
+    endDate: "Jun 2016",
+    role: "Senior Back End Developer",
+    company: "Qualio",
+    url: "http://www.qualio.com",
+    description: "Primary backend Python developer on Qualio's SaaS Quality Management platform, built on Pyramid for pharma and life sciences organisations navigating FDA and ISO compliance. Refactored legacy code, developed a new API, and maintained high uptime on AWS.",
+  },
+  {
+    date: "Oct 2012",
+    endDate: "Jan 2016",
+    role: "Lead Developer",
+    company: "Arts Alliance Media",
+    url: "http://www.artsalliancemedia.com/",
+    description: "Led the Screenwriter team for three years — a Python Theatre Management System running on 40,000+ cinema screens globally, integrating with projection systems, POS, IP cameras, and onsite hardware. Responsible for hiring, training, worldwide deployments, and customer support.",
+  },
+  {
+    date: "Aug 2011",
+    endDate: "Oct 2012",
+    role: "Python Developer",
+    company: "Arts Alliance Media",
+    url: "http://www.artsalliancemedia.com/",
+    description: "Joined AAM as a Python developer on the Screenwriter project, building and maintaining features for a theatre management system deployed in cinemas worldwide. Promoted to team lead after a year.",
+  },
+  {
+    date: "May 2011",
+    endDate: "Aug 2011",
+    role: "Back End Developer",
+    company: "Avaeon",
+    url: "http://www.avaeon.com/",
+    description: "First role after graduating — C# developer enhancing an eCommerce platform facilitating insurance sales across the United States.",
+  },
+  {
+    date: "Sep 2008",
+    endDate: "May 2011",
+    role: "BSc. (Hons) Software Development — First-Class Honours",
+    company: "ATU",
+    url: "http://www.atu.ie",
+    description: null,
+  },
 ];
 
 export function PanelExperience() {
   return (
     <div className="h-full flex flex-col p-8 md:p-16">
-      <p className="text-[10px] tracking-[0.2em] text-subtle uppercase mb-8 flex-none">
-        Experience
-      </p>
-
       <div className="flex-1 overflow-y-auto">
         {timeline.map((item, i) => (
-          <div key={i} className="border-t border-foreground/10 py-5 flex flex-col md:flex-row md:items-baseline gap-1 md:gap-0">
-            <div className="md:w-48 flex-none">
-              <a
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-foreground hover:text-muted transition-colors"
-              >
-                {item.company}
-              </a>
+          <div key={i} className="py-1.5 md:py-4 flex flex-col gap-1">
+            <div className="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-0">
+              <div className="md:w-56 flex-none">
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-accent hover:text-foreground transition-colors"
+                >
+                  {item.company}
+                </a>
+              </div>
+              <div className="flex-1 text-sm text-muted">
+                {item.role}
+              </div>
+              <div className="hidden md:block md:w-48 flex-none text-right">
+                <span className="text-[10px] tracking-widest text-subtle uppercase">
+                  {item.date} – {item.endDate}
+                </span>
+              </div>
             </div>
-            <div className="flex-1 text-sm text-muted">
-              {item.role}
-            </div>
-            <div className="md:w-48 flex-none text-right">
+            {item.description && (
+              <div className="md:pl-56 pt-2 pb-1">
+                <p className="text-sm leading-relaxed text-subtle max-w-2xl">
+                  {item.description}
+                </p>
+              </div>
+            )}
+            <div className="md:hidden pb-2">
               <span className="text-[10px] tracking-widest text-subtle uppercase">
                 {item.date} – {item.endDate}
               </span>
             </div>
           </div>
         ))}
-        <div className="border-t border-foreground/10" />
       </div>
     </div>
   );

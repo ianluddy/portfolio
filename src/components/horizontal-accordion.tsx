@@ -1,54 +1,32 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
-import { Sun, Moon } from "lucide-react";
+import { useState } from "react";
 import { PanelHome } from "./panel-home";
 import { PanelAbout } from "./panel-about";
 import { PanelProjects } from "./panel-projects";
 import { PanelExperience } from "./panel-experience";
-import { PanelContact } from "./panel-contact";
 
 const COLLAPSED_PX = 56;
 
 const panels = [
   { id: "01", label: "Home", Content: PanelHome },
   { id: "02", label: "About", Content: PanelAbout },
-  { id: "03", label: "Projects", Content: PanelProjects },
-  { id: "04", label: "Experience", Content: PanelExperience },
-  { id: "05", label: "Contact", Content: PanelContact },
+  { id: "03", label: "Experience", Content: PanelExperience },
+  { id: "04", label: "Projects", Content: PanelProjects },
 ];
 
-function ThemeToggle() {
-  const { setTheme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
-  if (!mounted) return null;
-
-  const isDark = resolvedTheme === "dark";
-
-  return (
-    <button
-      onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="fixed bottom-6 right-6 z-50 p-2 text-subtle hover:text-foreground transition-colors"
-      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-    >
-      {isDark
-        ? <Sun size={16} strokeWidth={1.5} />
-        : <Moon size={16} strokeWidth={1.5} />
-      }
-    </button>
-  );
-}
 
 export function HorizontalAccordion() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  function openPanel(i: number) {
+    setActiveIndex(i);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
 
   return (
     <>
-      <ThemeToggle />
-
       {/* ── Desktop: horizontal accordion ── */}
       <div className="hidden md:flex h-screen w-screen overflow-hidden bg-background text-foreground">
         {panels.map(({ id, label, Content }, i) => {
@@ -58,26 +36,35 @@ export function HorizontalAccordion() {
           return (
             <div
               key={id}
-              className="relative h-full flex-none overflow-hidden border-r border-foreground/10 last:border-r-0"
+              className="relative h-full flex-none overflow-hidden border-r border-foreground/50 last:border-r-0"
               style={{
                 width: isActive
                   ? `calc(100vw - ${collapsedTotal}px)`
                   : `${COLLAPSED_PX}px`,
-                transition: "width 0.65s cubic-bezier(0.4, 0, 0.2, 1)",
+                transition: "width 0.39s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s ease",
                 cursor: isActive ? "default" : "pointer",
+                backgroundColor: !isActive && hoveredIndex === i
+                  ? "color-mix(in srgb, var(--foreground) 4%, transparent)"
+                  : "transparent",
               }}
               onClick={() => !isActive && setActiveIndex(i)}
+              onMouseEnter={() => !isActive && setHoveredIndex(i)}
+              onMouseLeave={() => setHoveredIndex(null)}
             >
               {/* Collapsed tab */}
               <div
                 className="absolute top-0 left-0 flex flex-col items-center pt-6 gap-5 z-10 select-none"
-                style={{ width: COLLAPSED_PX }}
+                style={{
+                  width: COLLAPSED_PX,
+                  transition: "color 0.2s ease",
+                  color: !isActive && hoveredIndex === i ? "var(--foreground)" : "var(--subtle)",
+                }}
               >
-                <span className="text-[10px] font-light tracking-[0.15em] text-subtle">
+                <span className="text-[10px] font-normal tracking-[0.15em]">
                   {id}
                 </span>
                 <span
-                  className="text-[10px] font-light tracking-[0.18em] text-subtle uppercase"
+                  className="text-xs font-normal tracking-[0.18em] uppercase"
                   style={{
                     writingMode: "vertical-rl",
                     transform: "rotate(180deg)",
@@ -96,12 +83,15 @@ export function HorizontalAccordion() {
                   opacity: isActive ? 1 : 0,
                   transform: isActive ? "translateX(0)" : "translateX(-12px)",
                   transition: isActive
-                    ? "opacity 0.4s ease 0.35s, transform 0.4s ease 0.35s"
-                    : "opacity 0.15s ease, transform 0.15s ease",
+                    ? "opacity 0.24s ease 0.21s, transform 0.24s ease 0.21s"
+                    : "opacity 0.09s ease, transform 0.09s ease",
                   pointerEvents: isActive ? "auto" : "none",
                 }}
               >
-                <Content />
+                {label === "Projects"
+                  ? <PanelProjects isActive={isActive} />
+                  : <Content />
+                }
               </div>
             </div>
           );
@@ -117,7 +107,7 @@ export function HorizontalAccordion() {
             <div key={id} className="border-b border-foreground/10 last:border-b-0">
               <button
                 className="w-full flex items-center gap-4 px-5 py-4 text-left cursor-pointer"
-                onClick={() => setActiveIndex(i)}
+                onClick={() => openPanel(i)}
               >
                 <span className="text-[10px] font-light tracking-[0.15em] text-subtle flex-none">
                   {id}
@@ -134,7 +124,7 @@ export function HorizontalAccordion() {
                 style={{
                   display: "grid",
                   gridTemplateRows: isActive ? "1fr" : "0fr",
-                  transition: "grid-template-rows 0.45s cubic-bezier(0.4, 0, 0.2, 1)",
+                  transition: "grid-template-rows 0.27s cubic-bezier(0.4, 0, 0.2, 1)",
                 }}
               >
                 <div className="overflow-hidden">

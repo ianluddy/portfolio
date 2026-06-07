@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Cormorant_Garamond } from "next/font/google";
-import { ThemeProvider } from "next-themes";
+import { DM_Sans, EB_Garamond } from "next/font/google";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -10,18 +9,18 @@ const dmSans = DM_Sans({
   variable: "--font-body",
 });
 
-const cormorant = Cormorant_Garamond({
+const ebGaramond = EB_Garamond({
   subsets: ["latin"],
   display: "swap",
-  weight: ["300", "400", "500"],
+  weight: ["400", "500", "600", "700", "800"],
   style: ["normal", "italic"],
   variable: "--font-display",
 });
 
 export const metadata: Metadata = {
-  title: "Ian Luddy — Software Engineer",
+  title: "Ian Luddy — Software Builder",
   description:
-    "Ian Luddy, Software Engineer based in Galway. Full-stack engineer building AI-first with Claude Code, Next.js, React, Python, and more.",
+    "Ian Luddy, Software Builder based in Galway. Building AI-first with Claude Code, Next.js, React, Python, and more.",
   authors: [{ name: "Ian Luddy" }],
 };
 
@@ -33,13 +32,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${cormorant.variable}`}
-      suppressHydrationWarning
+      className={`dark ${dmSans.variable} ${ebGaramond.variable}`}
     >
       <body>
-        <ThemeProvider attribute="class" defaultTheme="dark">
-          {children}
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   );

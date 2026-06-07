@@ -18,7 +18,7 @@ export function PanelContact() {
             <p className="text-[10px] tracking-[0.2em] text-subtle uppercase mb-2">Email</p>
             <a
               href="mailto:ianluddy@gmail.com"
-              className="text-sm text-muted hover:text-foreground transition-colors"
+              className="text-sm text-accent hover:text-foreground transition-colors"
             >
               ianluddy@gmail.com
             </a>
@@ -30,7 +30,7 @@ export function PanelContact() {
               href="https://github.com/ianluddy"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-muted hover:text-foreground transition-colors"
+              className="text-sm text-accent hover:text-foreground transition-colors"
             >
               github.com/ianluddy
             </a>
@@ -42,7 +42,7 @@ export function PanelContact() {
               href="https://ie.linkedin.com/in/ianluddy"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-muted hover:text-foreground transition-colors"
+              className="text-sm text-accent hover:text-foreground transition-colors"
             >
               linkedin.com/in/ianluddy
             </a>
