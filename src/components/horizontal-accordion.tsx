@@ -146,7 +146,7 @@ export function HorizontalAccordion() {
                 }}
               >
                 <div className="overflow-hidden">
-                  <div className="min-h-[calc(100svh-192px)]">
+                  <div className="h-[calc(100svh-215px)]">
                     <Content />
                   </div>
                 </div>
