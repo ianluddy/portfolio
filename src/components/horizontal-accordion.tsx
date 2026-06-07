@@ -22,7 +22,7 @@ export function HorizontalAccordion() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const panelScrollRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const mobileContainerRef = useRef<HTMLDivElement>(null);
+  const mobileTopAnchorRef = useRef<HTMLDivElement>(null);
 
   // Reset desktop panel scroll to top after the width animation completes
   useEffect(() => {
@@ -35,17 +35,10 @@ export function HorizontalAccordion() {
   }, [activeIndex]);
 
   function openPanel(i: number) {
+    // Scroll to the top anchor instantly so the accordion headers are always
+    // visible before the expand/collapse animation plays.
+    mobileTopAnchorRef.current?.scrollIntoView({ behavior: "instant" as ScrollBehavior });
     setActiveIndex(i);
-    // Reset scroll after the mobile grid animation completes.
-    // Scroll the container div (the real scroll root on mobile) and fall back to window.
-    setTimeout(() => {
-      const container = mobileContainerRef.current;
-      if (container && container.scrollHeight > container.clientHeight) {
-        container.scrollTo({ top: 0, behavior: "smooth" });
-      } else {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-    }, MOBILE_ANIM_MS);
   }
 
   return (
@@ -123,7 +116,8 @@ export function HorizontalAccordion() {
       </div>
 
       {/* ── Mobile: vertical accordion ── */}
-      <div ref={mobileContainerRef} className="flex md:hidden flex-col w-screen bg-background text-foreground overflow-y-auto">
+      <div className="flex md:hidden flex-col w-screen bg-background text-foreground overflow-y-auto">
+        <div ref={mobileTopAnchorRef} />
         {panels.map(({ id, label, Content }, i) => {
           const isActive = activeIndex === i;
 
