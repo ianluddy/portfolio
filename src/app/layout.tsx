@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   description:
     "Ian Luddy, Software Builder based in Galway. Building AI-first with Claude Code, Next.js, React, Python, and more.",
   authors: [{ name: "Ian Luddy" }],
+  alternates: {
+    canonical: "https://www.ianluddy.com",
+  },
 };
 
 export default function RootLayout({
