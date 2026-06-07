@@ -14,12 +14,12 @@
 }
 
 .dark {
-  /* Dark mode — warm charcoal matching Claude.ai */
-  --background: #1e1e1e;
-  --foreground: #e8ddd2;
-  --muted:      #b0a498;
-  --subtle:     #7c6e62;
-  --border:     rgba(232, 221, 210, 0.08);
+  /* Dark mode — cool neutral greys, higher contrast */
+  --background: #1a1a1a;
+  --foreground: #e2e2e2;
+  --muted:      #acacac;
+  --subtle:     #6e6e6e;
+  --border:     rgba(226, 226, 226, 0.10);
   --accent:     #b06070;
 }
 
