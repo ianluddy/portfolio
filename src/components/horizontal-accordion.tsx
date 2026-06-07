@@ -22,7 +22,6 @@ export function HorizontalAccordion() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const panelScrollRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const mobileTopAnchorRef = useRef<HTMLDivElement>(null);
 
   // Reset desktop panel scroll to top after the width animation completes
   useEffect(() => {
@@ -35,10 +34,12 @@ export function HorizontalAccordion() {
   }, [activeIndex]);
 
   function openPanel(i: number) {
-    // Scroll to the top anchor instantly so the accordion headers are always
-    // visible before the expand/collapse animation plays.
-    mobileTopAnchorRef.current?.scrollIntoView({ behavior: "instant" as ScrollBehavior });
     setActiveIndex(i);
+    // Wait one frame so React commits the DOM update and scroll anchoring
+    // has run, then hard-reset to the top before the animation plays.
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+    });
   }
 
   return (
@@ -117,7 +118,6 @@ export function HorizontalAccordion() {
 
       {/* ── Mobile: vertical accordion ── */}
       <div className="flex md:hidden flex-col w-screen bg-background text-foreground overflow-y-auto">
-        <div ref={mobileTopAnchorRef} />
         {panels.map(({ id, label, Content }, i) => {
           const isActive = activeIndex === i;
 
