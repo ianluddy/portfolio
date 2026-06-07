@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { PanelHome } from "./panel-home";
 import { PanelAbout } from "./panel-about";
 import { PanelProjects } from "./panel-projects";
 import { PanelExperience } from "./panel-experience";
 
 const COLLAPSED_PX = 56;
+const DESKTOP_ANIM_MS = 390;
+const MOBILE_ANIM_MS = 270;
 
 const panels = [
   { id: "01", label: "Home", Content: PanelHome },
@@ -19,10 +21,24 @@ const panels = [
 export function HorizontalAccordion() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const panelScrollRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  // Reset desktop panel scroll to top after the width animation completes
+  useEffect(() => {
+    const ref = panelScrollRefs.current[activeIndex];
+    if (!ref) return;
+    const timer = setTimeout(() => {
+      ref.scrollTo({ top: 0, behavior: "smooth" });
+    }, DESKTOP_ANIM_MS);
+    return () => clearTimeout(timer);
+  }, [activeIndex]);
 
   function openPanel(i: number) {
     setActiveIndex(i);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // Reset window scroll after the mobile grid animation completes
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, MOBILE_ANIM_MS);
   }
 
   return (
@@ -76,6 +92,7 @@ export function HorizontalAccordion() {
 
               {/* Panel content */}
               <div
+                ref={(el) => { panelScrollRefs.current[i] = el; }}
                 className="absolute top-0 h-full overflow-y-auto"
                 style={{
                   left: COLLAPSED_PX,
