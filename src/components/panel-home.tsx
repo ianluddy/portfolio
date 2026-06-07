@@ -9,7 +9,7 @@ export function PanelHome() {
         </div>
 
         <p className="text-sm leading-relaxed text-muted max-w-sm">
-          Building at the speed of thought with AI
+          Building software at the speed of thought with AI
         </p>
 
         <div className="space-y-1 text-[10px] tracking-[0.2em] text-subtle uppercase">
