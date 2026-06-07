@@ -20,7 +20,7 @@ const ebGaramond = EB_Garamond({
 export const metadata: Metadata = {
   title: "Ian Luddy — Software Builder",
   description:
-    "Ian Luddy, Software Builder based in Galway. Building AI-first with Claude Code, Next.js, React, Python, and more.",
+    "Ian Luddy, Software Builder based in Galway. Building AI-first with Claude Code, Claude Design and Conductor.",
   authors: [{ name: "Ian Luddy" }],
   alternates: {
     canonical: "https://www.ianluddy.com",
