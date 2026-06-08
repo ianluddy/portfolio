@@ -22,14 +22,14 @@ export const metadata: Metadata = {
   description:
     "Ian Luddy, Software Builder based in Galway. Shipping AI-first with Claude Code, Claude Design and Conductor.",
   authors: [{ name: "Ian Luddy" }],
-  metadataBase: new URL("https://www.ianluddy.com"),
+  metadataBase: new URL("https://ianluddy.com"),
   alternates: {
-    canonical: "https://www.ianluddy.com",
+    canonical: "https://ianluddy.com",
   },
   openGraph: {
     title: "Ian Luddy — Software Builder",
     description: "Ian Luddy, Software Builder based in Galway. Shipping AI-first with Claude Code, Claude Design and Conductor.",
-    url: "https://www.ianluddy.com",
+    url: "https://ianluddy.com",
     siteName: "Ian Luddy",
     locale: "en_IE",
     type: "website",
