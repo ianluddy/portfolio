@@ -146,7 +146,10 @@ export function HorizontalAccordion() {
                 }}
               >
                 <div className="overflow-hidden">
-                  <Content />
+                  {label === "Projects"
+                    ? <PanelProjects isActive={isActive} />
+                    : <Content />
+                  }
                 </div>
               </div>
             </div>
