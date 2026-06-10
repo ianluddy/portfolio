@@ -25,7 +25,7 @@ const projects: Project[] = [
     url: "https://fin.ai",
     urlLabel: "fin.ai",
     description: [
-      "The marketing site for Intercom's AI agent product — high-velocity feature shipping with Claude Code and Conductor, experimentation with Eppo, Sanity for flexible content management, hosted and deployed on Vercel, with full observability via Datadog and Sentry.",
+      "Next.js marketing site for Intercom's AI agent product, attracting 200k monthly visitors — high-velocity feature shipping with Claude Code and Conductor, experimentation with Eppo, Sanity for flexible content management, hosted and deployed on Vercel, with full observability via Datadog and Sentry.",
     ],
     stack: ["Claude Code", "Conductor", "NextJS", "Vercel", "Tailwind", "Eppo", "Datadog", "Sentry", "Sanity"],
     image: "/image/fin.webp",
@@ -37,7 +37,7 @@ const projects: Project[] = [
     url: "https://www.intercom.com",
     urlLabel: "intercom.com",
     description: [
-      "The marketing site for Intercom's customer service platform — high-velocity feature shipping with Claude Code and Conductor, experimentation with Eppo, content management through Contentful, hosted and deployed on Vercel, with full observability via Datadog and Sentry.",
+      "Next.js marketing site for Intercom's customer service platform, attracting 600k monthly visitors — high-velocity feature shipping with Claude Code and Conductor, experimentation with Eppo, content management through Contentful, hosted and deployed on Vercel, with full observability via Datadog and Sentry.",
     ],
     stack: ["Claude Code", "Conductor", "NextJS", "Vercel", "Tailwind", "Eppo", "Datadog", "Sentry", "Contentful"],
     image: "/image/intercom.webp",
@@ -49,9 +49,9 @@ const projects: Project[] = [
     url: "https://www.zendesk.com",
     urlLabel: "zendesk.com",
     description: [
-      "The marketing site for Zendesk's customer service and CRM platform, attracting around 2 million visitors each month across 16 localised languages, with experimentation and personalisation via Optimizely and full observability via Datadog and Sentry.",
+      "Next.js marketing site for Zendesk's customer service and CRM platform, attracting 2 million monthly visitors across 16 localised languages — running on AWS, experimentation and personalisation via Optimizely, analytics via Hotjar, with full observability via Datadog and Sentry.",
     ],
-    stack: ["Claude Code", "Cursor", "NextJS", "React", "Node", "Optimizely", "Adobe Target", "Storybook", "Hotjar", "AWS", "Docker"],
+    stack: ["Claude Code", "Cursor", "NextJS", "React", "Optimizely", "Adobe Target", "Storybook", "Hotjar", "AWS", "Docker"],
     image: "/image/zen.webp",
     imageAlt: "Zendesk",
     device: "laptop",
@@ -61,7 +61,7 @@ const projects: Project[] = [
     url: "https://www.dylanluddy.com",
     urlLabel: "dylanluddy.com",
     description: [
-      "A portfolio site for Dylan Luddy, a digital marketer based in London, showcasing his experience across SEO, paid media, and growth strategy — built with Next.js, Tailwind CSS, and Sanity CMS on Vercel.",
+      "Portfolio site for Dylan Luddy, a digital marketer based in London, showcasing his experience across SEO, paid media, and growth strategy — built with Next.js, Tailwind CSS, and Sanity CMS on Vercel.",
     ],
     stack: ["Claude Code", "Claude Design", "NextJS", "React", "Tailwind CSS", "Sanity CMS", "Vercel"],
     image: "/image/dylan.webp",
@@ -85,7 +85,7 @@ const projects: Project[] = [
     url: "https://ianandclaire.vercel.app/",
     urlLabel: "ianandclaire.com",
     description: [
-      "A wedding website built with Next.js, Google Fonts, and imagery from Etsy, with Google Forms handling guest RSVPs.",
+      "Wedding website built with Next.js, Google Fonts, and imagery from Etsy, with Google Forms handling guest RSVPs.",
     ],
     stack: ["NextJS", "React", "Google Fonts", "Google Forms", "Etsy"],
     image: "/image/wed.webp",
@@ -98,7 +98,7 @@ const projects: Project[] = [
     url: "https://www.enterprise-ireland.com/",
     urlLabel: "enterprise-ireland.com",
     description: [
-      "A WordPress marketing site for Enterprise Ireland, designed to promote Ireland's export strengths and connect Irish businesses with international markets.",
+      "WordPress marketing site for Enterprise Ireland, designed to promote Ireland's export strengths and connect Irish businesses with international markets.",
     ],
     stack: ["PHP", "WordPress", "WPML", "WPEngine", "AWS", "Docker"],
     image: "/image/adv.webp",
@@ -123,7 +123,7 @@ const projects: Project[] = [
     url: "https://bakedgoodes.vercel.app/",
     urlLabel: "bakedgoodes.ie",
     description: [
-      "A fast, responsive Next.js site for a baking business, with Formik-powered order and inquiry forms and Sentry for error tracking.",
+      "Fast, responsive Next.js site for a baking business, with Formik-powered order and inquiry forms and Sentry for error tracking.",
     ],
     stack: ["NextJS", "React", "Google Fonts", "Google Maps", "Sentry", "Formik", "Etsy"],
     image: "/image/baked.webp",
@@ -148,7 +148,7 @@ const projects: Project[] = [
     url: "https://dpd.ie/",
     urlLabel: "dpd.ie",
     description: [
-      "A delivery management web app integrated with DPD's portal backend — now used by thousands of people every week.",
+      "Delivery management web app integrated with DPD's portal backend — now used by thousands of people every week.",
     ],
     stack: [".NET", "Microsoft IIS", "SQL Server", "Postman"],
     image: "/image/dpd.webp",
@@ -161,7 +161,7 @@ const projects: Project[] = [
     url: "https://weirandsons.ie",
     urlLabel: "weirandsons.ie",
     description: [
-      "An eCommerce site for weirandsons.ie, a renowned Irish jewellery retailer, combining WordPress for the frontend with Magento for the backend.",
+      "eCommerce site for weirandsons.ie, a renowned Irish jewellery retailer, combining WordPress for the frontend with Magento for the backend.",
     ],
     stack: ["PHP", "WordPress", "WPEngine", "Magento"],
     image: "/image/weir.webp",
@@ -173,7 +173,7 @@ const projects: Project[] = [
     url: "https://www.hsscu.ie/",
     urlLabel: "hsscu.ie",
     description: [
-      "A modern WordPress platform for the Health Services Staffs Credit Union, covering online banking, loan calculators, and financial resources, with SEO and analytics setup.",
+      "Modern WordPress platform for the Health Services Staffs Credit Union, covering online banking, loan calculators, and financial resources, with SEO and analytics setup.",
     ],
     stack: ["PHP", "WordPress", "WPEngine", "Bootstrap", "Slick Slider", "AWS", "Docker"],
     image: "/image/hss.webp",
@@ -185,7 +185,7 @@ const projects: Project[] = [
     url: "https://www.mfcu.ie",
     urlLabel: "mfcu.ie",
     description: [
-      "A modern WordPress site for Member First Credit Union, with a custom loan calculator and AWS hosting for speed, scalability, and security.",
+      "Modern WordPress site for Member First Credit Union, with a custom loan calculator and AWS hosting for speed, scalability, and security.",
     ],
     stack: ["PHP", "WordPress", "Bootstrap", "AWS", "Docker"],
     image: "/image/mfcu.webp",
