@@ -168,7 +168,14 @@ export function PanelProjects({ isActive }: { isActive?: boolean }) {
   const [selected, setSelected] = useState<number | null>(null);
 
   useEffect(() => {
-    if (!isActive) setSelected(null);
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+    if (isActive) {
+      const timer = setTimeout(() => setSelected(0), isMobile ? 300 : 460);
+      return () => clearTimeout(timer);
+    } else {
+      const timer = setTimeout(() => setSelected(null), isMobile ? 270 : 390);
+      return () => clearTimeout(timer);
+    }
   }, [isActive]);
 
   return (

@@ -1,6 +1,6 @@
 export function PanelAbout() {
   return (
-    <div className="h-full flex flex-col justify-start p-8 md:p-16 gap-6">
+    <div className="min-h-[calc(100svh-210px)] md:h-full flex flex-col justify-start p-8 md:p-16 gap-6">
 <div className="space-y-4 text-sm leading-loose text-muted max-w-lg">
         <p>
           I&apos;m a full-stack software builder from Galway with a passion for
