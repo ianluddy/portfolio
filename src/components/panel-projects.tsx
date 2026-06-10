@@ -18,7 +18,7 @@ const projects: Project[] = [
     urlLabel: "fin.ai",
     tagline: "Marketing site for Intercom's AI agent product",
     description: [
-      "The marketing site for Intercom's AI agent product — high-velocity feature shipping, experimentation with Eppo, Sanity for flexible content management, hosted and deployed on Vercel, with full observability via Datadog and Sentry.",
+      "The marketing site for Intercom's AI agent product — high-velocity feature shipping with Claude Code and Conductor, experimentation with Eppo, Sanity for flexible content management, hosted and deployed on Vercel, with full observability via Datadog and Sentry.",
     ],
     stack: ["Claude Code", "Conductor", "NextJS", "Vercel", "Tailwind", "Eppo", "Datadog", "Sentry", "Sanity"],
   },
@@ -28,7 +28,7 @@ const projects: Project[] = [
     urlLabel: "intercom.com",
     tagline: "Marketing site for the leading customer service platform",
     description: [
-      "The main marketing site for Intercom's customer service platform — high-velocity feature shipping, experimentation with Eppo, content management through Contentful, hosted and deployed on Vercel, with full observability via Datadog and Sentry.",
+      "The marketing site for Intercom's customer service platform — high-velocity feature shipping with Claude Code and Conductor, experimentation with Eppo, content management through Contentful, hosted and deployed on Vercel, with full observability via Datadog and Sentry.",
     ],
     stack: ["Claude Code", "Conductor", "NextJS", "Vercel", "Tailwind", "Eppo", "Datadog", "Sentry", "Contentful"],
   },
@@ -187,7 +187,7 @@ export function PanelProjects({ isActive }: { isActive?: boolean }) {
                   <span className={`text-sm transition-colors ${isOpen ? "text-foreground" : "text-muted group-hover:text-foreground"}`}>
                     {project.title}
                   </span>
-                  <span className="hidden md:inline text-sm text-subtle ml-4">
+                  <span className="hidden md:inline text-sm text-subtle ml-4 transition-colors group-hover:text-muted">
                     {project.tagline}
                   </span>
                 </div>
