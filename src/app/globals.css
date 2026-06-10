@@ -14,13 +14,12 @@
 }
 
 .dark {
-  /* Dark mode — cool neutral greys, higher contrast */
-  --background: #1a1a1a;
-  --foreground: #e2e2e2;
-  --muted:      #acacac;
-  --subtle:     #6e6e6e;
-  --border:     rgba(226, 226, 226, 0.10);
-  --accent:     #b06070;
+  --background: #121212;
+  --foreground: #ffffff;
+  --muted:      #b0b0b0;
+  --subtle:     #606060;
+  --border:     rgba(255, 255, 255, 0.10);
+  --accent:     #ff6b6b;
 }
 
 @theme inline {

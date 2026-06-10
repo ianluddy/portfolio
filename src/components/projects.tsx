@@ -25,7 +25,7 @@ const projects: Project[] = [
     url: "https://fin.ai",
     urlLabel: "fin.ai",
     description: [
-      "The marketing site for Intercom's AI agent product — high-velocity feature shipping, experimentation with Eppo, Sanity for flexible content management, hosted and deployed on Vercel, with full observability via Datadog and Sentry.",
+      "The marketing site for Intercom's AI agent product — high-velocity feature shipping with Claude Code and Conductor, experimentation with Eppo, Sanity for flexible content management, hosted and deployed on Vercel, with full observability via Datadog and Sentry.",
     ],
     stack: ["Claude Code", "Conductor", "NextJS", "Vercel", "Tailwind", "Eppo", "Datadog", "Sentry", "Sanity"],
     image: "/image/fin.webp",
@@ -37,7 +37,7 @@ const projects: Project[] = [
     url: "https://www.intercom.com",
     urlLabel: "intercom.com",
     description: [
-      "The main marketing site for Intercom's customer service platform — high-velocity feature shipping, experimentation with Eppo, content management through Contentful, hosted and deployed on Vercel, with full observability via Datadog and Sentry.",
+      "The marketing site for Intercom's customer service platform — high-velocity feature shipping with Claude Code and Conductor, experimentation with Eppo, content management through Contentful, hosted and deployed on Vercel, with full observability via Datadog and Sentry.",
     ],
     stack: ["Claude Code", "Conductor", "NextJS", "Vercel", "Tailwind", "Eppo", "Datadog", "Sentry", "Contentful"],
     image: "/image/intercom.webp",
