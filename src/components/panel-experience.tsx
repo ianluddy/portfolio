@@ -45,7 +45,7 @@ const timeline = [
     role: "Senior Back End Developer",
     company: "Qualio",
     url: "http://www.qualio.com",
-    description: "Primary backend Python developer on Qualio's SaaS Quality Management platform, built on Pyramid for pharma and life sciences organisations navigating FDA and ISO compliance. Refactored legacy code, developed a new API, and maintained high uptime on AWS.",
+    description: "Lead Python developer on Qualio's SaaS Quality Management platform, built on Pyramid for pharma and life sciences organisations navigating FDA and ISO compliance. Refactored legacy code, developed a new API, and maintained high uptime on AWS.",
   },
   {
     date: "Oct 2012",
