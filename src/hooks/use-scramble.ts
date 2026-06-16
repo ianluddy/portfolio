@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+const FRAME_MS = 1000 / (60 * 0.7); // ~24ms — 30% slower than 60fps
+
 function randomChar(target: string): string {
   if (target >= "a" && target <= "z") {
     return String.fromCharCode(97 + Math.floor(Math.random() * 26));
@@ -25,28 +27,36 @@ export function useScramble(text: string, delay = 0, duration = 1200): string {
     const n = chars.length;
     let rafId: number;
     let settleStart: number | null = null;
+    let lastRenderTime = 0;
     const mountTime = performance.now();
 
     function tick(ts: number) {
       const elapsed = ts - mountTime;
+      const due = ts - lastRenderTime >= FRAME_MS;
 
       if (elapsed < delay) {
-        // Pre-settle phase: all chars cycle continuously
-        setDisplayed(chars.map(c => (isPreserved(c) ? c : randomChar(c))).join(""));
+        // Pre-settle: cycle all chars at throttled rate
+        if (due) {
+          setDisplayed(chars.map(c => (isPreserved(c) ? c : randomChar(c))).join(""));
+          lastRenderTime = ts;
+        }
         rafId = requestAnimationFrame(tick);
       } else {
-        // Settle phase: chars lock in left-to-right
+        // Settle: lock chars left-to-right, unsettled ones keep cycling
         if (settleStart === null) settleStart = ts;
         const progress = Math.min((ts - settleStart) / duration, 1);
 
-        setDisplayed(
-          chars
-            .map((c, i) => {
-              if (isPreserved(c)) return c;
-              return progress >= (i + 1) / n ? c : randomChar(c);
-            })
-            .join("")
-        );
+        if (due || progress === 1) {
+          setDisplayed(
+            chars
+              .map((c, i) => {
+                if (isPreserved(c)) return c;
+                return progress >= (i + 1) / n ? c : randomChar(c);
+              })
+              .join("")
+          );
+          lastRenderTime = ts;
+        }
 
         if (progress < 1) {
           rafId = requestAnimationFrame(tick);
@@ -55,7 +65,6 @@ export function useScramble(text: string, delay = 0, duration = 1200): string {
     }
 
     rafId = requestAnimationFrame(tick);
-
     return () => cancelAnimationFrame(rafId);
   }, [text, delay, duration]);
 
