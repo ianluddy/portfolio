@@ -6,17 +6,18 @@ interface ScrambleTextProps {
   text: string;
   delay?: number;
   duration?: number;
+  wrap?: boolean;
 }
 
-export function ScrambleText({ text, delay = 0, duration = 1200 }: ScrambleTextProps) {
+export function ScrambleText({ text, delay = 0, duration = 1200, wrap = false }: ScrambleTextProps) {
   const displayed = useScramble(text, delay, duration);
 
   return (
     <span style={{ display: "inline-grid" }}>
-      {/* Invisible real text — anchors the grid cell to the correct dimensions */}
       <span style={{ visibility: "hidden", gridArea: "1/1" }}>{text}</span>
-      {/* Visible scrambled/settled text — wraps naturally, clipped to the cell */}
-      <span style={{ gridArea: "1/1", overflow: "hidden" }}>{displayed}</span>
+      <span style={{ gridArea: "1/1", overflow: "hidden", whiteSpace: wrap ? "normal" : "nowrap" }}>
+        {displayed}
+      </span>
     </span>
   );
 }

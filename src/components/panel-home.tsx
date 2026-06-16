@@ -18,6 +18,7 @@ export function PanelHome() {
             text="Building software at the speed of thought with AI"
             delay={500}
             duration={1600}
+            wrap
           />
         </p>
 

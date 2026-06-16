@@ -197,7 +197,7 @@ export function PanelProjects({ isActive }: { isActive?: boolean }) {
                     <ScrambleText text={project.title} delay={base} duration={Math.min(900, project.title.length * 40)} />
                   </span>
                   <span className="hidden md:inline text-sm text-subtle ml-4 transition-colors group-hover:text-muted">
-                    <ScrambleText text={project.tagline} delay={base + 60} duration={Math.min(1400, project.tagline.length * 18)} />
+                    <ScrambleText text={project.tagline} delay={base + 60} duration={Math.min(1400, project.tagline.length * 18)} wrap />
                   </span>
                 </div>
                 <span className={`text-foreground/50 text-xl leading-none flex-none transition-transform duration-300 ${isOpen ? "rotate-45" : "group-hover:text-foreground"}`}>

@@ -31,6 +31,7 @@ export function Hero() {
                 text="One engineer · Many agents · Parallel workflows · Shipping at full velocity"
                 delay={400}
                 duration={2200}
+                wrap
               />
             </p>
           </div>
