@@ -81,46 +81,51 @@ const timeline = [
   },
 ];
 
+import { ScrambleText } from "@/components/scramble-text";
+
 export function PanelExperience() {
   return (
     <div className="h-full flex flex-col p-8 md:p-16">
       <div className="flex-1 overflow-y-auto">
-        {timeline.map((item, i) => (
-          <div key={i} className="py-1.5 md:py-4 flex flex-col gap-1">
-            <div className="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-0">
-              <div className="md:w-56 flex-none">
-                <a
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-accent hover:text-foreground transition-colors"
-                >
-                  {item.company}
-                </a>
+        {timeline.map((item, i) => {
+          const base = 200 + i * 80;
+          return (
+            <div key={i} className="py-1.5 md:py-4 flex flex-col gap-1">
+              <div className="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-0">
+                <div className="md:w-56 flex-none">
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-accent hover:text-foreground transition-colors"
+                  >
+                    <ScrambleText text={item.company} delay={base} duration={500} />
+                  </a>
+                </div>
+                <div className="flex-1 text-sm text-muted">
+                  <ScrambleText text={item.role} delay={base + 50} duration={Math.min(1200, item.role.length * 18)} />
+                </div>
+                <div className="hidden md:block md:w-48 flex-none text-right">
+                  <span className="text-[10px] tracking-widest text-subtle uppercase">
+                    <ScrambleText text={`${item.date} – ${item.endDate}`} delay={base + 100} duration={700} />
+                  </span>
+                </div>
               </div>
-              <div className="flex-1 text-sm text-muted">
-                {item.role}
-              </div>
-              <div className="hidden md:block md:w-48 flex-none text-right">
+              {item.description && (
+                <div className="md:pl-56 pt-2 pb-1">
+                  <p className="text-sm leading-relaxed text-subtle max-w-2xl">
+                    {item.description}
+                  </p>
+                </div>
+              )}
+              <div className="md:hidden pb-2">
                 <span className="text-[10px] tracking-widest text-subtle uppercase">
-                  {item.date} – {item.endDate}
+                  <ScrambleText text={`${item.date} – ${item.endDate}`} delay={base + 100} duration={700} />
                 </span>
               </div>
             </div>
-            {item.description && (
-              <div className="md:pl-56 pt-2 pb-1">
-                <p className="text-sm leading-relaxed text-subtle max-w-2xl">
-                  {item.description}
-                </p>
-              </div>
-            )}
-            <div className="md:hidden pb-2">
-              <span className="text-[10px] tracking-widest text-subtle uppercase">
-                {item.date} – {item.endDate}
-              </span>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

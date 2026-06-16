@@ -22,7 +22,17 @@ const panels = [
 export function HorizontalAccordion() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [visitedPanels, setVisitedPanels] = useState<Set<number>>(new Set([0]));
   const panelScrollRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  function markVisited(i: number) {
+    setVisitedPanels(prev => {
+      if (prev.has(i)) return prev;
+      const next = new Set(prev);
+      next.add(i);
+      return next;
+    });
+  }
 
   // Reset desktop panel scroll to top after the width animation completes
   useEffect(() => {
@@ -36,6 +46,7 @@ export function HorizontalAccordion() {
 
   function openPanel(i: number) {
     setActiveIndex(i);
+    markVisited(i);
     // Wait one frame so React commits the DOM update and scroll anchoring
     // has run, then hard-reset to the top before the animation plays.
     requestAnimationFrame(() => {
@@ -65,7 +76,7 @@ export function HorizontalAccordion() {
                   ? "color-mix(in srgb, var(--foreground) 4%, transparent)"
                   : "transparent",
               }}
-              onClick={() => !isActive && setActiveIndex(i)}
+              onClick={() => { if (!isActive) { setActiveIndex(i); markVisited(i); } }}
               onMouseEnter={() => !isActive && setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
@@ -107,10 +118,11 @@ export function HorizontalAccordion() {
                   pointerEvents: isActive ? "auto" : "none",
                 }}
               >
-                {label === "Projects"
-                  ? <PanelProjects isActive={isActive} />
-                  : <Content />
-                }
+                {visitedPanels.has(i) && (
+                  label === "Projects"
+                    ? <PanelProjects isActive={isActive} />
+                    : <Content />
+                )}
               </div>
             </div>
           );
@@ -147,10 +159,11 @@ export function HorizontalAccordion() {
                 }}
               >
                 <div className="overflow-hidden">
-                  {label === "Projects"
-                    ? <PanelProjects isActive={isActive} />
-                    : <Content />
-                  }
+                  {visitedPanels.has(i) && (
+                    label === "Projects"
+                      ? <PanelProjects isActive={isActive} />
+                      : <Content />
+                  )}
                 </div>
               </div>
             </div>
