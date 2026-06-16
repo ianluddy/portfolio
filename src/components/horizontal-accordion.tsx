@@ -79,7 +79,7 @@ export function HorizontalAccordion() {
                 }}
               >
                 <span className="text-[10px] font-normal tracking-[0.15em]">
-                  <ScrambleText text={id} delay={i * 150} duration={300} />
+                  <ScrambleText text={id} delay={200 + i * 200} duration={700} />
                 </span>
                 <span
                   className="text-xs font-normal tracking-[0.18em] uppercase"
@@ -88,7 +88,7 @@ export function HorizontalAccordion() {
                     transform: "rotate(180deg)",
                   }}
                 >
-                  <ScrambleText text={label} delay={i * 150 + 50} duration={Math.max(400, label.length * 60)} />
+                  <ScrambleText text={label} delay={350 + i * 200} duration={Math.max(800, label.length * 80)} />
                 </span>
               </div>
 
@@ -129,10 +129,10 @@ export function HorizontalAccordion() {
                 onClick={() => openPanel(i)}
               >
                 <span className="text-[10px] font-light tracking-[0.15em] text-subtle flex-none">
-                  <ScrambleText text={id} delay={i * 150} duration={300} />
+                  <ScrambleText text={id} delay={200 + i * 200} duration={700} />
                 </span>
                 <span className="text-[10px] font-light tracking-[0.18em] text-subtle uppercase flex-1">
-                  <ScrambleText text={label} delay={i * 150 + 50} duration={Math.max(400, label.length * 60)} />
+                  <ScrambleText text={label} delay={350 + i * 200} duration={Math.max(800, label.length * 80)} />
                 </span>
                 <span className={`text-subtle text-sm flex-none transition-transform ${isActive ? "rotate-45" : ""}`}>
                   +
