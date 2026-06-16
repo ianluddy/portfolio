@@ -5,6 +5,7 @@ import { PanelHome } from "./panel-home";
 import { PanelAbout } from "./panel-about";
 import { PanelProjects } from "./panel-projects";
 import { PanelExperience } from "./panel-experience";
+import { ScrambleText } from "./scramble-text";
 
 const COLLAPSED_PX = 56;
 const DESKTOP_ANIM_MS = 390;
@@ -78,7 +79,7 @@ export function HorizontalAccordion() {
                 }}
               >
                 <span className="text-[10px] font-normal tracking-[0.15em]">
-                  {id}
+                  <ScrambleText text={id} delay={i * 150} duration={300} />
                 </span>
                 <span
                   className="text-xs font-normal tracking-[0.18em] uppercase"
@@ -87,7 +88,7 @@ export function HorizontalAccordion() {
                     transform: "rotate(180deg)",
                   }}
                 >
-                  {label}
+                  <ScrambleText text={label} delay={i * 150 + 50} duration={Math.max(400, label.length * 60)} />
                 </span>
               </div>
 
@@ -128,10 +129,10 @@ export function HorizontalAccordion() {
                 onClick={() => openPanel(i)}
               >
                 <span className="text-[10px] font-light tracking-[0.15em] text-subtle flex-none">
-                  {id}
+                  <ScrambleText text={id} delay={i * 150} duration={300} />
                 </span>
                 <span className="text-[10px] font-light tracking-[0.18em] text-subtle uppercase flex-1">
-                  {label}
+                  <ScrambleText text={label} delay={i * 150 + 50} duration={Math.max(400, label.length * 60)} />
                 </span>
                 <span className={`text-subtle text-sm flex-none transition-transform ${isActive ? "rotate-45" : ""}`}>
                   +

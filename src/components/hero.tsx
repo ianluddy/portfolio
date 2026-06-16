@@ -3,19 +3,9 @@
 import { Button } from "@/components/ui/button";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { ArrowDown } from "lucide-react";
-import { useScramble } from "@/hooks/use-scramble";
+import { ScrambleText } from "@/components/scramble-text";
 
 export function Hero() {
-  const heading = useScramble("Ian Luddy", 0, 1200);
-  const subheading = useScramble(
-    "One engineer · Many agents · Parallel workflows · Shipping at full velocity",
-    400,
-    2200
-  );
-  const btnProjects = useScramble("View Projects", 900, 600);
-  const btnGithub = useScramble("GitHub", 1100, 400);
-  const btnLinkedin = useScramble("LinkedIn", 1200, 500);
-
   return (
     <section
       id="home"
@@ -32,12 +22,16 @@ export function Hero() {
         <div className="max-w-3xl mx-auto text-center space-y-6">
           <div className="hero-fade-in hero-fade-in-1">
             <h1 className="text-[66px] xs:text-[80px] sm:text-[90px] md:text-[120px] lg:text-[150px] xl:text-[170px] font-heading-shade leading-none">
-              {heading}
+              <ScrambleText text="Ian Luddy" delay={0} duration={1200} />
             </h1>
           </div>
           <div className="hero-fade-in hero-fade-in-2">
             <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[28px] font-base text-foreground/80">
-              {subheading}
+              <ScrambleText
+                text="One engineer · Many agents · Parallel workflows · Shipping at full velocity"
+                delay={400}
+                duration={2200}
+              />
             </p>
           </div>
           <div className="hero-fade-in hero-fade-in-3">
@@ -45,19 +39,19 @@ export function Hero() {
               <a href="#projects" className="w-full sm:w-auto">
                 <Button className="text-base px-6 py-3 w-full sm:w-auto">
                   <ArrowDown className="mr-2 h-4 w-4" />
-                  {btnProjects}
+                  <ScrambleText text="View Projects" delay={900} duration={600} />
                 </Button>
               </a>
               <a href="https://github.com/ianluddy" className="w-full sm:w-auto">
                 <Button className="text-base px-6 py-3 bg-secondary w-full sm:w-auto">
                   <GithubIcon className="mr-2 h-4 w-4" />
-                  {btnGithub}
+                  <ScrambleText text="GitHub" delay={1100} duration={400} />
                 </Button>
               </a>
               <a href="https://ie.linkedin.com/in/ianluddy" className="w-full sm:w-auto">
                 <Button className="text-base px-6 py-3 bg-secondary w-full sm:w-auto">
                   <LinkedinIcon className="mr-2 h-4 w-4" />
-                  {btnLinkedin}
+                  <ScrambleText text="LinkedIn" delay={1200} duration={500} />
                 </Button>
               </a>
             </div>
