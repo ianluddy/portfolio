@@ -24,14 +24,20 @@ export function useScramble(text: string, delay = 0, duration = 1200): string {
     const chars = text.split("");
     const n = chars.length;
     let rafId: number;
-    let start: number | null = null;
+    let settleStart: number | null = null;
+    const mountTime = performance.now();
 
-    setDisplayed(chars.map(c => (isPreserved(c) ? c : randomChar(c))).join(""));
+    function tick(ts: number) {
+      const elapsed = ts - mountTime;
 
-    const timeoutId = window.setTimeout(() => {
-      function tick(ts: number) {
-        if (start === null) start = ts;
-        const progress = Math.min((ts - start) / duration, 1);
+      if (elapsed < delay) {
+        // Pre-settle phase: all chars cycle continuously
+        setDisplayed(chars.map(c => (isPreserved(c) ? c : randomChar(c))).join(""));
+        rafId = requestAnimationFrame(tick);
+      } else {
+        // Settle phase: chars lock in left-to-right
+        if (settleStart === null) settleStart = ts;
+        const progress = Math.min((ts - settleStart) / duration, 1);
 
         setDisplayed(
           chars
@@ -46,14 +52,11 @@ export function useScramble(text: string, delay = 0, duration = 1200): string {
           rafId = requestAnimationFrame(tick);
         }
       }
+    }
 
-      rafId = requestAnimationFrame(tick);
-    }, delay);
+    rafId = requestAnimationFrame(tick);
 
-    return () => {
-      clearTimeout(timeoutId);
-      cancelAnimationFrame(rafId);
-    };
+    return () => cancelAnimationFrame(rafId);
   }, [text, delay, duration]);
 
   return displayed;
