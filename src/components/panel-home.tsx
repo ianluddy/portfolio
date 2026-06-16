@@ -1,6 +1,7 @@
 "use client";
 
 import { ScrambleText } from "@/components/scramble-text";
+import { ScrambleParagraph } from "@/components/scramble-paragraph";
 
 export function PanelHome() {
   return (
@@ -13,14 +14,14 @@ export function PanelHome() {
           </h1>
         </div>
 
-        <p className="text-sm leading-relaxed text-muted max-w-sm">
-          <ScrambleText
-            text="Building software at the speed of thought with AI"
-            delay={500}
-            duration={1600}
-            wrap
-          />
-        </p>
+        <ScrambleParagraph
+          text="Building software at the speed of thought with AI"
+          delay={500}
+          duration={1600}
+          className="text-sm leading-relaxed text-muted max-w-sm"
+        >
+          Building software at the speed of thought with AI
+        </ScrambleParagraph>
 
         <div className="space-y-1 text-[10px] tracking-[0.2em] text-subtle uppercase">
           <p><ScrambleText text="Galway, Ireland" delay={900} duration={700} /></p>
