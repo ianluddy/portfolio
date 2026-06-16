@@ -82,6 +82,7 @@ const timeline = [
 ];
 
 import { ScrambleText } from "@/components/scramble-text";
+import { ScrambleParagraph } from "@/components/scramble-paragraph";
 
 export function PanelExperience() {
   return (
@@ -113,9 +114,14 @@ export function PanelExperience() {
               </div>
               {item.description && (
                 <div className="md:pl-56 pt-2 pb-1">
-                  <p className="text-sm leading-relaxed text-subtle max-w-2xl">
+                  <ScrambleParagraph
+                    text={item.description}
+                    delay={base + 150}
+                    duration={Math.min(3000, item.description.length * 15)}
+                    className="text-sm leading-relaxed text-subtle max-w-2xl"
+                  >
                     {item.description}
-                  </p>
+                  </ScrambleParagraph>
                 </div>
               )}
               <div className="md:hidden pb-2">
