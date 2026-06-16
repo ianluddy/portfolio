@@ -1,8 +1,18 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { ArrowDown } from "lucide-react";
+import { useScramble } from "@/hooks/use-scramble";
 
 export function Hero() {
+  const heading = useScramble("Ian Luddy", 0, 1200);
+  const subheading = useScramble(
+    "One engineer · Many agents · Parallel workflows · Shipping at full velocity",
+    400,
+    2200
+  );
+
   return (
     <section
       id="home"
@@ -19,12 +29,12 @@ export function Hero() {
         <div className="max-w-3xl mx-auto text-center space-y-6">
           <div className="hero-fade-in hero-fade-in-1">
             <h1 className="text-[66px] xs:text-[80px] sm:text-[90px] md:text-[120px] lg:text-[150px] xl:text-[170px] font-heading-shade leading-none">
-              Ian Luddy
+              {heading}
             </h1>
           </div>
           <div className="hero-fade-in hero-fade-in-2">
             <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[28px] font-base text-foreground/80">
-              One engineer · Many agents · Parallel workflows · Shipping at full velocity
+              {subheading}
             </p>
           </div>
           <div className="hero-fade-in hero-fade-in-3">
