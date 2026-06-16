@@ -10,22 +10,13 @@ interface ScrambleTextProps {
 
 export function ScrambleText({ text, delay = 0, duration = 1200 }: ScrambleTextProps) {
   const displayed = useScramble(text, delay, duration);
-  const isAnimating = displayed !== text;
 
   return (
     <span style={{ display: "inline-grid" }}>
-      {/* Always present, invisible — fixes the grid cell to the real text's dimensions */}
+      {/* Invisible real text — anchors the grid cell to the correct dimensions */}
       <span style={{ visibility: "hidden", gridArea: "1/1" }}>{text}</span>
-      {/* Visible layer — nowrap + clipped during scramble so it never affects layout */}
-      <span
-        style={{
-          gridArea: "1/1",
-          overflow: "hidden",
-          whiteSpace: isAnimating ? "nowrap" : "normal",
-        }}
-      >
-        {displayed}
-      </span>
+      {/* Visible scrambled/settled text — wraps naturally, clipped to the cell */}
+      <span style={{ gridArea: "1/1", overflow: "hidden" }}>{displayed}</span>
     </span>
   );
 }
