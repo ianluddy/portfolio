@@ -54,6 +54,55 @@
   }
 }
 
+/* ── Flip-board (split-flap) animation ── */
+.flip-board {
+  display: inline-flex;
+  gap: 0.05em;
+  perspective: 400px;
+}
+
+.flip-tile {
+  display: inline-flex;
+  flex-direction: column;
+  overflow: hidden;
+  line-height: 0.5;
+}
+
+.flip-tile-inner {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.flip-half {
+  display: block;
+  overflow: hidden;
+  height: 0.5em;
+  line-height: 1;
+  backface-visibility: hidden;
+  transform-origin: bottom center;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.flip-top {
+  transform-origin: bottom center;
+  align-items: flex-start;
+  display: flex;
+}
+
+.flip-bottom {
+  transform-origin: top center;
+  align-items: flex-end;
+  display: flex;
+  margin-top: 0.02em;
+}
+
+.flip-settled .flip-top,
+.flip-settled .flip-bottom {
+  transition: none !important;
+  transform: none !important;
+}
+
 /* Desktop: prevent page scroll — accordion fills viewport */
 @media (min-width: 768px) {
   html,

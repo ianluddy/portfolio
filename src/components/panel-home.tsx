@@ -1,10 +1,15 @@
+"use client";
+
+import { FlipBoard } from "@/components/flip-board";
+
 export function PanelHome() {
   return (
     <div className="min-h-[calc(100svh-210px)] md:h-full flex flex-col justify-between p-8 md:p-16">
       <div className="space-y-3 md:space-y-5">
         <div className="space-y-2">
           <h1 className="font-display text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tight uppercase text-muted">
-            Ian<br />Luddy
+            <FlipBoard text="Ian" className="block" />
+            <FlipBoard text="Luddy" className="block" />
           </h1>
         </div>
 
