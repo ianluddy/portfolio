@@ -12,6 +12,9 @@ export function Hero() {
     400,
     2200
   );
+  const btnProjects = useScramble("View Projects", 900, 600);
+  const btnGithub = useScramble("GitHub", 1100, 400);
+  const btnLinkedin = useScramble("LinkedIn", 1200, 500);
 
   return (
     <section
@@ -42,19 +45,19 @@ export function Hero() {
               <a href="#projects" className="w-full sm:w-auto">
                 <Button className="text-base px-6 py-3 w-full sm:w-auto">
                   <ArrowDown className="mr-2 h-4 w-4" />
-                  View Projects
+                  {btnProjects}
                 </Button>
               </a>
               <a href="https://github.com/ianluddy" className="w-full sm:w-auto">
                 <Button className="text-base px-6 py-3 bg-secondary w-full sm:w-auto">
                   <GithubIcon className="mr-2 h-4 w-4" />
-                  GitHub
+                  {btnGithub}
                 </Button>
               </a>
               <a href="https://ie.linkedin.com/in/ianluddy" className="w-full sm:w-auto">
                 <Button className="text-base px-6 py-3 bg-secondary w-full sm:w-auto">
                   <LinkedinIcon className="mr-2 h-4 w-4" />
-                  LinkedIn
+                  {btnLinkedin}
                 </Button>
               </a>
             </div>

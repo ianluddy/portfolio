@@ -6,6 +6,11 @@ export function PanelHome() {
   const line1 = useScramble("Ian", 0, 600);
   const line2 = useScramble("Luddy", 200, 900);
   const sub = useScramble("Building software at the speed of thought with AI", 500, 1600);
+  const location = useScramble("Galway, Ireland", 900, 700);
+  const availability = useScramble("Available for contract work", 1100, 1000);
+  const email = useScramble("ianluddy@gmail.com", 1400, 800);
+  const github = useScramble("github.com/ianluddy", 1600, 800);
+  const linkedin = useScramble("linkedin.com/in/ianluddy", 1800, 900);
 
   return (
     <div className="min-h-[calc(100svh-210px)] md:h-full flex flex-col justify-between p-8 md:p-16">
@@ -21,8 +26,8 @@ export function PanelHome() {
         </p>
 
         <div className="space-y-1 text-[10px] tracking-[0.2em] text-subtle uppercase">
-          <p>Galway, Ireland</p>
-          <p>Available for contract work</p>
+          <p>{location}</p>
+          <p>{availability}</p>
         </div>
       </div>
 
@@ -31,7 +36,7 @@ export function PanelHome() {
           href="mailto:ianluddy@gmail.com"
           className="text-[10px] tracking-widest text-accent hover:text-foreground transition-colors uppercase"
         >
-          ianluddy@gmail.com
+          {email}
         </a>
         <a
           href="https://github.com/ianluddy"
@@ -39,7 +44,7 @@ export function PanelHome() {
           rel="noopener noreferrer"
           className="text-[10px] tracking-widest text-accent hover:text-foreground transition-colors uppercase"
         >
-          github.com/ianluddy
+          {github}
         </a>
         <a
           href="https://ie.linkedin.com/in/ianluddy"
@@ -47,7 +52,7 @@ export function PanelHome() {
           rel="noopener noreferrer"
           className="text-[10px] tracking-widest text-accent hover:text-foreground transition-colors uppercase"
         >
-          linkedin.com/in/ianluddy
+          {linkedin}
         </a>
       </div>
     </div>

@@ -1,13 +1,20 @@
 import { useState, useEffect } from "react";
 
-const SCRAMBLE_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*+=";
-
-function randomChar(): string {
-  return SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
+function randomChar(target: string): string {
+  if (target >= "a" && target <= "z") {
+    return String.fromCharCode(97 + Math.floor(Math.random() * 26));
+  }
+  if (target >= "A" && target <= "Z") {
+    return String.fromCharCode(65 + Math.floor(Math.random() * 26));
+  }
+  if (target >= "0" && target <= "9") {
+    return String.fromCharCode(48 + Math.floor(Math.random() * 10));
+  }
+  return target;
 }
 
 function isPreserved(c: string): boolean {
-  return c === " " || c === "·" || c === "\n" || c === "\t";
+  return !/[a-zA-Z0-9]/.test(c);
 }
 
 export function useScramble(text: string, delay = 0, duration = 1200): string {
@@ -19,7 +26,7 @@ export function useScramble(text: string, delay = 0, duration = 1200): string {
     let rafId: number;
     let start: number | null = null;
 
-    setDisplayed(chars.map(c => (isPreserved(c) ? c : randomChar())).join(""));
+    setDisplayed(chars.map(c => (isPreserved(c) ? c : randomChar(c))).join(""));
 
     const timeoutId = window.setTimeout(() => {
       function tick(ts: number) {
@@ -30,7 +37,7 @@ export function useScramble(text: string, delay = 0, duration = 1200): string {
           chars
             .map((c, i) => {
               if (isPreserved(c)) return c;
-              return progress >= (i + 1) / n ? c : randomChar();
+              return progress >= (i + 1) / n ? c : randomChar(c);
             })
             .join("")
         );
