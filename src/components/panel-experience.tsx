@@ -5,7 +5,7 @@ const timeline = [
     role: "Senior Web Engineer",
     company: "Fin (formerly Intercom)",
     url: "https://fin.ai/",
-    description: "Web engineer on the marketing and growth team across both Intercom — the best-in-class customer service platform — and its major AI pivot to Fin, an AI agent product that now powers millions of customer interactions. Work spans CMS integration, localisation systems for global markets, full-stack observability tooling, on-call incident response, and high-velocity feature shipping. The Fin pivot was capped by Salesforce's $3.6B acquisition of the company.",
+    description: "Web engineering across both Intercom — the best-in-class customer service platform — and its major AI pivot to Fin, an AI agent product that now powers millions of customer interactions. Work spans CMS integration, localisation systems for global markets, full-stack observability tooling, on-call incident response, high-velocity feature shipping, and creating and maintaining Claude skills to maximise engineering workflow efficiency. The Fin pivot was capped by Salesforce's $3.6B acquisition of the company.",
   },
   {
     date: "Dec 2019",
