@@ -13,7 +13,7 @@ const timeline = [
     role: "Senior Web Engineer",
     company: "Zendesk",
     url: "http://www.zendesk.com/",
-    description: "Led the experimentation program across marketing sites attracting ~2M visitors monthly, running 400+ A/B tests and personalisation campaigns. Collaborated with product and design to build out high-performance experiences and reusable design system components, with lead responsibilities across engineering teams in EMEA and APAC.",
+    description: "Led the experimentation program across marketing sites attracting ~2M visitors monthly, running 400+ A/B tests and personalisation campaigns. Collaborated with product and design to build out high-performance experiences and reusable design system components. Localised the site into 16 languages, managed full observability tooling including synthetic testing, and held lead responsibilities across engineering teams in EMEA and APAC.",
   },
   {
     date: "Dec 2018",
