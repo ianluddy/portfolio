@@ -19,12 +19,14 @@ export function ScrambleText({ text, delay = 0, duration = 1200, wrap = false }:
     return <>{displayed}</>;
   }
 
-  // Single-line strings: inline-grid keeps the slot locked to the real text
-  // width while nowrap prevents scrambled chars from causing reflow.
+  // Single-line strings: outer span is sized only by the hidden real-text span.
+  // The visible span is absolutely positioned so it never contributes to the
+  // grid's intrinsic width — scrambled chars wider than real chars can't push
+  // adjacent elements or cause reflow.
   return (
-    <span style={{ display: "inline-grid" }}>
+    <span style={{ display: "inline-grid", position: "relative" }}>
       <span style={{ visibility: "hidden", gridArea: "1/1" }}>{text}</span>
-      <span style={{ gridArea: "1/1", overflow: "hidden", whiteSpace: "nowrap" }}>
+      <span style={{ position: "absolute", inset: 0, overflow: "hidden", whiteSpace: "nowrap" }}>
         {displayed}
       </span>
     </span>

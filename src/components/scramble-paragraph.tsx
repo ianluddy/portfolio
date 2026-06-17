@@ -27,7 +27,7 @@ export function ScrambleParagraph({
   const isAnimating = displayed !== text;
 
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative", overflow: "hidden" }}>
       <p
         className={className}
         style={isAnimating ? { opacity: 0, pointerEvents: "none" } : undefined}
