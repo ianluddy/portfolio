@@ -100,15 +100,15 @@ export function PanelExperience() {
                     rel="noopener noreferrer"
                     className="text-sm text-accent hover:text-foreground transition-colors"
                   >
-                    <ScrambleText text={item.company} delay={base} duration={500} />
+                    <ScrambleText text={item.company} delay={base} duration={250} />
                   </a>
                 </div>
                 <div className="flex-1 text-sm text-muted">
-                  <ScrambleText text={item.role} delay={base + 50} duration={Math.min(1200, item.role.length * 18)} />
+                  <ScrambleText text={item.role} delay={base + 50} duration={Math.min(600, item.role.length * 9)} />
                 </div>
                 <div className="hidden md:block md:w-48 flex-none text-right">
                   <span className="text-[10px] tracking-widest text-subtle uppercase">
-                    <ScrambleText text={`${item.date} – ${item.endDate}`} delay={base + 100} duration={700} />
+                    <ScrambleText text={`${item.date} – ${item.endDate}`} delay={base + 100} duration={350} />
                   </span>
                 </div>
               </div>
@@ -117,7 +117,7 @@ export function PanelExperience() {
                   <ScrambleParagraph
                     text={item.description}
                     delay={base + 150}
-                    duration={Math.min(3000, item.description.length * 15)}
+                    duration={Math.min(1500, item.description.length * 7)}
                     className="text-sm leading-relaxed text-subtle max-w-2xl"
                   >
                     {item.description}

@@ -8,7 +8,7 @@ export function PanelAbout() {
         <ScrambleParagraph
           text="I'm a full-stack software builder from Galway with a passion for coding that started in 2008. I build software the way modern engineers should: AI-first, using Claude Code for engineering, Claude Design for UI, and Conductor to parallelise multiple agents across tasks simultaneously."
           delay={200}
-          duration={3000}
+          duration={1500}
           className="text-sm leading-loose text-muted max-w-lg"
         >
           I'm a full-stack software builder from Galway with a passion for coding that started in 2008. I build software the way modern engineers should: AI-first, using{" "}
@@ -30,7 +30,7 @@ export function PanelAbout() {
           <ScrambleText
             text="This lets me prototype, architect, and ship production systems dramatically faster than traditional workflows — exploring design tradeoffs, eliminating boilerplate, and maintaining high velocity without sacrificing code quality."
             delay={800}
-            duration={3500}
+            duration={1750}
             wrap
           />
         </p>
@@ -39,7 +39,7 @@ export function PanelAbout() {
           <ScrambleText
             text="Outside of work I'm usually chilling with the family, dialling in coffee, playing tunes on the banjo, or walking the dog."
             delay={1100}
-            duration={2200}
+            duration={1100}
             wrap
           />
         </p>
