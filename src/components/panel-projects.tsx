@@ -169,11 +169,14 @@ export function PanelProjects({ isActive }: { isActive?: boolean }) {
   const [selected, setSelected] = useState<number | null>(null);
 
   useEffect(() => {
-    const isMobile = window.matchMedia("(max-width: 767px)").matches;
     if (isActive) {
-      const timer = setTimeout(() => setSelected(0), isMobile ? 300 : 460);
+      const base = 200;
+      const titleDone = base + Math.min(450, projects[0].title.length * 20);
+      const taglineDone = base + 60 + Math.min(700, projects[0].tagline.length * 9);
+      const timer = setTimeout(() => setSelected(0), Math.max(titleDone, taglineDone) + 50);
       return () => clearTimeout(timer);
     } else {
+      const isMobile = window.matchMedia("(max-width: 767px)").matches;
       const timer = setTimeout(() => setSelected(null), isMobile ? 270 : 390);
       return () => clearTimeout(timer);
     }
