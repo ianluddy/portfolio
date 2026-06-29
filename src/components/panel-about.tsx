@@ -1,5 +1,4 @@
 import { ScrambleParagraph } from "@/components/scramble-paragraph";
-import { ScrambleText } from "@/components/scramble-text";
 
 export function PanelAbout() {
   return (
@@ -26,23 +25,23 @@ export function PanelAbout() {
           {" "}to parallelise multiple agents across tasks simultaneously.
         </ScrambleParagraph>
 
-        <p>
-          <ScrambleText
-            text="This lets me prototype, architect, and ship production systems dramatically faster than traditional workflows — exploring design tradeoffs, eliminating boilerplate, and maintaining high velocity without sacrificing code quality."
-            delay={800}
-            duration={1750}
-            wrap
-          />
-        </p>
+        <ScrambleParagraph
+          text="This lets me prototype, architect, and ship production systems dramatically faster than traditional workflows — exploring design tradeoffs, eliminating boilerplate, and maintaining high velocity without sacrificing code quality."
+          delay={800}
+          duration={1750}
+          className="text-sm leading-loose text-muted"
+        >
+          This lets me prototype, architect, and ship production systems dramatically faster than traditional workflows — exploring design tradeoffs, eliminating boilerplate, and maintaining high velocity without sacrificing code quality.
+        </ScrambleParagraph>
 
-        <p>
-          <ScrambleText
-            text="Outside of work I'm usually chilling with the family, dialling in coffee, playing tunes on the banjo, or walking the dog."
-            delay={1100}
-            duration={1100}
-            wrap
-          />
-        </p>
+        <ScrambleParagraph
+          text="Outside of work I'm usually chilling with the family, dialling in coffee, playing tunes on the banjo, or walking the dog."
+          delay={1100}
+          duration={1100}
+          className="text-sm leading-loose text-muted"
+        >
+          Outside of work I'm usually chilling with the family, dialling in coffee, playing tunes on the banjo, or walking the dog.
+        </ScrambleParagraph>
       </div>
     </div>
   );
