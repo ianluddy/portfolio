@@ -1,19 +1,11 @@
 const timeline = [
   {
-    date: "May 2026",
+    date: "May 2025",
     endDate: "Present",
     role: "Senior Web Engineer",
-    company: "Fin",
+    company: "Fin (formerly Intercom)",
     url: "https://fin.ai/",
-    description: "Building out high-performance experiences across Fin's marketing site around their core AI agent offerings — Intercom's major AI pivot. Work spans CMS integration, localisation systems for global markets, full-stack observability tooling, on-call incident response via PagerDuty, and maintaining Claude skills for efficient engineering workflows.",
-  },
-  {
-    date: "May 2025",
-    endDate: "May 2026",
-    role: "Senior Web Engineer",
-    company: "Intercom",
-    url: "http://www.intercom.com/",
-    description: "Web engineer on Intercom's marketing and growth team, building and maintaining high-performance experiences across intercom.com. Worked closely with design, content, and product marketing to deliver at scale.",
+    description: "Building out high-performance experiences across both Intercom — the best-in-class customer service platform — and its major AI pivot to Fin, an AI agent product that now powers millions of customer interactions. Work spans CMS integration, localisation systems for global markets, full-stack observability tooling, on-call incident response, high-velocity feature shipping, and creating and maintaining Claude skills to maximise engineering workflow efficiency. The Fin pivot was capped by Salesforce's $3.6B acquisition of the company.",
   },
   {
     date: "Dec 2019",
@@ -21,7 +13,7 @@ const timeline = [
     role: "Senior Web Engineer",
     company: "Zendesk",
     url: "http://www.zendesk.com/",
-    description: "Led the experimentation program across marketing sites attracting ~2M visitors monthly, running 400+ A/B tests and personalisation campaigns. Collaborated with product and design on new site sections and design system components, with lead responsibilities across engineering teams in EMEA and APAC.",
+    description: "Led the experimentation program across marketing sites attracting ~2M visitors monthly, running 400+ A/B tests and personalisation campaigns. Collaborated with product and design to build out high-performance experiences and reusable design system components. Localised the site into 16 languages, managed full observability tooling including synthetic testing, and held lead responsibilities across engineering teams in EMEA and APAC.",
   },
   {
     date: "Dec 2018",
@@ -81,46 +73,57 @@ const timeline = [
   },
 ];
 
+import { ScrambleText } from "@/components/scramble-text";
+import { ScrambleParagraph } from "@/components/scramble-paragraph";
+
 export function PanelExperience() {
   return (
     <div className="h-full flex flex-col p-8 md:p-16">
       <div className="flex-1 overflow-y-auto">
-        {timeline.map((item, i) => (
-          <div key={i} className="py-1.5 md:py-4 flex flex-col gap-1">
-            <div className="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-0">
-              <div className="md:w-56 flex-none">
-                <a
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-accent hover:text-foreground transition-colors"
-                >
-                  {item.company}
-                </a>
+        {timeline.map((item, i) => {
+          const base = 200 + i * 80;
+          return (
+            <div key={i} className="py-1.5 md:py-4 flex flex-col gap-1">
+              <div className="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-0">
+                <div className="md:w-56 flex-none">
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-accent hover:text-foreground transition-colors"
+                  >
+                    <ScrambleText text={item.company} delay={base} duration={250} />
+                  </a>
+                </div>
+                <div className="flex-1 text-sm text-muted">
+                  <ScrambleText text={item.role} delay={base + 50} duration={Math.min(600, item.role.length * 9)} />
+                </div>
+                <div className="hidden md:block md:w-48 flex-none text-right">
+                  <span className="text-[10px] tracking-widest text-subtle uppercase">
+                    <ScrambleText text={`${item.date} – ${item.endDate}`} delay={base + 100} duration={350} />
+                  </span>
+                </div>
               </div>
-              <div className="flex-1 text-sm text-muted">
-                {item.role}
-              </div>
-              <div className="hidden md:block md:w-48 flex-none text-right">
+              {item.description && (
+                <div className="md:pl-56 pt-2 pb-1">
+                  <ScrambleParagraph
+                    text={item.description}
+                    delay={base + 150}
+                    duration={Math.min(1500, item.description.length * 7)}
+                    className="text-sm leading-relaxed text-subtle max-w-2xl"
+                  >
+                    {item.description}
+                  </ScrambleParagraph>
+                </div>
+              )}
+              <div className="md:hidden pb-2">
                 <span className="text-[10px] tracking-widest text-subtle uppercase">
-                  {item.date} – {item.endDate}
+                  <ScrambleText text={`${item.date} – ${item.endDate}`} delay={base + 100} duration={700} />
                 </span>
               </div>
             </div>
-            {item.description && (
-              <div className="md:pl-56 pt-2 pb-1">
-                <p className="text-sm leading-relaxed text-subtle max-w-2xl">
-                  {item.description}
-                </p>
-              </div>
-            )}
-            <div className="md:hidden pb-2">
-              <span className="text-[10px] tracking-widest text-subtle uppercase">
-                {item.date} – {item.endDate}
-              </span>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

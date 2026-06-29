@@ -1,20 +1,31 @@
+"use client";
+
+import { ScrambleText } from "@/components/scramble-text";
+import { ScrambleParagraph } from "@/components/scramble-paragraph";
+
 export function PanelHome() {
   return (
     <div className="min-h-[calc(100svh-210px)] md:h-full flex flex-col justify-between p-8 md:p-16">
       <div className="space-y-3 md:space-y-5">
         <div className="space-y-2">
           <h1 className="font-display text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tight uppercase text-muted">
-            Ian<br />Luddy
+            <ScrambleText text="Ian" delay={0} duration={600} /><br />
+            <ScrambleText text="Luddy" delay={200} duration={900} />
           </h1>
         </div>
 
-        <p className="text-sm leading-relaxed text-muted max-w-sm">
+        <ScrambleParagraph
+          text="Building software at the speed of thought with AI"
+          delay={500}
+          duration={1600}
+          className="text-sm leading-relaxed text-muted max-w-sm"
+        >
           Building software at the speed of thought with AI
-        </p>
+        </ScrambleParagraph>
 
         <div className="space-y-1 text-[10px] tracking-[0.2em] text-subtle uppercase">
-          <p>Galway, Ireland</p>
-          <p>Available for contract work</p>
+          <p><ScrambleText text="Galway, Ireland" delay={900} duration={700} /></p>
+          <p><ScrambleText text="Available for contract work" delay={1100} duration={1000} /></p>
         </div>
       </div>
 
@@ -23,7 +34,7 @@ export function PanelHome() {
           href="mailto:ianluddy@gmail.com"
           className="text-[10px] tracking-widest text-accent hover:text-foreground transition-colors uppercase"
         >
-          ianluddy@gmail.com
+          <ScrambleText text="ianluddy@gmail.com" delay={1400} duration={800} />
         </a>
         <a
           href="https://github.com/ianluddy"
@@ -31,7 +42,7 @@ export function PanelHome() {
           rel="noopener noreferrer"
           className="text-[10px] tracking-widest text-accent hover:text-foreground transition-colors uppercase"
         >
-          github.com/ianluddy
+          <ScrambleText text="github.com/ianluddy" delay={1600} duration={800} />
         </a>
         <a
           href="https://ie.linkedin.com/in/ianluddy"
@@ -39,7 +50,7 @@ export function PanelHome() {
           rel="noopener noreferrer"
           className="text-[10px] tracking-widest text-accent hover:text-foreground transition-colors uppercase"
         >
-          linkedin.com/in/ianluddy
+          <ScrambleText text="linkedin.com/in/ianluddy" delay={1800} duration={900} />
         </a>
       </div>
     </div>

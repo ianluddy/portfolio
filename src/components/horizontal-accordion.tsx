@@ -5,6 +5,7 @@ import { PanelHome } from "./panel-home";
 import { PanelAbout } from "./panel-about";
 import { PanelProjects } from "./panel-projects";
 import { PanelExperience } from "./panel-experience";
+import { ScrambleText } from "./scramble-text";
 
 const COLLAPSED_PX = 56;
 const DESKTOP_ANIM_MS = 390;
@@ -21,7 +22,17 @@ const panels = [
 export function HorizontalAccordion() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [visitedPanels, setVisitedPanels] = useState<Set<number>>(new Set([0]));
   const panelScrollRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  function markVisited(i: number) {
+    setVisitedPanels(prev => {
+      if (prev.has(i)) return prev;
+      const next = new Set(prev);
+      next.add(i);
+      return next;
+    });
+  }
 
   // Reset desktop panel scroll to top after the width animation completes
   useEffect(() => {
@@ -35,6 +46,7 @@ export function HorizontalAccordion() {
 
   function openPanel(i: number) {
     setActiveIndex(i);
+    markVisited(i);
     // Wait one frame so React commits the DOM update and scroll anchoring
     // has run, then hard-reset to the top before the animation plays.
     requestAnimationFrame(() => {
@@ -64,7 +76,7 @@ export function HorizontalAccordion() {
                   ? "color-mix(in srgb, var(--foreground) 4%, transparent)"
                   : "transparent",
               }}
-              onClick={() => !isActive && setActiveIndex(i)}
+              onClick={() => { if (!isActive) { setActiveIndex(i); markVisited(i); } }}
               onMouseEnter={() => !isActive && setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
@@ -78,7 +90,7 @@ export function HorizontalAccordion() {
                 }}
               >
                 <span className="text-[10px] font-normal tracking-[0.15em]">
-                  {id}
+                  <ScrambleText text={id} delay={200 + i * 200} duration={700} />
                 </span>
                 <span
                   className="text-xs font-normal tracking-[0.18em] uppercase"
@@ -87,7 +99,7 @@ export function HorizontalAccordion() {
                     transform: "rotate(180deg)",
                   }}
                 >
-                  {label}
+                  <ScrambleText text={label} delay={350 + i * 200} duration={Math.max(800, label.length * 80)} />
                 </span>
               </div>
 
@@ -106,10 +118,11 @@ export function HorizontalAccordion() {
                   pointerEvents: isActive ? "auto" : "none",
                 }}
               >
-                {label === "Projects"
-                  ? <PanelProjects isActive={isActive} />
-                  : <Content />
-                }
+                {visitedPanels.has(i) && (
+                  label === "Projects"
+                    ? <PanelProjects isActive={isActive} />
+                    : <Content />
+                )}
               </div>
             </div>
           );
@@ -128,10 +141,10 @@ export function HorizontalAccordion() {
                 onClick={() => openPanel(i)}
               >
                 <span className="text-[10px] font-light tracking-[0.15em] text-subtle flex-none">
-                  {id}
+                  <ScrambleText text={id} delay={200 + i * 200} duration={700} />
                 </span>
                 <span className="text-[10px] font-light tracking-[0.18em] text-subtle uppercase flex-1">
-                  {label}
+                  <ScrambleText text={label} delay={350 + i * 200} duration={Math.max(800, label.length * 80)} />
                 </span>
                 <span className={`text-subtle text-sm flex-none transition-transform ${isActive ? "rotate-45" : ""}`}>
                   +
@@ -146,10 +159,11 @@ export function HorizontalAccordion() {
                 }}
               >
                 <div className="overflow-hidden">
-                  {label === "Projects"
-                    ? <PanelProjects isActive={isActive} />
-                    : <Content />
-                  }
+                  {visitedPanels.has(i) && (
+                    label === "Projects"
+                      ? <PanelProjects isActive={isActive} />
+                      : <Content />
+                  )}
                 </div>
               </div>
             </div>
