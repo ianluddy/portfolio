@@ -14,6 +14,16 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Cuplift",
+    url: "https://cuplift.app/",
+    urlLabel: "cuplift.app",
+    tagline: "AI-powered filter coffee brewing companion",
+    description: [
+      "A filter coffee companion app — import coffees by pasting a roaster URL or photographing the bag (Claude vision reads the label), then brew, score, and let the recipe engine dial in your parameters over time. Supports AeroPress, V60, Orea, Chemex and more; tracks grind, dose, temperature, water profile, and every sensory note across your brew history.",
+    ],
+    stack: ["Claude Code", "Conductor", "NextJS", "React", "Tailwind CSS", "Neon Postgres", "Drizzle ORM", "Claude AI", "Vercel"],
+  },
+  {
     title: "Fin",
     url: "https://fin.ai",
     urlLabel: "fin.ai",
