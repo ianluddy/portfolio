@@ -22,7 +22,14 @@ export const metadata: Metadata = {
   description:
     "Ian Luddy, Software Builder based in Galway. Shipping AI-first with Claude Code, Claude Design and Conductor.",
   authors: [{ name: "Ian Luddy" }],
-  icons: { icon: "/favicon.svg?v=2" },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon-96.png", sizes: "96x96", type: "image/png" },
+    ],
+    apple: "/apple-icon.png",
+  },
   metadataBase: new URL("https://ianluddy.com"),
   alternates: {
     canonical: "https://ianluddy.com",
