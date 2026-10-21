@@ -29,9 +29,9 @@ const projects: Project[] = [
     urlLabel: "fin.ai",
     tagline: "Marketing site for Intercom's AI agent product",
     description: [
-      "Next.js marketing site for Intercom's AI agent product, attracting 200k monthly visitors — high-velocity feature shipping with Claude Code and Conductor, experimentation with Eppo, Sanity for flexible content management, hosted and deployed on Vercel, with full observability via Datadog and Sentry.",
+      "Next.js marketing site for Intercom's AI agent product, attracting 200k monthly visitors — high-velocity feature shipping with Claude Code and Conductor, experimentation with Eppo, Sanity for flexible content management, localisation for global markets through Lokalise and Lilt, and answer engine optimisation (AEO) so Fin is surfaced and cited by AI search tools like ChatGPT, Perplexity and Google AI Overviews. Hosted and deployed on Vercel, with full observability via Datadog and Sentry.",
     ],
-    stack: ["Claude Code", "Conductor", "NextJS", "Vercel", "Tailwind", "Eppo", "Datadog", "Sentry", "Sanity"],
+    stack: ["Claude Code", "Conductor", "NextJS", "Vercel", "Tailwind", "Eppo", "Datadog", "Sentry", "Sanity", "Lokalise", "Lilt"],
   },
   {
     title: "Intercom",
