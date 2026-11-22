@@ -206,15 +206,15 @@ export function PanelProjects({ isActive }: { isActive?: boolean }) {
                 onClick={() => setSelected(isOpen ? null : i)}
               >
                 <div className="flex-1 min-w-0">
-                  <span className={`text-sm transition-colors ${isOpen ? "text-foreground" : "text-muted group-hover:text-foreground"}`}>
+                  <span className={`font-pixel text-[11px] leading-relaxed ${isOpen ? "text-accent" : "text-foreground group-hover:text-accent"}`}>
                     <ScrambleText text={project.title} delay={base} duration={Math.min(450, project.title.length * 20)} />
                   </span>
-                  <span className="hidden md:inline text-sm text-subtle ml-4 transition-colors group-hover:text-muted">
+                  <span className="hidden md:inline text-xl text-subtle ml-4 group-hover:text-muted">
                     <ScrambleText text={project.tagline} delay={base + 60} duration={Math.min(700, project.tagline.length * 9)} wrap />
                   </span>
                 </div>
-                <span className={`text-foreground/50 text-xl leading-none flex-none transition-transform duration-300 ${isOpen ? "rotate-45" : "group-hover:text-foreground"}`}>
-                  +
+                <span className={`font-pixel text-[11px] leading-relaxed flex-none ${isOpen ? "text-accent rotate-90" : "text-subtle group-hover:text-accent"}`}>
+                  ▶
                 </span>
               </button>
 
@@ -222,27 +222,31 @@ export function PanelProjects({ isActive }: { isActive?: boolean }) {
                 style={{
                   display: "grid",
                   gridTemplateRows: isOpen ? "1fr" : "0fr",
-                  transition: "grid-template-rows 0.21s ease",
+                  transition: "grid-template-rows 0.21s steps(5, end)",
                 }}
               >
                 <div className="overflow-hidden">
-                  <div className="pb-8 space-y-4">
-                    <p className="text-sm text-subtle md:hidden">{project.tagline}</p>
+                  <div className="mb-6 p-5 space-y-4 pixel-box bg-panel">
+                    <p className="text-xl text-subtle md:hidden">{project.tagline}</p>
                     {project.description.map((p, j) => (
-                      <p key={j} className="text-sm leading-relaxed text-muted max-w-2xl">
+                      <p key={j} className="text-xl leading-snug text-muted max-w-2xl">
                         {p}
                       </p>
                     ))}
-                    <p className="text-[10px] tracking-widest text-subtle uppercase">
-                      {project.stack.join(" · ")}
-                    </p>
+                    <ul className="flex flex-wrap gap-2">
+                      {project.stack.map((tech) => (
+                        <li key={tech} className="font-pixel text-[8px] uppercase text-accent-3 border-2 border-accent-3 px-2 py-1.5">
+                          {tech}
+                        </li>
+                      ))}
+                    </ul>
                     <a
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block text-[10px] tracking-widest text-accent hover:text-foreground transition-colors uppercase"
+                      className="inline-block font-pixel text-[10px] text-background bg-accent px-3 py-2 shadow-[4px_4px_0_0_#000] hover:bg-foreground active:translate-x-1 active:translate-y-1 active:shadow-none uppercase"
                     >
-                      {project.urlLabel} →
+                      ▶ {project.urlLabel}
                     </a>
                   </div>
                 </div>

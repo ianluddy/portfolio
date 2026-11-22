@@ -83,23 +83,23 @@ export function PanelExperience() {
         {timeline.map((item, i) => {
           const base = 200 + i * 80;
           return (
-            <div key={i} className="py-1.5 md:py-4 flex flex-col gap-1">
+            <div key={i} className="py-3 md:py-5 flex flex-col gap-1 border-b-2 border-dashed border-subtle/40 last:border-b-0">
               <div className="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-0">
-                <div className="md:w-56 flex-none">
+                <div className="md:w-56 flex-none md:pr-6">
                   <a
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-accent hover:text-foreground transition-colors"
+                    className="font-pixel text-[11px] leading-relaxed text-accent hover:text-foreground"
                   >
-                    <ScrambleText text={item.company} delay={base} duration={250} />
+                    <ScrambleText text={item.company} delay={base} duration={250} wrap />
                   </a>
                 </div>
-                <div className="flex-1 text-sm text-muted">
+                <div className="flex-1 text-xl leading-snug text-foreground">
                   <ScrambleText text={item.role} delay={base + 50} duration={Math.min(600, item.role.length * 9)} />
                 </div>
                 <div className="hidden md:block md:w-48 flex-none text-right">
-                  <span className="text-[10px] tracking-widest text-subtle uppercase">
+                  <span className="font-pixel text-[8px] text-subtle uppercase">
                     <ScrambleText text={`${item.date} – ${item.endDate}`} delay={base + 100} duration={350} />
                   </span>
                 </div>
@@ -110,14 +110,14 @@ export function PanelExperience() {
                     text={item.description}
                     delay={base + 150}
                     duration={Math.min(1500, item.description.length * 7)}
-                    className="text-sm leading-relaxed text-subtle max-w-2xl"
+                    className="text-lg leading-snug text-muted max-w-2xl"
                   >
                     {item.description}
                   </ScrambleParagraph>
                 </div>
               )}
               <div className="md:hidden pb-2">
-                <span className="text-[10px] tracking-widest text-subtle uppercase">
+                <span className="font-pixel text-[8px] text-subtle uppercase">
                   <ScrambleText text={`${item.date} – ${item.endDate}`} delay={base + 100} duration={700} />
                 </span>
               </div>

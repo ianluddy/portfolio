@@ -2,40 +2,83 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ── Colour tokens — warm palette matching Claude.ai ── */
-:root {
-  /* Light mode */
-  --background: #ede0cc;
-  --foreground: #1a1714;
-  --muted:      #4a4644;
-  --subtle:     #7a6a5e;
-  --border:     rgba(26, 23, 20, 0.90);
-  --accent:     #1a2e80;
-}
-
+/* ── Colour tokens — 8-bit console palette ── */
+:root,
 .dark {
-  --background: #121212;
-  --foreground: #ffffff;
-  --muted:      #b0b0b0;
-  --subtle:     #7d7d7d;
-  --border:     rgba(255, 255, 255, 0.10);
-  --accent:     #ff6b6b;
+  --background: #0e0b24; /* deep cartridge-night indigo */
+  --panel:      #17133a;
+  --foreground: #f4f4f4;
+  --muted:      #c9c5ef;
+  --subtle:     #8580c2;
+  --border:     #f4f4f4;
+  --accent:     #ffd23f; /* coin yellow */
+  --accent-2:   #ff4f69; /* 1UP red */
+  --accent-3:   #3ddc97; /* power-up green */
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-panel:      var(--panel);
   --color-foreground: var(--foreground);
   --color-muted:      var(--muted);
   --color-subtle:     var(--subtle);
   --color-border:     var(--border);
   --color-accent:     var(--accent);
+  --color-accent-2:   var(--accent-2);
+  --color-accent-3:   var(--accent-3);
   --font-sans:        var(--font-body);
-  --font-display:     var(--font-display);
 }
 
-/* Editorial serif display utility */
+/* Chunky pixel display font (headings, labels, HUD text) */
+.font-pixel,
 .font-display {
-  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-family: var(--font-pixel), ui-monospace, monospace;
+  font-weight: 400;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
+}
+
+/* Hard drop shadow, like a sprite on a tile map */
+.pixel-shadow {
+  text-shadow: 4px 4px 0 var(--accent-2), 8px 8px 0 #000;
+}
+@media (max-width: 767px) {
+  .pixel-shadow {
+    text-shadow: 3px 3px 0 var(--accent-2), 6px 6px 0 #000;
+  }
+}
+
+/* Blinking cursor / selector */
+@keyframes pixel-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.blink {
+  animation: pixel-blink 1s steps(1, end) infinite;
+}
+
+/* ▶ selector that appears on hover/focus */
+.pixel-select::before {
+  content: "▶";
+  display: inline-block;
+  width: 1.5em;
+  margin-left: -1.5em;
+  color: var(--accent);
+  visibility: hidden;
+  animation: pixel-blink 0.8s steps(1, end) infinite;
+}
+.pixel-select:hover::before,
+.pixel-select:focus-visible::before,
+.group:hover .pixel-select::before,
+.pixel-select[data-active="true"]::before {
+  visibility: visible;
+}
+
+/* Bordered pixel box with stepped corners */
+.pixel-box {
+  border: 4px solid var(--foreground);
+  box-shadow: 6px 6px 0 0 #000;
+  image-rendering: pixelated;
 }
 
 @layer base {
@@ -47,10 +90,60 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
-    font-family: var(--font-body), system-ui, sans-serif;
-    font-weight: 300;
-    -webkit-font-smoothing: antialiased;
-    transition: background-color 0.4s ease, color 0.4s ease;
+    font-family: var(--font-body), ui-monospace, monospace;
+    font-weight: 400;
+    -webkit-font-smoothing: none;
+    image-rendering: pixelated;
+  }
+
+  /* Subtle pixel grid on the backdrop */
+  body {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 8px 8px;
+  }
+
+  /* CRT scanlines + vignette */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 50;
+    background:
+      repeating-linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0,
+        rgba(0, 0, 0, 0) 2px,
+        rgba(0, 0, 0, 0.22) 3px,
+        rgba(0, 0, 0, 0) 4px
+      ),
+      radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.45) 100%);
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--background);
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px dashed var(--accent);
+    outline-offset: 3px;
+  }
+
+  /* Pixel-art scrollbars */
+  * {
+    scrollbar-color: var(--accent) var(--panel);
+    scrollbar-width: thin;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blink,
+  .pixel-select::before {
+    animation: none;
   }
 }
 

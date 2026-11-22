@@ -1,20 +1,19 @@
 import type { Metadata } from "next";
-import { DM_Sans, EB_Garamond } from "next/font/google";
+import { Press_Start_2P, VT323 } from "next/font/google";
 import "./globals.css";
 
-const dmSans = DM_Sans({
+const pixel = Press_Start_2P({
   subsets: ["latin"],
   display: "swap",
-  weight: ["300", "400"],
-  variable: "--font-body",
+  weight: "400",
+  variable: "--font-pixel",
 });
 
-const ebGaramond = EB_Garamond({
+const vt323 = VT323({
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
-  style: ["normal", "italic"],
-  variable: "--font-display",
+  weight: "400",
+  variable: "--font-body",
 });
 
 export const metadata: Metadata = {
@@ -52,7 +51,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark ${dmSans.variable} ${ebGaramond.variable}`}
+      className={`dark ${pixel.variable} ${vt323.variable}`}
     >
       <body>
         {children}
