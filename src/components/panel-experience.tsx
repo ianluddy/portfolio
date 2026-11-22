@@ -66,10 +66,10 @@ const timeline = [
   {
     date: "Sep 2008",
     endDate: "May 2011",
-    role: "BSc. (Hons) Software Development — First-Class Honours",
+    role: "BSc. (Hons) Software Development",
     company: "ATU",
     url: "http://www.atu.ie",
-    description: null,
+    description: "Graduated with First-Class Honours and won the Student of the Year award.",
   },
 ];
 
