@@ -288,3 +288,17 @@ export const projects: Project[] = [
     stack: ["Claude Code", "Cursor", "Vercel", "NextJS", "React", "Prisma", "NeonDB", "PostgreSQL", "Stripe"],
   },
 ];
+
+export function slugify(s: string) {
+  return s
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+export const jobSlug = (job: Job) => `${slugify(job.company)}-${job.date.slice(-4)}`;
+export const projectSlug = (project: Project) => slugify(project.title);
+
+/** First year in the timeline — when the coding journey started. */
+export const startYear = Number(timeline[timeline.length - 1].date.slice(-4));

@@ -20,6 +20,21 @@ export const PALETTE: Record<string, string> = {
   D: "#9c6a25", // dog ears/shade
   n: "#14112b", // dog nose
   t: "#ff8fa0", // dog tongue
+  x: "#14112b", // outline
+  y: "#ffd23f", // gold
+  Y: "#b8860b", // dark gold
+  r: "#ff4f69", // red
+  R: "#c7334c", // dark red
+  g: "#3ddc97", // green
+  G: "#1f8a4c", // dark green
+  b: "#4aa3ff", // blue
+  B: "#283a8f", // dark blue
+  o: "#a0703a", // brown
+  O: "#6b4426", // dark brown
+  p: "#ff8fa0", // pink
+  l: "#c9c5ef", // light
+  m: "#8580c2", // mid grey
+  f: "#ff8a3d", // flame orange
 };
 
 const head = [
@@ -121,27 +136,305 @@ export const DOG = {
   ],
 };
 
-const cache = new Map<string, HTMLCanvasElement>();
+// 12×12 inventory icons
+export const ICONS: Record<string, Sprite> = {
+  cup: [
+    "............",
+    "...l..l.....",
+    "....l..l....",
+    "............",
+    ".xxxxxxxx...",
+    ".xwwwwwwxxx.",
+    ".xwOOOOwx.x.",
+    ".xwOOOOwx.x.",
+    ".xwwwwwwxxx.",
+    "..xwwwwx....",
+    "xxxxxxxxxx..",
+    "............",
+  ],
+  bot: [
+    ".....yy.....",
+    ".....xx.....",
+    "..xxxxxxxx..",
+    ".xllllllllx.",
+    ".xlggllgglx.",
+    ".xlggllgglx.",
+    ".xllllllllx.",
+    ".xllxxxxllx.",
+    ".xllllllllx.",
+    "..xxxxxxxx..",
+    "...xx..xx...",
+    "............",
+  ],
+  chat: [
+    "............",
+    ".xxxxxxxxxx.",
+    "xbbbbbbbbbbx",
+    "xbbbbbbbbbbx",
+    "xbwwbwwbwwbx",
+    "xbbbbbbbbbbx",
+    "xbbbbbbbbbbx",
+    ".xxxxbbxxxx.",
+    "....xbx.....",
+    "....xx......",
+    "............",
+    "............",
+  ],
+  headset: [
+    "...xxxxxx...",
+    "..xmmmmmmx..",
+    ".xm......mx.",
+    ".xm......mx.",
+    "xggx....xggx",
+    "xggx....xggx",
+    "xggx....xggx",
+    ".xx......mx.",
+    ".........mx.",
+    ".......xxmx.",
+    "......xrrx..",
+    ".......xx...",
+  ],
+  megaphone: [
+    ".........x..",
+    ".......xxyx.",
+    ".....xxyyyx.",
+    ".xxxxyyyyyx.",
+    ".xrrxyyyyyx.",
+    ".xrrxyyyyyx.",
+    ".xxxxyyyyyx.",
+    "..xx.xxyyyx.",
+    "..xx...xxyx.",
+    "..xx.....x..",
+    "............",
+    "............",
+  ],
+  film: [
+    "............",
+    "xxxxxxxxxxxx",
+    "xwxxwxxwxxwx",
+    "xxxxxxxxxxxx",
+    "xmmmmmmmmmmx",
+    "xmbbbbbbbbmx",
+    "xmbbbybbbbmx",
+    "xmbbbyybbbmx",
+    "xmbbbybbbbmx",
+    "xmmmmmmmmmmx",
+    "xxxxxxxxxxxx",
+    "............",
+  ],
+  heart: [
+    "............",
+    "..xx...xx...",
+    ".xrrx.xrrx..",
+    "xrwrrxrrrrx.",
+    "xrrrrrrrrrx.",
+    "xrrrrrrrrrx.",
+    ".xrrrrrrrx..",
+    "..xrrrrrx...",
+    "...xrrrx....",
+    "....xrx.....",
+    ".....x......",
+    "............",
+  ],
+  shamrock: [
+    "............",
+    "...xx..xx...",
+    "..xggxxggx..",
+    "..xggggggx..",
+    "...xggggx...",
+    ".xxxggggxxx.",
+    "xggggxxggggx",
+    "xggggxxggggx",
+    ".xxxx.Gxxxx.",
+    "......G.....",
+    ".....G......",
+    "............",
+  ],
+  medkit: [
+    "............",
+    "....xxxx....",
+    "....x..x....",
+    ".xxxxxxxxxx.",
+    ".xwwwwwwwwx.",
+    ".xwwwrrwwwx.",
+    ".xwwrrrrwwx.",
+    ".xwwrrrrwwx.",
+    ".xwwwrrwwwx.",
+    ".xwwwwwwwwx.",
+    ".xxxxxxxxxx.",
+    "............",
+  ],
+  cake: [
+    ".....f......",
+    ".....y......",
+    ".....x......",
+    "..xxxxxxxx..",
+    "..xppppppx..",
+    "..xwpwwpwx..",
+    "..xOOOOOOx..",
+    "..xppppppx..",
+    "..xOOOOOOx..",
+    ".xxxxxxxxxx.",
+    "............",
+    "............",
+  ],
+  potion: [
+    "....xxxx....",
+    "....xOOx....",
+    ".....xx.....",
+    "....xllx....",
+    "....xllx....",
+    "...xllllx...",
+    "..xllllllx..",
+    ".xggggggggx.",
+    ".xgwggggggx.",
+    ".xggggggggx.",
+    "..xxxxxxxx..",
+    "............",
+  ],
+  parcel: [
+    "............",
+    ".xxxxxxxxxx.",
+    ".xooooRooox.",
+    ".xooooRooox.",
+    ".xxxxxxxxxx.",
+    ".xooooRooox.",
+    ".xooooRooox.",
+    ".xooooRooox.",
+    ".xooooRooox.",
+    ".xxxxxxxxxx.",
+    "............",
+    "............",
+  ],
+  gem: [
+    "............",
+    "...xxxxxx...",
+    "..xbwbbbbx..",
+    ".xbwbbbbbbx.",
+    "xxxxxxxxxxxx",
+    ".xbbbbbbbbx.",
+    "..xbbbbbbx..",
+    "...xbbbbx...",
+    "....xbbx....",
+    ".....xx.....",
+    "............",
+    "............",
+  ],
+  coins: [
+    "............",
+    "..xxxxxxxx..",
+    "..xyyyyyyx..",
+    "..xYYYYYYx..",
+    "..xxxxxxxx..",
+    ".xxxxxxxxxx.",
+    ".xyyyyyyyyx.",
+    ".xYYYYYYYYx.",
+    "xxxxxxxxxxxx",
+    "xyyyyyyyyyyx",
+    "xYYYYYYYYYYx",
+    "xxxxxxxxxxxx",
+  ],
+  bag: [
+    "....x..x....",
+    ".....xx.....",
+    "....xoox....",
+    "...xoooox...",
+    "..xooyyooox.",
+    ".xooyoooooox",
+    ".xoooyyoooox",
+    ".xooooooyoox",
+    ".xooyyyyooox",
+    "..xooooooox.",
+    "...xxxxxxx..",
+    "............",
+  ],
+  scissors: [
+    "x.........x.",
+    ".x.......x..",
+    "..x.....x...",
+    "...x...x....",
+    "....x.x.....",
+    ".....x......",
+    "....x.x.....",
+    ".xxx...xxx..",
+    "xrrrx.xrrrx.",
+    "xr.rx.xr.rx.",
+    "xrrrx.xrrrx.",
+    ".xxx...xxx..",
+  ],
+  terminal: [
+    "xxxxxxxxxxxx",
+    "xBBBBBBBBBBx",
+    "xBgBBBBBBBBx",
+    "xBBgBBBBBBBx",
+    "xBgBBggggBBx",
+    "xBBBBBBBBBBx",
+    "xxxxxxxxxxxx",
+    "....xmmx....",
+    "..xxxxxxxx..",
+  ],
+  brush: [
+    ".........xx.",
+    "........xmx.",
+    ".......xmx..",
+    "......xmx...",
+    ".....xOx....",
+    "...xrrx.....",
+    "..xrrrx.....",
+    ".xrrrx......",
+    ".xrx........",
+    ".x..........",
+  ],
+  wand: [
+    "........y...",
+    ".......yyy..",
+    "........y...",
+    ".......x....",
+    "......x.....",
+    ".....x......",
+    "....x.......",
+    "...x........",
+    "..x.........",
+  ],
+  postbox: [
+    "..xxxxxxxx..",
+    ".xGGGGGGGGx.",
+    ".xGxxxxxxGx.",
+    ".xGGGGGGGGx.",
+    ".xGGyyyyGGx.",
+    ".xGGGGGGGGx.",
+    ".xGGGGGGGGx.",
+    ".xGGGGGGGGx.",
+    ".xGGGGGGGGx.",
+    ".xGGGGGGGGx.",
+    "..xxxxxxxx..",
+    "...xx..xx...",
+  ],
+};
 
-/** Rasterise a sprite once into an offscreen canvas (optionally mirrored). */
-export function spriteCanvas(sprite: Sprite, flip = false): HTMLCanvasElement {
-  const key = sprite.join("|") + (flip ? "f" : "");
-  const hit = cache.get(key);
-  if (hit) return hit;
-  const w = Math.max(...sprite.map((r) => r.length));
-  const h = sprite.length;
-  const c = document.createElement("canvas");
-  c.width = w;
-  c.height = h;
-  const g = c.getContext("2d")!;
-  sprite.forEach((row, y) => {
-    for (let x = 0; x < row.length; x++) {
-      const col = PALETTE[row[x]];
-      if (!col) continue;
-      g.fillStyle = col;
-      g.fillRect(flip ? w - 1 - x : x, y, 1, 1);
-    }
-  });
-  cache.set(key, c);
-  return c;
-}
+export const CAMPFIRE: [Sprite, Sprite] = [
+  [
+    ".....r......",
+    "....rr..r...",
+    "....rfr.rr..",
+    "...rffrrfr..",
+    "...rfyffffr.",
+    "..rfyyyyfr..",
+    "..rffyyyfr..",
+    "...rfffffr..",
+    ".OOoOOoOOoO.",
+    "OoOOoOOoOOoO",
+  ],
+  [
+    "......r.....",
+    "...r..rr....",
+    "..rr.rfr....",
+    "..rfrrffr...",
+    ".rffffyfr...",
+    "..rfyyyyfr..",
+    "..rfyyyffr..",
+    "..rfffffr...",
+    ".OOoOOoOOoO.",
+    "OoOOoOOoOOoO",
+  ],
+];

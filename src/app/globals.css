@@ -63,6 +63,18 @@
   box-shadow: 0 0 0 4px #000, 8px 8px 0 4px #000;
 }
 
+/* Pixel starfield backdrop */
+.stars {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, #f4f4f4 50%, transparent 51%),
+    radial-gradient(1px 1px at 90px 120px, #8580c2 50%, transparent 51%),
+    radial-gradient(1px 1px at 160px 60px, #c9c5ef 50%, transparent 51%),
+    radial-gradient(1px 1px at 230px 170px, #8580c2 50%, transparent 51%),
+    radial-gradient(1px 1px at 60px 200px, #f4f4f4 50%, transparent 51%);
+  background-size: 260px 240px;
+}
+
 /* CRT scanlines laid over the game screen */
 .crt::after {
   content: "";

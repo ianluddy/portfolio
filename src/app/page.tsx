@@ -1,11 +1,5 @@
-import { Game } from "@/components/game/game";
-import { TextVersion } from "@/components/game/text-version";
+import { Rpg } from "@/components/rpg/rpg";
 
 export default function Home() {
-  return (
-    <main>
-      <TextVersion />
-      <Game />
-    </main>
-  );
+  return <Rpg />;
 }
