@@ -1,5 +1,11 @@
-import { HorizontalAccordion } from "@/components/horizontal-accordion";
+import { Game } from "@/components/game/game";
+import { TextVersion } from "@/components/game/text-version";
 
 export default function Home() {
-  return <HorizontalAccordion />;
+  return (
+    <main>
+      <TextVersion />
+      <Game />
+    </main>
+  );
 }

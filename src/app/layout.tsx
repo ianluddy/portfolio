@@ -1,20 +1,6 @@
 import type { Metadata } from "next";
-import { Press_Start_2P, VT323 } from "next/font/google";
 import "./globals.css";
-
-const pixel = Press_Start_2P({
-  subsets: ["latin"],
-  display: "swap",
-  weight: "400",
-  variable: "--font-pixel",
-});
-
-const vt323 = VT323({
-  subsets: ["latin"],
-  display: "swap",
-  weight: "400",
-  variable: "--font-body",
-});
+import { pixelFont, terminalFont } from "./fonts";
 
 export const metadata: Metadata = {
   title: "Ian Luddy — Software Builder",
@@ -51,7 +37,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark ${pixel.variable} ${vt323.variable}`}
+      className={`dark ${pixelFont.variable} ${terminalFont.variable}`}
     >
       <body>
         {children}
