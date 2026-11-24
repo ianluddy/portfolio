@@ -1,304 +1,338 @@
-export type Segment = string | { text: string; href: string };
-export type Paragraph = Segment[];
+"use client";
 
-export interface Job {
-  date: string;
-  endDate: string;
-  role: string;
-  company: string;
-  url: string;
-  description: string | null;
-}
+import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
 
-export interface Project {
+type DeviceType = "laptop" | "phone" | "phone-tablet";
+
+interface Project {
   title: string;
   url: string;
   urlLabel: string;
-  tagline: string;
   description: string[];
   stack: string[];
+  image: string;
+  image2?: string;
+  imageAlt: string;
+  device: DeviceType;
 }
 
-export const profile = {
-  name: "Ian Luddy",
-  tagline: "Building software at the speed of thought with AI",
-  location: "Galway, Ireland",
-  availability: "Available for contract work",
-  email: "ianluddy@gmail.com",
-  links: [
-    { label: "ianluddy@gmail.com", href: "mailto:ianluddy@gmail.com" },
-    { label: "github.com/ianluddy", href: "https://github.com/ianluddy" },
-    { label: "linkedin.com/in/ianluddy", href: "https://ie.linkedin.com/in/ianluddy" },
-  ],
-};
-
-export const about: Paragraph[] = [
-  [
-    "I'm a full-stack software builder from Galway with a passion for coding that started in 2008. I build software the way modern engineers should: AI-first, using ",
-    { text: "Claude Code", href: "https://claude.ai/code" },
-    " for engineering, ",
-    { text: "Claude Design", href: "https://claude.ai/design" },
-    " for UI, and ",
-    { text: "Conductor", href: "https://conductor.build" },
-    " to parallelise multiple agents across tasks simultaneously.",
-  ],
-  [
-    "This lets me prototype, architect, and ship production systems dramatically faster than traditional workflows — exploring design tradeoffs, eliminating boilerplate, and maintaining high velocity without sacrificing code quality.",
-  ],
-  [
-    "Outside of work I'm usually chilling with the family, dialling in coffee, playing tunes on the banjo, or walking the dog.",
-  ],
-];
-
-// Most recent first
-export const timeline: Job[] = [
-  {
-    date: "May 2025",
-    endDate: "Present",
-    role: "Senior Web Engineer",
-    company: "Fin (formerly Intercom)",
-    url: "https://fin.ai/",
-    description: "Building out high-performance experiences across both Intercom — the best-in-class customer service platform — and its major AI pivot to Fin, an AI agent product that now powers millions of customer interactions. Work spans CMS integration, localisation for global markets, answer engine optimisation (AEO) to get Fin cited by AI search, full-stack observability tooling, on-call incident response, high-velocity feature shipping, and creating and maintaining Claude skills to maximise engineering workflow efficiency. The Fin pivot was capped by Salesforce's $3.6B acquisition of the company.",
-  },
-  {
-    date: "Dec 2019",
-    endDate: "May 2025",
-    role: "Senior Web Engineer",
-    company: "Zendesk",
-    url: "http://www.zendesk.com/",
-    description: "Led the experimentation program across marketing sites attracting ~2M visitors monthly, running 400+ A/B tests and personalisation campaigns. Collaborated with product and design to build out high-performance experiences and reusable design system components. Localised the site into 16 languages, managed full observability tooling including synthetic testing, and held lead responsibilities across engineering teams in EMEA and APAC.",
-  },
-  {
-    date: "Dec 2018",
-    endDate: "Dec 2019",
-    role: "Senior Full Stack Developer",
-    company: "Total Digital",
-    url: "http://www.totaldigital.ie/",
-    description: "Lead developer across diverse client projects from initial concept through to production, including Enterprise Ireland and DPD. Handled the full stack, mentored junior engineers, and managed ongoing client support.",
-  },
-  {
-    date: "Jun 2016",
-    endDate: "Dec 2018",
-    role: "Senior Full Stack Developer",
-    company: "Software Design",
-    url: "http://www.softwaredesign.ie/",
-    description: "Full stack development at the agency later rebranded as Total Digital — building and maintaining a wide variety of client projects across the full stack, from greenfield builds to production support.",
-  },
-  {
-    date: "Jan 2016",
-    endDate: "Jun 2016",
-    role: "Senior Back End Developer",
-    company: "Qualio",
-    url: "http://www.qualio.com",
-    description: "Lead Python developer on Qualio's SaaS Quality Management platform, built on Pyramid for pharma and life sciences organisations navigating FDA and ISO compliance. Refactored legacy code, developed a new API, and maintained high uptime on AWS.",
-  },
-  {
-    date: "Oct 2012",
-    endDate: "Jan 2016",
-    role: "Lead Developer",
-    company: "Arts Alliance Media",
-    url: "http://www.artsalliancemedia.com/",
-    description: "Led the Screenwriter team for three years — a Python Theatre Management System running on 40,000+ cinema screens globally, integrating with projection systems, POS, IP cameras, and onsite hardware. Responsible for hiring, training, worldwide deployments, and customer support.",
-  },
-  {
-    date: "Aug 2011",
-    endDate: "Oct 2012",
-    role: "Python Developer",
-    company: "Arts Alliance Media",
-    url: "http://www.artsalliancemedia.com/",
-    description: "Joined AAM as a Python developer on the Screenwriter project, building and maintaining features for a theatre management system deployed in cinemas worldwide. Promoted to team lead after a year.",
-  },
-  {
-    date: "May 2011",
-    endDate: "Aug 2011",
-    role: "Back End Developer",
-    company: "Avaeon",
-    url: "http://www.avaeon.com/",
-    description: "First role after graduating — C# developer enhancing an eCommerce platform facilitating insurance sales across the United States.",
-  },
-  {
-    date: "Sep 2008",
-    endDate: "May 2011",
-    role: "BSc. (Hons) Software Development",
-    company: "ATU",
-    url: "http://www.atu.ie",
-    description: "Graduated with First-Class Honours and won the Student of the Year award.",
-  },
-];
-
-export const projects: Project[] = [
+const projects: Project[] = [
   {
     title: "Cuplift",
     url: "https://cuplift.app/",
     urlLabel: "cuplift.app",
-    tagline: "AI-powered filter coffee brewing companion",
     description: [
       "A filter coffee companion app — import coffees by pasting a roaster URL or photographing the bag (Claude vision reads the label), then brew, score, and let the recipe engine dial in your parameters over time. Supports AeroPress, V60, Orea, Chemex and more; tracks grind, dose, temperature, water profile, and every sensory note across your brew history.",
     ],
     stack: ["Claude Code", "Conductor", "NextJS", "React", "Tailwind CSS", "Neon Postgres", "Drizzle ORM", "Claude AI", "Vercel"],
+    image: "/image/cuplift.webp",
+    imageAlt: "Cuplift coffee brewing app",
+    device: "laptop",
   },
   {
     title: "Fin",
     url: "https://fin.ai",
     urlLabel: "fin.ai",
-    tagline: "Marketing site for Intercom's AI agent product",
     description: [
       "Next.js marketing site for Intercom's AI agent product, attracting 200k monthly visitors — high-velocity feature shipping with Claude Code and Conductor, experimentation with Eppo, Sanity for flexible content management, localisation for global markets through Lokalise and Lilt, and answer engine optimisation (AEO) so Fin is surfaced and cited by AI search tools like ChatGPT, Perplexity and Google AI Overviews. Hosted and deployed on Vercel, with full observability via Datadog and Sentry.",
     ],
     stack: ["Claude Code", "Conductor", "NextJS", "Vercel", "Tailwind", "Eppo", "Datadog", "Sentry", "Sanity", "Lokalise", "Lilt"],
+    image: "/image/fin.webp",
+    imageAlt: "Fin",
+    device: "laptop",
   },
   {
     title: "Intercom",
     url: "https://www.intercom.com",
     urlLabel: "intercom.com",
-    tagline: "Marketing site for the leading customer service platform",
     description: [
       "Next.js marketing site for Intercom's customer service platform, attracting 600k monthly visitors — high-velocity feature shipping with Claude Code and Conductor, experimentation with Eppo, content management through Contentful, hosted and deployed on Vercel, with full observability via Datadog and Sentry.",
     ],
     stack: ["Claude Code", "Conductor", "NextJS", "Vercel", "Tailwind", "Eppo", "Datadog", "Sentry", "Contentful"],
+    image: "/image/intercom.webp",
+    imageAlt: "Intercom",
+    device: "laptop",
   },
   {
     title: "Zendesk",
     url: "https://www.zendesk.com",
     urlLabel: "zendesk.com",
-    tagline: "Marketing site for Zendesk's customer service and CRM platform",
     description: [
       "Next.js marketing site for Zendesk's customer service and CRM platform, attracting 2 million monthly visitors across 16 localised languages — running on AWS, experimentation and personalisation via Optimizely, analytics via Hotjar, with full observability via Datadog and Sentry.",
     ],
     stack: ["Claude Code", "Cursor", "NextJS", "React", "Optimizely", "Adobe Target", "Storybook", "Hotjar", "AWS", "Docker"],
+    image: "/image/zen.webp",
+    imageAlt: "Zendesk",
+    device: "laptop",
   },
   {
     title: "Dylan Luddy",
     url: "https://www.dylanluddy.com",
     urlLabel: "dylanluddy.com",
-    tagline: "Portfolio site for a digital marketer in London",
     description: [
       "Portfolio site for Dylan Luddy, a digital marketer based in London, showcasing his experience across SEO, paid media, and growth strategy — built with Next.js, Tailwind CSS, and Sanity CMS on Vercel.",
     ],
     stack: ["Claude Code", "Claude Design", "NextJS", "React", "Tailwind CSS", "Sanity CMS", "Vercel"],
+    image: "/image/dylan.webp",
+    imageAlt: "Dylan Luddy Portfolio",
+    device: "laptop",
   },
   {
     title: "Screenwriter",
     url: "https://www.artsalliancemedia.com/",
     urlLabel: "artsalliancemedia.com",
-    tagline: "Theatre Management System running on 40,000+ cinema screens",
     description: [
       "Arts Alliance Media's flagship product — a Theatre Management System running on over 40,000 digital screens globally. I led the team for three years on this Python application with a browser-based front end, integrating with all major projection and audio systems, POS systems, IP cameras, and other cinema hardware.",
     ],
     stack: ["Python", "MongoDB", "Bootstrap", "AWS", "Docker", "Flask", "Django", "SQLAlchemy", "Handlebars"],
+    image: "/image/tms.webp",
+    imageAlt: "Screenwriter",
+    device: "laptop",
   },
   {
     title: "Ian & Claire",
     url: "https://ianandclaire.vercel.app/",
     urlLabel: "ianandclaire.com",
-    tagline: "Wedding website with Google Forms RSVP",
     description: [
       "Wedding website built with Next.js, Google Fonts, and imagery from Etsy, with Google Forms handling guest RSVPs.",
     ],
     stack: ["NextJS", "React", "Google Fonts", "Google Forms", "Etsy"],
+    image: "/image/wed.webp",
+    image2: "/image/wed1.webp",
+    imageAlt: "Ian and Claire",
+    device: "phone-tablet",
   },
   {
     title: "Enterprise Ireland",
     url: "https://www.enterprise-ireland.com/",
     urlLabel: "enterprise-ireland.com",
-    tagline: "WordPress marketing site for Enterprise Ireland",
     description: [
       "WordPress marketing site for Enterprise Ireland, designed to promote Ireland's export strengths and connect Irish businesses with international markets.",
     ],
     stack: ["PHP", "WordPress", "WPML", "WPEngine", "AWS", "Docker"],
+    image: "/image/adv.webp",
+    imageAlt: "Irish Advantage",
+    device: "laptop",
   },
   {
     title: "Health Connect",
     url: "https://healthconnect.ie",
     urlLabel: "healthconnect.ie",
-    tagline: "Healthcare access platform for minority communities in Ireland",
     description: [
       "Health Connect is a multilingual WordPress platform making healthcare services accessible to minority and vulnerable communities across Ireland, with WPML-powered support for Polish, Chinese, Russian, and Arabic, plus Google Maps integration for service locations.",
     ],
     stack: ["PHP", "WordPress", "Bootstrap", "Fontawesome", "AWS", "Docker"],
+    image: "/image/hc.webp",
+    image2: "/image/hc1.webp",
+    imageAlt: "Health Connect",
+    device: "phone-tablet",
   },
   {
     title: "Baked Goodes",
     url: "https://bakedgoodes.vercel.app/",
     urlLabel: "bakedgoodes.ie",
-    tagline: "E-commerce site for my wife's baking business",
     description: [
       "Fast, responsive Next.js site for a baking business, with Formik-powered order and inquiry forms and Sentry for error tracking.",
     ],
     stack: ["NextJS", "React", "Google Fonts", "Google Maps", "Sentry", "Formik", "Etsy"],
+    image: "/image/baked.webp",
+    image2: "/image/baked1.webp",
+    imageAlt: "Baked Goodes",
+    device: "phone-tablet",
   },
   {
     title: "Qualio",
     url: "https://www.qualio.com/",
     urlLabel: "qualio.com",
-    tagline: "SaaS Quality Management for pharma and life sciences",
     description: [
       "SaaS Quality Management platform built on the Pyramid framework for organisations in regulated industries like Pharma and Life Sciences.",
     ],
     stack: ["Python", "Pyramid", "PostgreSQL", "Gunicorn", "Nginx", "CircleCI", "AWS", "Docker"],
+    image: "/image/qual.webp",
+    imageAlt: "Qualio",
+    device: "laptop",
   },
   {
-    title: "DPD — Manage Delivery",
+    title: "DPD - Manage Delivery",
     url: "https://dpd.ie/",
     urlLabel: "dpd.ie",
-    tagline: "Delivery management portal used by thousands weekly",
     description: [
       "Delivery management web app integrated with DPD's portal backend — now used by thousands of people every week.",
     ],
     stack: [".NET", "Microsoft IIS", "SQL Server", "Postman"],
+    image: "/image/dpd.webp",
+    image2: "/image/dpd1.webp",
+    imageAlt: "DPD",
+    device: "phone-tablet",
   },
   {
     title: "Weir & Sons",
     url: "https://weirandsons.ie",
     urlLabel: "weirandsons.ie",
-    tagline: "eCommerce for a renowned Irish jeweller",
     description: [
       "eCommerce site for weirandsons.ie, a renowned Irish jewellery retailer, combining WordPress for the frontend with Magento for the backend.",
     ],
     stack: ["PHP", "WordPress", "WPEngine", "Magento"],
+    image: "/image/weir.webp",
+    imageAlt: "Weir & Sons",
+    device: "laptop",
   },
   {
     title: "Health Services Staffs Credit Union",
     url: "https://www.hsscu.ie/",
     urlLabel: "hsscu.ie",
-    tagline: "WordPress site for Health Services Staffs Credit Union",
     description: [
       "Modern WordPress platform for the Health Services Staffs Credit Union, covering online banking, loan calculators, and financial resources, with SEO and analytics setup.",
     ],
     stack: ["PHP", "WordPress", "WPEngine", "Bootstrap", "Slick Slider", "AWS", "Docker"],
+    image: "/image/hss.webp",
+    imageAlt: "HSSCU",
+    device: "laptop",
   },
   {
     title: "Member First Credit Union",
     url: "https://www.mfcu.ie",
     urlLabel: "mfcu.ie",
-    tagline: "Custom WordPress theme with loan calculator",
     description: [
       "Modern WordPress site for Member First Credit Union, with a custom loan calculator and AWS hosting for speed, scalability, and security.",
     ],
     stack: ["PHP", "WordPress", "Bootstrap", "AWS", "Docker"],
+    image: "/image/mfcu.webp",
+    image2: "/image/mfcu1.webp",
+    imageAlt: "Member First Credit Union",
+    device: "phone-tablet",
   },
   {
     title: "Sparebace",
     url: "https://sparebace.vercel.app/",
     urlLabel: "sparebace.vercel.app",
-    tagline: "Voice-enabled salon booking app",
     description: [
       "Built in response to a Barespace challenge — 'Transform the way salon bookings are made' — Sparebace is a voice-enabled chatbot booking experience built with Next.js 14, Prisma, PostgreSQL, and Stripe, deployed on Vercel with NeonDB for serverless database hosting.",
     ],
     stack: ["Claude Code", "Cursor", "Vercel", "NextJS", "React", "Prisma", "NeonDB", "PostgreSQL", "Stripe"],
+    image: "/image/bare.webp",
+    imageAlt: "Sparebace",
+    device: "laptop",
   },
 ];
 
-export function slugify(s: string) {
-  return s
-    .toLowerCase()
-    .replace(/&/g, "and")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
+function LaptopMockup({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="laptop-device">
+      <div className="laptop-lid">
+        <div className="laptop-camera" />
+        <div className="laptop-screen">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={src} alt={alt} loading="lazy" />
+        </div>
+      </div>
+      <div className="laptop-base" />
+    </div>
+  );
 }
 
-export const jobSlug = (job: Job) => `${slugify(job.company)}-${job.date.slice(-4)}`;
-export const projectSlug = (project: Project) => slugify(project.title);
+function PhoneMockup({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="phone-device">
+      <div className="phone-notch" />
+      <div className="phone-screen">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={src} alt={alt} loading="lazy" />
+      </div>
+    </div>
+  );
+}
 
-/** First year in the timeline — when the coding journey started. */
-export const startYear = Number(timeline[timeline.length - 1].date.slice(-4));
+function TabletMockup({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="tablet-device">
+      <div className="tablet-camera" />
+      <div className="tablet-screen">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={src} alt={alt} loading="lazy" />
+      </div>
+    </div>
+  );
+}
+
+function DeviceMockup({ project }: { project: Project }) {
+  if (project.device === "laptop") {
+    return (
+      <div className="flex items-end justify-center w-full">
+        <LaptopMockup src={project.image} alt={project.imageAlt} />
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex items-end justify-center gap-4 md:gap-6">
+      <PhoneMockup src={project.image2 || project.image} alt={project.imageAlt} />
+      <TabletMockup src={project.image} alt={project.imageAlt} />
+    </div>
+  );
+}
+
+function ProjectRow({ project, index }: { project: Project; index: number }) {
+  const reversed = index % 2 === 1;
+
+  return (
+    <div className="py-12 md:py-16">
+      <div className={`flex flex-col ${reversed ? "md:flex-row-reverse" : "md:flex-row"} gap-8 md:gap-12 items-start md:min-h-[380px]`}>
+        <div className="flex-1 space-y-4">
+          <h3 className="text-2xl md:text-3xl">{project.title}</h3>
+          <a
+            href={project.url}
+            className="text-sm text-foreground/70 hover:text-foreground hover:underline font-base relative bottom-5"
+          >
+            {project.urlLabel}
+          </a>
+          <div className="space-y-3">
+            {project.description.map((p, i) => (
+              <p key={i} className="text-sm font-base leading-relaxed text-foreground/80">
+                {p}
+              </p>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-1.5 pt-2">
+            {project.stack.map((tech) => (
+              <Badge key={tech} className="text-xs">
+                {tech}
+              </Badge>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex-1 flex items-center justify-center">
+          <DeviceMockup project={project} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function Projects() {
+  const [showAll, setShowAll] = useState(false);
+  const visible = showAll ? projects : projects.slice(0, 7);
+
+  return (
+    <section id="projects" className="bg-background scroll-mt-16">
+      <div className="mx-auto max-w-7xl px-6 py-16 md:pt-10 md:pb-24">
+        <h2 className="text-4xl md:text-5xl font-heading mb-4 text-center">Projects</h2>
+        {visible.map((project, i) => (
+          <ProjectRow key={project.title} project={project} index={i} />
+        ))}
+        {!showAll && (
+          <div className="flex justify-center mt-10">
+            <Button onClick={() => setShowAll(true)} className="text-base px-8 py-3">
+              <ChevronDown className="mr-2 h-4 w-4" />
+              Show All Projects ({projects.length - 7} more)
+            </Button>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}

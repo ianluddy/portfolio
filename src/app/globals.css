@@ -1,126 +1,94 @@
 @import "tailwindcss";
 
-/* ── 8-bit console palette ── */
+@custom-variant dark (&:is(.dark *));
+
+/* ── Colour tokens — warm palette matching Claude.ai ── */
 :root {
-  --background: #05040f;
-  --panel:      #14112b;
-  --foreground: #f4f4f4;
-  --muted:      #c9c5ef;
-  --subtle:     #8580c2;
-  --accent:     #ffd23f; /* coin yellow */
-  --accent-2:   #ff4f69; /* 1UP red */
-  --accent-3:   #3ddc97; /* power-up green */
+  /* Light mode */
+  --background: #ede0cc;
+  --foreground: #1a1714;
+  --muted:      #4a4644;
+  --subtle:     #7a6a5e;
+  --border:     rgba(26, 23, 20, 0.90);
+  --accent:     #1a2e80;
+}
+
+.dark {
+  --background: #121212;
+  --foreground: #ffffff;
+  --muted:      #b0b0b0;
+  --subtle:     #7d7d7d;
+  --border:     rgba(255, 255, 255, 0.10);
+  --accent:     #ff6b6b;
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-panel:      var(--panel);
   --color-foreground: var(--foreground);
   --color-muted:      var(--muted);
   --color-subtle:     var(--subtle);
+  --color-border:     var(--border);
   --color-accent:     var(--accent);
-  --color-accent-2:   var(--accent-2);
-  --color-accent-3:   var(--accent-3);
+  --font-sans:        var(--font-body);
+  --font-display:     var(--font-display);
 }
 
-.font-pixel {
-  font-family: var(--font-pixel), ui-monospace, monospace;
-  -webkit-font-smoothing: none;
-}
-
-/* Symbols the pixel font lacks (▶ ★ ✕ …) */
-.glyph {
-  font-family: ui-monospace, "Segoe UI Symbol", "Apple Symbols", system-ui, sans-serif;
-  font-size: 1.35em;
-  line-height: 1;
-  vertical-align: -0.1em;
-}
-
-.font-terminal {
-  font-family: var(--font-body), ui-monospace, monospace;
-}
-
-@keyframes pixel-blink {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
-}
-.blink {
-  animation: pixel-blink 1s steps(1, end) infinite;
-}
-
-@keyframes pixel-pop {
-  from { transform: scale(0.96) translateY(6px); opacity: 0; }
-  to   { transform: none; opacity: 1; }
-}
-.pop {
-  animation: pixel-pop 0.16s steps(3, end);
-}
-
-/* Chunky bordered box with a hard drop shadow */
-.pixel-box {
-  background: var(--panel);
-  border: 4px solid var(--foreground);
-  box-shadow: 0 0 0 4px #000, 8px 8px 0 4px #000;
-}
-
-/* Pixel starfield backdrop */
-.stars {
-  background-color: var(--background);
-  background-image:
-    radial-gradient(1px 1px at 20px 30px, #f4f4f4 50%, transparent 51%),
-    radial-gradient(1px 1px at 90px 120px, #8580c2 50%, transparent 51%),
-    radial-gradient(1px 1px at 160px 60px, #c9c5ef 50%, transparent 51%),
-    radial-gradient(1px 1px at 230px 170px, #8580c2 50%, transparent 51%),
-    radial-gradient(1px 1px at 60px 200px, #f4f4f4 50%, transparent 51%);
-  background-size: 260px 240px;
-}
-
-/* CRT scanlines laid over the game screen */
-.crt::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    repeating-linear-gradient(to bottom, transparent 0, transparent 2px, rgba(0, 0, 0, 0.18) 3px, transparent 4px),
-    radial-gradient(ellipse at center, transparent 62%, rgba(0, 0, 0, 0.5) 100%);
+/* Editorial serif display utility */
+.font-display {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
 }
 
 @layer base {
-  html,
+  html {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+
   body {
     background-color: var(--background);
     color: var(--foreground);
-    height: 100%;
-    overflow: hidden;
-    overscroll-behavior: none;
-  }
-
-  body {
-    font-family: var(--font-body), ui-monospace, monospace;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  ::selection {
-    background: var(--accent);
-    color: var(--background);
-  }
-
-  a:focus-visible,
-  button:focus-visible {
-    outline: 3px dashed var(--accent);
-    outline-offset: 3px;
-  }
-
-  * {
-    scrollbar-color: var(--accent) var(--panel);
-    scrollbar-width: thin;
+    font-family: var(--font-body), system-ui, sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.4s ease, color 0.4s ease;
   }
 }
 
+/* Desktop: prevent page scroll — accordion fills viewport */
+@media (min-width: 768px) {
+  html,
+  body {
+    overflow: hidden;
+    height: 100%;
+  }
+}
+
+/* Split-flap letters (see FlapCells) */
+.flap-cell {
+  position: relative;
+  display: inline-block;
+}
+.flap-char {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  translate: -50% 0;
+  white-space: nowrap;
+  transform-origin: 50% 55%;
+  animation: flap 45ms ease-out;
+}
+@keyframes flap {
+  from {
+    transform: scaleY(0.45);
+    opacity: 0.6;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
-  .blink,
-  .pop {
+  .flap-char {
     animation: none;
   }
 }

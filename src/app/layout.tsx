@@ -1,6 +1,21 @@
 import type { Metadata } from "next";
+import { DM_Sans, EB_Garamond } from "next/font/google";
 import "./globals.css";
-import { pixelFont, terminalFont } from "./fonts";
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400"],
+  variable: "--font-body",
+});
+
+const ebGaramond = EB_Garamond({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
+  style: ["normal", "italic"],
+  variable: "--font-display",
+});
 
 export const metadata: Metadata = {
   title: "Ian Luddy — Software Builder",
@@ -37,7 +52,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark ${pixelFont.variable} ${terminalFont.variable}`}
+      className={`dark ${dmSans.variable} ${ebGaramond.variable}`}
     >
       <body>
         {children}
